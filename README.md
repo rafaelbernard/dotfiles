@@ -1,3 +1,3 @@
 # rc.d
 
-Based on 
+Inspired by https://github.com/eevee/rc I'm also publishing my dot files.
