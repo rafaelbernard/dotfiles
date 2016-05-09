@@ -34,23 +34,19 @@ alias idsea='sh /home/rafael/Dropbox/util/impl/implementar_dsea_desenvolvimento'
 
 alias sappdevdsea='ssh -p 2153 root@vestibular.dsea.uerj.br'
 
-# ICONS4U
-alias pdbprodachecpv='psql -h db1.ache.icons4u.com.br -U rafael -d ache'
-
-alias scmsprodachecpv='ssh root@cms.ache.icons4u.com.br'
-alias sdbprodachecpv='ssh root@db1.ache.icons4u.com.br'
-alias sappprodachecpv='ssh root@app1.ache.icons4u.com.br'
-alias sappdevachecpv='ssh root@app.dev.cuidadospelavida.com.br'
-
 #Util
 alias sincmusicasdsea='sh /home/rafael/Dropbox/util/shell/sinc_musicas_dsea'
 
+# private setting
+source /home/rafael/Dropbox/util/shell/rc.d/zshrcp
+# omz
 source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 source ~/.oh-my-zsh/plugins/svn/svn.plugin.zsh
 source ~/.oh-my-zsh/plugins/ubuntu/ubuntu.plugin.zsh
 
 # Instalacao das Funcoes ZZ (www.funcoeszz.net)
 export ZZPATH=/home/rafael/Dropbox/util/shell/funcoeszz
+# private settings
 source /home/rafael/Dropbox/util/shell/rc.d/zzzshrc
 
 
