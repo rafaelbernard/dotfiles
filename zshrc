@@ -9,7 +9,6 @@ alias psqlddesenv='psql -h pgdev.dsea.uerj.br -U ADM_DSEA -d dsea'
 alias psqldprod='psql -h pg.dsea.uerj.br -U ADM_DSEA -d dsea'
 alias psqlsrv1='psql -h srv1.oservidor.com -U rafael -d econrio_bd'
 alias psqlsrv2='psql -h srv2.oservidor.com -U rafael -d postgres'
-alias psql_i4u_hom_ache='psql -h db1.ache.icons4u.com.br -U rafael -d postgres'
 alias curbac='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
 alias vi='vim'
 alias ll='ls -l'
@@ -33,7 +32,12 @@ alias baixar_cap2014='sh /home/rafael/Dropbox/util/impl/baixar_cap2014'
 alias baixar_cap2015='sh /home/rafael/Dropbox/util/impl/baixar_cap2015'
 alias idsea='sh /home/rafael/Dropbox/util/impl/implementar_dsea_desenvolvimento'
 
+alias sappdevdsea='ssh -p 2153 root@vestibular.dsea.uerj.br'
+
 # ICONS4U
+alias pdbprodachecpv='psql -h db1.ache.icons4u.com.br -U rafael -d ache'
+
+alias scmsprodachecpv='ssh root@cms.ache.icons4u.com.br'
 alias sdbprodachecpv='ssh root@db1.ache.icons4u.com.br'
 alias sappprodachecpv='ssh root@app1.ache.icons4u.com.br'
 alias sappdevachecpv='ssh root@app.dev.cuidadospelavida.com.br'
