@@ -22,8 +22,6 @@ alias gok='echo "git commit -a -m \"OK\"" && git commit -a -m "OK"'
 alias gpa='echo "git pull --all" && git pull --all'
 alias gpom='echo "git push -u origin master" && git push -u origin master'
 
-alias tunel_vivomais_hom='ssh -f root@db1.vms.icons4u.com.br -L 55432:db1.vms.icons4u.com.br:5432 -N'
-
 # Execucao de aplicacao local em PHP
 alias runphp='php -S localhost:8000'
 
@@ -32,13 +30,11 @@ alias baixar_cap2014='sh /home/rafael/Dropbox/util/impl/baixar_cap2014'
 alias baixar_cap2015='sh /home/rafael/Dropbox/util/impl/baixar_cap2015'
 alias idsea='sh /home/rafael/Dropbox/util/impl/implementar_dsea_desenvolvimento'
 
-alias sappdevdsea='ssh -p 2153 root@vestibular.dsea.uerj.br'
-
 #Util
 alias sincmusicasdsea='sh /home/rafael/Dropbox/util/shell/sinc_musicas_dsea'
 
 # private setting
-source /home/rafael/Dropbox/util/shell/rc.d/zshrcp
+source /home/rafael/Dropbox/util/shell/rc.d/zshrc.priv
 # omz
 source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 source ~/.oh-my-zsh/plugins/svn/svn.plugin.zsh
@@ -48,5 +44,3 @@ source ~/.oh-my-zsh/plugins/ubuntu/ubuntu.plugin.zsh
 export ZZPATH=/home/rafael/Dropbox/util/shell/funcoeszz
 # private settings
 source /home/rafael/Dropbox/util/shell/rc.d/zzzshrc
-
-
