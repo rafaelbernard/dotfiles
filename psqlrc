@@ -11,6 +11,9 @@
 \pset null ␀
 \pset linestyle unicode
 
+-- Echoing sql statements of commands
+\set ECHO_HIDDEN true
+
 -- automatically switch to \x for large outputs
 \x auto
 
