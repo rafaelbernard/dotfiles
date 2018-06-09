@@ -25,5 +25,4 @@ export NVM_DIR="/usr/local/nvm"
 
 # omz
 source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
-source ~/.oh-my-zsh/plugins/svn/svn.plugin.zsh
 source ~/.oh-my-zsh/plugins/ubuntu/ubuntu.plugin.zsh
