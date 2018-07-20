@@ -1,2 +1,3 @@
-set number
-set expandtab tabstop=4
+"set number
+set expandtab tabstop=2
+set autoindent
