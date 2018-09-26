@@ -1,6 +1,9 @@
-# Atalhos
+# -----------
+# shortcuts
+# -----------
 alias duh='du -h --max-depth=1'
 alias install='sudo aptitude install'
+# get current background image
 alias curbac='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
 alias vi='vim'
 alias ll='ls -l'
