@@ -19,7 +19,7 @@ alias gpom='echo "git push -u origin master" && git push -u origin master'
 alias runphp='php -S localhost:8000'
 
 # private setting
-source /home/rafael/Dropbox/util/shell/rc.d/zshrc.priv
+source /home/rafael/Documents/util/shell/rc.d/zshrc.priv
 
 #nvm
 export NVM_DIR="/usr/local/nvm"
