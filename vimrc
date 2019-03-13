@@ -2,7 +2,7 @@
 set number                  "number all lines
 set expandtab tabstop=2     "transform tab into 2 spaces
 set autoindent
-set smartindent             "reacts to the syntax/style of the code you are editing
+"set smartindent             "reacts to the syntax/style of the code you are editing
 "set relativenumber
 "set ruler
 "set mouse=a
