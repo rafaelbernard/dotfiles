@@ -1,6 +1,6 @@
 "vim settings
-set number
-set expandtab tabstop=2
+set number                  "number all lines
+set expandtab tabstop=2     "transform tab into 2 spaces
 set autoindent
 "set relativenumber
 "set ruler
@@ -22,6 +22,6 @@ set autoindent
 "set foldmethod=indent
 "set foldlevelstart=99
 "set incsearch
-set cursorline
-set synmaxcol=2048
-set laststatus=2
+set cursorline              "underline at cursor line
+"set synmaxcol=2048
+"set laststatus=2
