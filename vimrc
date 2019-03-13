@@ -1,3 +1,27 @@
-"set number
+"vim settings
+set number
 set expandtab tabstop=2
 set autoindent
+"set relativenumber
+"set ruler
+"set mouse=a
+"set autowrite
+"set autoread
+"set noshowmode
+"set hidden
+"set nojoinspaces
+"set shiftwidth=4
+"set softtabstop=4
+"set shiftround
+"set expandtab
+"set smartindent
+"set pumheight=15
+"set completeopt=menuone,longest
+"set list
+"set listchars=tab:\ \ ,trail:•,extends:#,nbsp:.
+"set foldmethod=indent
+"set foldlevelstart=99
+"set incsearch
+set cursorline
+set synmaxcol=2048
+set laststatus=2
