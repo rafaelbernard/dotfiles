@@ -1,16 +1,16 @@
 "vim settings
 set number                  "number all lines
+"set relativenumber          " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
 set expandtab tabstop=2     "transform tab into 2 spaces
 set autoindent
-"set smartindent             "reacts to the syntax/style of the code you are editing
-"set relativenumber
-"set ruler
-"set mouse=a
+"set smartindent            "reacts to the syntax/style of the code you are editing
+set ruler
+"set mouse=a                 "Enable the use of the mouse.
 "set autowrite
-"set autoread
-"set noshowmode
-"set hidden
-"set nojoinspaces
+"set autoread                "When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again.
+"set noshowmode              "If in Insert, Replace or Visual mode put a message on the last line.
+set hidden
+set nojoinspaces            "Insert two spaces after a '.', '?' and '!' with a join command.
 "set shiftwidth=4
 "set softtabstop=4
 "set shiftround
