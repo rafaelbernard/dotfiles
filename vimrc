@@ -14,7 +14,6 @@ set nojoinspaces            "Insert two spaces after a '.', '?' and '!' with a j
 set shiftwidth=2            "Returns the effective value of 'shiftwidth'. This is the 'shiftwidth' value unless it is zero, in which case it is the 'tabstop' value.
 set softtabstop=2
 set shiftround              "Round indent to multiple of 'shiftwidth'.  Applies to > and < commands (...)
-"set expandtab
 "set pumheight=15
 "set completeopt=menuone,longest
 "set list
@@ -25,3 +24,4 @@ set shiftround              "Round indent to multiple of 'shiftwidth'.  Applies 
 set cursorline              "underline at cursor line
 "set synmaxcol=2048
 "set laststatus=2
+set rtp+=~/.fzf             "enable fzf integration
