@@ -1,3 +1,12 @@
+
+# Path to your oh-my-zsh installation.
+export ZSH=/home/rafael/.oh-my-zsh
+
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="superjarin"
+ZSH_THEME="jispwoso"
+
 # -----------
 # shortcuts
 # -----------
