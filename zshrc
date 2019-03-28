@@ -1,6 +1,7 @@
 # -----------
 # shortcuts
 # -----------
+# check folder size with max-depth of 1
 alias duh='du -h --max-depth=1'
 alias install='sudo aptitude install'
 # get current background image
@@ -9,6 +10,7 @@ alias vi='vim'
 alias ll='ls -l'
 alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
 alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
+alias fcd='cd find . -type d | fzf'
 
 # Atalhos GIT
 alias gok='echo "git commit -a -m \"OK\"" && git commit -a -m "OK"'
@@ -20,6 +22,9 @@ alias runphp='php -S localhost:8000'
 
 # private setting
 source /home/rafael/Documents/util/shell/rc.d/zshrc.priv
+
+#fzf - https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
 
 #nvm
 export NVM_DIR="/usr/local/nvm"
