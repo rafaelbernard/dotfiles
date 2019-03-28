@@ -7,6 +7,13 @@ export ZSH=/home/rafael/.oh-my-zsh
 #ZSH_THEME="superjarin"
 ZSH_THEME="jispwoso"
 
+# Plugins
+plugins=(
+ git aws ubuntu
+)
+
+source $ZSH/oh-my-zsh.sh
+
 # -----------
 # shortcuts
 # -----------
@@ -41,5 +48,5 @@ export NVM_DIR="/usr/local/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # omz
-source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
-source ~/.oh-my-zsh/plugins/ubuntu/ubuntu.plugin.zsh
+#source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
+#source ~/.oh-my-zsh/plugins/ubuntu/ubuntu.plugin.zsh
