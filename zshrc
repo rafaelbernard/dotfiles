@@ -7,10 +7,20 @@ export ZSH=/home/rafael/.oh-my-zsh
 #ZSH_THEME="superjarin"
 ZSH_THEME="jispwoso"
 
+# History file size
+HISTSIZE=100000
+
 # Plugins
 plugins=(
  git aws ubuntu
 )
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 source $ZSH/oh-my-zsh.sh
 

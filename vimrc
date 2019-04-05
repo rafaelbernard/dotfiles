@@ -14,8 +14,8 @@ set nojoinspaces            "Insert two spaces after a '.', '?' and '!' with a j
 set shiftwidth=2            "Returns the effective value of 'shiftwidth'. This is the 'shiftwidth' value unless it is zero, in which case it is the 'tabstop' value.
 set softtabstop=2
 set shiftround              "Round indent to multiple of 'shiftwidth'.  Applies to > and < commands (...)
-"set pumheight=15
-"set completeopt=menuone,longest
+set pumheight=15            "Determines the maximum number of items to show in the popup menu
+set completeopt=menuone,longest
 "set list
 "set listchars=tab:\ \ ,trail:•,extends:#,nbsp:.
 "set foldmethod=indent
