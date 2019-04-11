@@ -20,7 +20,7 @@ set completeopt=menuone,longest                   "A comma separated list of opt
 "set listchars=tab:\ \ ,trail:•,extends:#,nbsp:.
 "set foldmethod=indent
 "set foldlevelstart=99
-"set incsearch
+set incsearch
 set cursorline              "underline at cursor line
 "set synmaxcol=2048
 "set laststatus=2
