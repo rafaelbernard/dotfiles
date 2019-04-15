@@ -1,5 +1,5 @@
 "vim settings
-"set number                                     "number all lines
+set number                                      "number all lines
 "set relativenumber          " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
 set expandtab tabstop=2                         "transform tab into 2 spaces
 "set autoindent
