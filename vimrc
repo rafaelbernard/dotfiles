@@ -1,11 +1,26 @@
 "vim settings
+"rafael araujo <rafael dot araujo at initd dot info>
+
+
+"Handling plugin installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+call plug#end()
+
 set number                                      "number all lines
 "set relativenumber          " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
 set expandtab tabstop=2                         "transform tab into 2 spaces
-"set autoindent
-"set smartindent            "reacts to the syntax/style of the code you are editing
+set autoindent
+set smartindent                                 "reacts to the syntax/style of the code you are editing
 "set ruler
-"set mouse=a                 "Enable the use of the mouse.
 "set autowrite
 "set autoread                "When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again.
 "set noshowmode              "If in Insert, Replace or Visual mode put a message on the last line.
