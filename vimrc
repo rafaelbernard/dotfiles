@@ -22,6 +22,6 @@ set completeopt=menuone,longest                   "A comma separated list of opt
 "set foldlevelstart=99
 "set incsearch
 set cursorline                                    "underline at cursor line
-"set synmaxcol=2048
+set synmaxcol=2048
 "set laststatus=2
 set rtp+=~/.fzf             "enable fzf integration
