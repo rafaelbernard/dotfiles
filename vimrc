@@ -16,8 +16,8 @@ Plug 'junegunn/limelight.vim'
 call plug#end()
 
 set number                                      "number all lines
-"set relativenumber          " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
-set expandtab tabstop=2                         "transform tab into 2 spaces
+"set relativenumber                              " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
+set expandtab tabstop=4                         "transform tab into 2 spaces
 set autoindent
 set smartindent                                 "reacts to the syntax/style of the code you are editing
 "set ruler
@@ -36,7 +36,7 @@ set smartindent                                 "reacts to the syntax/style of t
 "set foldmethod=indent
 "set foldlevelstart=99
 "set incsearch
-"set cursorline                                    "underline at cursor line
+set cursorline                                    "underline at cursor line
 "set synmaxcol=2048
 "set laststatus=2
 set rtp+=~/.fzf                                   "enable fzf integration
