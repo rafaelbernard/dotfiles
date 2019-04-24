@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
 set number                                      "number all lines
@@ -27,7 +28,7 @@ set smartindent                                 "reacts to the syntax/style of t
 "set hidden
 "set nojoinspaces            "Insert two spaces after a '.', '?' and '!' with a join command.
 "set shiftwidth=2            "Returns the effective value of 'shiftwidth'. This is the 'shiftwidth' value unless it is zero, in which case it is the 'tabstop' value.
-"set softtabstop=2
+set softtabstop=4
 "set shiftround                  "Round indent to multiple of 'shiftwidth'.  Applies to > and < commands (...)
 "set pumheight=15                                  "Determines the maximum number of items to show in the popup menu
 "set completeopt=menuone,longest                   "A comma separated list of options for Insert mode completion
@@ -38,5 +39,8 @@ set smartindent                                 "reacts to the syntax/style of t
 "set incsearch
 set cursorline                                    "underline at cursor line
 "set synmaxcol=2048
-"set laststatus=2
+set laststatus=2
+set wildmode=longest,list,full
+
+" # Integrations
 set rtp+=~/.fzf                                   "enable fzf integration
