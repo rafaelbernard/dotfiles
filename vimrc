@@ -14,6 +14,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 set number                                      "number all lines
