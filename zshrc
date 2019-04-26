@@ -47,7 +47,7 @@ alias gpom='echo "git push -u origin master" && git push -u origin master'
 alias runphp='php -S localhost:8000'
 
 # private setting
-source /home/rafael/Documents/util/shell/rc.d/zshrc.priv
+source ~/.dotfiles-priv/zshrc.priv
 
 #fzf - https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
