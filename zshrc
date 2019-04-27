@@ -47,7 +47,7 @@ alias gpom='echo "git push -u origin master" && git push -u origin master'
 alias runphp='php -S localhost:8000'
 
 # private setting
-source /home/rafael/Documents/util/shell/rc.d/zshrc.priv
+source ~/.dotfiles-priv/zshrc.priv
 
 #fzf - https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
@@ -58,5 +58,4 @@ export NVM_DIR="/usr/local/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # omz
-#source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 #source ~/.oh-my-zsh/plugins/ubuntu/ubuntu.plugin.zsh
