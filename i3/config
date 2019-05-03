@@ -169,5 +169,8 @@ bar {
         status_command i3status
 }
 
+# keyboard
+exec "setxkbmap --layout br"
+
 bindsym $mod+b exec "~/.config/i3/lock-screen.sh"
 exec autolock -time 15 -locker '~/.config/i3/lock-screen.sh' & 
