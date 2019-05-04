@@ -1,4 +1,4 @@
-"vim settings
+vim settings
 "rafael araujo <rafael dot araujo at initd dot info>
 
 
@@ -15,6 +15,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 set number                                      "number all lines
