@@ -1,13 +1,14 @@
 "vim settings
 "rafael araujo <rafael dot araujo at initd dot info>
 
-
 "Handling plugin installation
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+let mapleader=','
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/seoul256.vim'
@@ -16,6 +17,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set number                                      "number all lines
