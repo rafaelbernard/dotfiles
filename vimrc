@@ -15,10 +15,11 @@ Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf.vim'                         "tools - Fuzzy Finder
+Plug 'scrooloose/nerdtree'                      "file management - Nerdtree -- Tree file navigation
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
+Plug 'benmills/vimux'                           "so - interact with tmux from vim
 call plug#end()
 
 set number                                      "number all lines
