@@ -24,6 +24,8 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+setxkbmap -option caps:ctrl_modifier
+
 # -----------
 # shortcuts
 # -----------
@@ -43,7 +45,6 @@ alias gok='echo "git commit -a -m \"OK\"" && git commit -a -m "OK"'
 alias gpa='echo "git pull --all" && git pull --all'
 alias gpom='echo "git push -u origin master" && git push -u origin master'
 
-# Execucao de aplicacao local em PHP
 alias runphp='php -S localhost:8000'
 
 # private setting
