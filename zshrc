@@ -26,21 +26,25 @@ source $ZSH/oh-my-zsh.sh
 
 setxkbmap -option caps:ctrl_modifier
 
+autoload -Uz compinit
+compinit
+
 # -----------
 # shortcuts
 # -----------
 # check folder size with max-depth of 1
+alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias duh='du -h --max-depth=1'
+alias dot='cd ~/.dotfiles'
 alias install='sudo aptitude install'
 # get current background image
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
 alias vi='vim'
 alias ll='ls -l'
 alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
-alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias fcd='cd find . -type d | fzf'
 
-# Atalhos GIT
+# GIT
 alias gok='echo "git commit -a -m \"OK\"" && git commit -a -m "OK"'
 alias gpa='echo "git pull --all" && git pull --all'
 alias gpom='echo "git push -u origin master" && git push -u origin master'
@@ -50,9 +54,6 @@ alias runphp='php -S localhost:8000'
 # private setting
 source ~/.dotfiles-priv/zshrc.priv
 
-# kitty
-autoload -Uz compinit
-compinit
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 
