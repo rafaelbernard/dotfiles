@@ -50,6 +50,12 @@ alias runphp='php -S localhost:8000'
 # private setting
 source ~/.dotfiles-priv/zshrc.priv
 
+# kitty
+autoload -Uz compinit
+compinit
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
 #fzf - https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
 
@@ -58,16 +64,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# ssh agent
-#if [ -f ~/.ssh/agent.env ] ; then
-#    . ~/.ssh/agent.env > /dev/null
-#    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
-#        echo "Stale agent file found. Spawning new agent… "
-#        eval `ssh-agent | tee ~/.ssh/agent.env`
-#        ssh-add
-#    fi
-#else
-#    echo "Starting ssh-agent"
-#    eval `ssh-agent | tee ~/.ssh/agent.env`
-#    ssh-add
-#fi
