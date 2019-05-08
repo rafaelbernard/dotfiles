@@ -12,7 +12,7 @@ let mapleader=','
 
 call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
-"Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/seoul256.vim'
 "Plug 'junegunn/goyo.vim'
 "Plug 'junegunn/limelight.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
@@ -26,7 +26,7 @@ call plug#end()
 set number                                      "number all lines
 "set relativenumber                              " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
 set expandtab tabstop=4                         "transform tab into 2 spaces
-"set autoindent
+set autoindent
 "set smartindent                                 "reacts to the syntax/style of the code you are editing
 "set ruler
 "set autowrite
@@ -46,7 +46,7 @@ set expandtab tabstop=4                         "transform tab into 2 spaces
 "set incsearch
 set cursorline                                    "underline at cursor line
 "set synmaxcol=2048
-"set laststatus=2
+set laststatus=2                                   "The value of this option influences when the last window will have a status line. 2 = always
 "set wildmode=longest,list,full
 
 " # Integrations
