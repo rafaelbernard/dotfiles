@@ -1,4 +1,4 @@
-#!/usr/bin/env /bin/bash
+#!/usr/bin/env bash
 set -x
 
 echo "Installing dotfiles"
@@ -7,7 +7,7 @@ echo "Installing dotfiles"
 # PLATFORM
 # =========================
 
-#!/bin/bash
+# {{{
 
 platform_type=`uname -m`
 unamestr=`uname`
@@ -32,6 +32,8 @@ fi
 export platform_type
 export platform
 export hostname=`hostname -s`
+
+# }}}
 
 backup_dir="$HOME/.dotfiles-backup"
 
