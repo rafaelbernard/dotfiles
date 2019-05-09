@@ -20,6 +20,8 @@ Plug 'junegunn/fzf.vim'                         "tools - Fuzzy Finder
 Plug 'scrooloose/nerdtree'                      "file management - Nerdtree -- Tree file navigation
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
+Plug 'pangloss/vim-javascript' 
+Plug 'mxw/vim-jsx' 
 Plug 'benmills/vimux'                           "so - interact with tmux from vim
 call plug#end()
 
