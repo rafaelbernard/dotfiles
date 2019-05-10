@@ -23,8 +23,12 @@ Plug 'scrooloose/nerdtree'                      "file management - Nerdtree -- T
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
 Plug 'pangloss/vim-javascript' 
-Plug 'mxw/vim-jsx' 
 Plug 'benmills/vimux'                           "so - interact with tmux from vim
+
+"plugins - dev
+Plug 'StanAngeloff/php.vim'
+Plug 'mxw/vim-jsx' 
+
 call plug#end()
 
 set number                                      "number all lines
@@ -38,8 +42,8 @@ set smartindent                                 "reacts to the syntax/style of t
 "set noshowmode              "If in Insert, Replace or Visual mode put a message on the last line.
 "set hidden
 "set nojoinspaces            "Insert two spaces after a '.', '?' and '!' with a join command.
-"set shiftwidth=2            "Returns the effective value of 'shiftwidth'. This is the 'shiftwidth' value unless it is zero, in which case it is the 'tabstop' value.
-"set softtabstop=4
+set shiftwidth=4            "Returns the effective value of 'shiftwidth'. This is the 'shiftwidth' value unless it is zero, in which case it is the 'tabstop' value.
+set softtabstop=4
 "set shiftround                  "Round indent to multiple of 'shiftwidth'.  Applies to > and < commands (...)
 "set pumheight=15                                  "Determines the maximum number of items to show in the popup menu
 "set completeopt=menuone,longest                   "A comma separated list of options for Insert mode completion
@@ -59,20 +63,10 @@ set rtp+=~/.fzf                                   "enable fzf integration
 "Enabling clipboard pastes to be available to OS
 set clipboard+=unnamed
 
-let g:lightline = {
-    \ 'colorscheme': 'Tomorrow_Night',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'fugitive#head'
-    \ },
-    \ }
-
 " Key mapping
 nnoremap <leader>] :bnext<CR>
 nnoremap <leader>[ :bprev<CR>
 nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
+
