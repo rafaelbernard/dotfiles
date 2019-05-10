@@ -18,6 +18,7 @@ Plug 'junegunn/goyo.vim'                        "Distraction-free writing in Vim
 Plug 'junegunn/limelight.vim'                   "Hyperfocus-writing in Vim
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'                      "file management - Nerdtree -- Tree file navigation
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
