@@ -57,4 +57,22 @@ set laststatus=2                                   "The value of this option inf
 set rtp+=~/.fzf                                   "enable fzf integration
 
 "Enabling clipboard pastes to be available to OS
-set clipboard=unnamed
+set clipboard+=unnamed
+
+let g:lightline = {
+    \ 'colorscheme': 'Tomorrow_Night',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head'
+    \ },
+    \ }
+
+" Key mapping
+nnoremap <leader>] :bnext<CR>
+nnoremap <leader>[ :bprev<CR>
+nnoremap <C-p> :FZF<cr>
+nnoremap <leader><Enter> :FZFMru<CR>
+nnoremap <C-\> :NERDTreeToggle<CR>
