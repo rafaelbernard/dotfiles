@@ -11,12 +11,13 @@ endif
 let mapleader=','
 
 call plug#begin('~/.vim/plugged')
+Plug 'honza/dockerfile.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/seoul256.vim'
-"Plug 'junegunn/goyo.vim'
-"Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'                        "Distraction-free writing in Vim. - better served with limelight
+Plug 'junegunn/limelight.vim'                   "Hyperfocus-writing in Vim
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'junegunn/fzf.vim'                         "tools - Fuzzy Finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'                      "file management - Nerdtree -- Tree file navigation
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
@@ -24,10 +25,10 @@ Plug 'benmills/vimux'                           "so - interact with tmux from vi
 call plug#end()
 
 set number                                      "number all lines
-"set relativenumber                              " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
+set relativenumber                              " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
 set expandtab tabstop=4                         "transform tab into 2 spaces
 set autoindent
-"set smartindent                                 "reacts to the syntax/style of the code you are editing
+set smartindent                                 "reacts to the syntax/style of the code you are editing
 "set ruler
 "set autowrite
 "set autoread                "When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again.
