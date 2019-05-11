@@ -75,5 +75,10 @@ nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 
+" fzf ##########  {{{
+
+" enables preview when :Files
 let g:fzf_files_options = 
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
+" }}}
