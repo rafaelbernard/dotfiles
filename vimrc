@@ -77,7 +77,7 @@ nnoremap <C-\> :NERDTreeToggle<CR>
 
 " fzf ##########  {{{
 
-" enables preview when :Files
+" enables preview when exec :Files
 let g:fzf_files_options = 
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
