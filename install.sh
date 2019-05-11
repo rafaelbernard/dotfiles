@@ -43,13 +43,14 @@ mkdir $BACKDIR
 # zsh
 ZSH_FILE=$HOME/.zsh
 if [ -e $ZSH_FILE ]; then
+    # do nothing
 fi
 
 #echo "tmux"
 
 #if 
 
-echo "tmux"
+#echo "tmux"
 
-cd $HOME
-ln -sf ~/.dotfiles/tmux.conf .tmux.conf
+#cd $HOME
+#ln -sf ~/.dotfiles/tmux.conf .tmux.conf

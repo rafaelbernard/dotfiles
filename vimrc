@@ -12,15 +12,16 @@ let mapleader=','
 
 call plug#begin('~/.vim/plugged')
 
-" vim
+" vim / theme / design
+Plug 'junegunn/limelight.vim'                   "Hyperfocus-writing in Vim
+Plug 'junegunn/goyo.vim'                        "Distraction-free writing in Vim. - better served with limelight
 Plug 'junegunn/seoul256.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" tools / helpers
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/goyo.vim'                        "Distraction-free writing in Vim. - better served with limelight
-Plug 'junegunn/limelight.vim'                   "Hyperfocus-writing in Vim
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
