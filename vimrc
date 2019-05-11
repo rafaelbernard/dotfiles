@@ -13,11 +13,11 @@ let mapleader=','
 call plug#begin('~/.vim/plugged')
 
 " vim
+Plug 'junegunn/seoul256.vim'
+Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/seoul256.vim'
 
-Plug 'honza/dockerfile.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/goyo.vim'                        "Distraction-free writing in Vim. - better served with limelight
 Plug 'junegunn/limelight.vim'                   "Hyperfocus-writing in Vim
@@ -31,6 +31,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'benmills/vimux'                           "so - interact with tmux from vim
 
 "plugins - dev
+Plug 'honza/dockerfile.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'mxw/vim-jsx' 
 
@@ -80,5 +81,12 @@ nnoremap <C-\> :NERDTreeToggle<CR>
 " enables preview when exec :Files
 let g:fzf_files_options = 
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
+" }}}
+
+
+" airline ########## {{{
+
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " }}}
