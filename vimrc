@@ -11,9 +11,14 @@ endif
 let mapleader=','
 
 call plug#begin('~/.vim/plugged')
+
+" vim
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/seoul256.vim'
+
 Plug 'honza/dockerfile.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'                        "Distraction-free writing in Vim. - better served with limelight
 Plug 'junegunn/limelight.vim'                   "Hyperfocus-writing in Vim
 Plug 'PotatoesMaster/i3-vim-syntax'
@@ -70,3 +75,5 @@ nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 
+let g:fzf_files_options = 
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
