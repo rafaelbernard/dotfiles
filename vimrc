@@ -20,21 +20,24 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" integration
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'benmills/vimux'                           "so - interact with tmux from vim
+
 " tools / helpers
 Plug 'editorconfig/editorconfig-vim'
-Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'                      "file management - Nerdtree -- Tree file navigation
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
-Plug 'pangloss/vim-javascript' 
-Plug 'benmills/vimux'                           "so - interact with tmux from vim
 
 "plugins - dev
 Plug 'honza/dockerfile.vim'
 Plug 'StanAngeloff/php.vim'
+Plug 'pangloss/vim-javascript' 
 Plug 'mxw/vim-jsx' 
+Plug 'evidens/vim-twig'
 
 call plug#end()
 
@@ -45,7 +48,7 @@ set autoindent
 set smartindent                                 "reacts to the syntax/style of the code you are editing
 "set ruler
 "set autowrite
-"set autoread                "When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again.
+set autoread                                    "When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again.
 "set noshowmode              "If in Insert, Replace or Visual mode put a message on the last line.
 "set hidden
 "set nojoinspaces            "Insert two spaces after a '.', '?' and '!' with a join command.
