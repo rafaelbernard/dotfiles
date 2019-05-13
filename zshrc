@@ -42,6 +42,8 @@ alias current_background_image='gsettings get org.gnome.desktop.background pictu
 alias vi='vim'
 alias ll='ls -l'
 alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
+
+# fzfz
 alias fcd='cd find . -type d | fzf'
 
 # GIT
@@ -59,6 +61,7 @@ kitty + complete setup zsh | source /dev/stdin
 
 #fzf - https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
+#export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
