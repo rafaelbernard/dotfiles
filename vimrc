@@ -16,7 +16,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/limelight.vim'                   "Hyperfocus-writing in Vim
 Plug 'junegunn/goyo.vim'                        "Distraction-free writing in Vim. - better served with limelight
 Plug 'junegunn/seoul256.vim'
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 

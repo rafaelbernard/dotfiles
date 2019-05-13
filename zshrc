@@ -61,6 +61,7 @@ kitty + complete setup zsh | source /dev/stdin
 
 #fzf - https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
+#export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
