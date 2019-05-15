@@ -47,7 +47,7 @@ set expandtab tabstop=4                         "transform tab into 2 spaces
 set autoindent
 set smartindent                                 "reacts to the syntax/style of the code you are editing
 "set ruler
-"set autowrite
+set autowrite                                   "Write the contents of the file, if it has been modified, on each :next, :rewind, :last, :first, :previous, :stop, :suspend, :tag, :!, 	:make, CTRL-] and CTRL-^ command;
 set autoread                                    "When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again.
 "set noshowmode              "If in Insert, Replace or Visual mode put a message on the last line.
 "set hidden
