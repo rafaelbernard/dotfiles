@@ -35,6 +35,7 @@ Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
 "plugins - dev
 Plug 'honza/dockerfile.vim'
 Plug 'StanAngeloff/php.vim'
+Plug 'Townk/vim-autoclose'
 Plug 'pangloss/vim-javascript' 
 Plug 'mxw/vim-jsx' 
 Plug 'evidens/vim-twig'
