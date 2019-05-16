@@ -182,3 +182,8 @@ bindsym $mod+b exec "~/.config/i3/lock-screen.sh"
 exec autolock -time 15 -locker '~/.config/i3/lock-screen.sh' & 
 
 bindsym $mod+Shift+z exec "xtrlock"
+
+# sound
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
