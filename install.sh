@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -x
 
 echo "Installing dotfiles"
@@ -37,7 +37,9 @@ export hostname=`hostname -s`
 
 backup_dir="$HOME/.dotfiles-backup"
 
-#if [[ -f $backup_dir ]]
+if [[ -f $backup_dir ]]; then
+fi
+
 mkdir $backup_dir
 
 # zsh
@@ -54,3 +56,6 @@ fi
 
 #cd $HOME
 #ln -sf ~/.dotfiles/tmux.conf .tmux.conf
+
+# add kitty
+# add ranger
