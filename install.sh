@@ -38,7 +38,7 @@ export hostname=`hostname -s`
 backup_dir="$HOME/.dotfiles-backup"
 
 #if [[ -f $backup_dir ]]
-mkdir $BACKDIR
+mkdir $backup_dir
 
 # zsh
 ZSH_FILE=$HOME/.zsh
