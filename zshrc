@@ -8,7 +8,7 @@ export ZSH=/home/rafael/.oh-my-zsh
 ZSH_THEME="jispwoso"
 
 # History file size
-HISTSIZE=100000
+HISTSIZE=1000000
 
 # Plugins
 plugins=(
@@ -39,9 +39,12 @@ alias dot='cd ~/.dotfiles'
 alias install='sudo aptitude install'
 # get current background image
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
-alias vi='vim'
 alias ll='ls -l'
 alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
+
+alias vi='vim'
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
+command -v nvim >/dev/null && alias vi="nvim" vidiff="nvim -d" # Use neovim for vim if present.
 
 # fzfz
 alias fcd='cd find . -type d | fzf'

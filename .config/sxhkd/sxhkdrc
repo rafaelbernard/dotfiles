@@ -1,0 +1,10 @@
+
+super + Return
+        $TERMINAL
+super + shift + i
+        $TERMINAL -e htop
+# screenshot your type
+shift + Print
+        mainpick
+super + o ; {w,m}
+        {firefox,thunderbird}
