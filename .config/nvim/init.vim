@@ -1,5 +1,3 @@
-
-
 "vim settings
 "rafael araujo <rafael dot araujo at initd dot info>
 
@@ -97,6 +95,10 @@ let g:fzf_files_options =
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " }}}
+
+"Autoload zshrc
+        autocmd BufWritePost +zshrc source ~/.zshrc &
+
 
 "Update binds when sxhkdrc is updated
         autocmd BufWritePost +sxhkdrc !killall sxhkd; setsid sxhkd &
