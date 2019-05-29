@@ -44,10 +44,10 @@ kitty + complete setup zsh | source /dev/stdin
 # -----------
 # aliases
 # -----------
-# check folder size with max-depth of 1
 alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias duh='du -h --max-depth=1'
 alias dot='cd ~/.dotfiles'
+alias ez='vim ~/.dotfiles/zshrc'
 alias install='sudo aptitude install'
 # get current background image
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
@@ -75,5 +75,4 @@ alias runphp='php -S localhost:8000'
 # private setting
 [ -f ~/.dotfiles-priv/zshrc.priv ]
 source ~/.dotfiles-priv/zshrc.priv
-
 
