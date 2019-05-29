@@ -28,7 +28,7 @@ HISTSIZE=1000000
 
 # Plugins
 plugins=(
- git aws ubuntu vi-mode
+ git aws ubuntu
 )
 
 source $ZSH/oh-my-zsh.sh
