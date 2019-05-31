@@ -40,6 +40,11 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx' 
 Plug 'evidens/vim-twig'
 
+"Plug 'tpope/vim-dispatch'             "| Optional
+Plug 'tpope/vim-projectionist'        "|
+"Plug 'roxma/nvim-completion-manager'  "|
+Plug 'noahfrederick/vim-composer'     "|
+Plug 'noahfrederick/vim-laravel'
 call plug#end()
 
 set number                                      "number all lines

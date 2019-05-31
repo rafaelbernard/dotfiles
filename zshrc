@@ -9,9 +9,9 @@ else
   export EDITOR='nvim'
 fi
 
-#fzf - https://github.com/junegunn/fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
-export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
+# private setting
+[ -f ~/.dotfiles-priv/zshrc.priv ]
+source ~/.dotfiles-priv/zshrc.priv
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -70,9 +70,15 @@ alias gok='echo "git commit -a -m \"OK\"" && git commit -a -m "OK"'
 alias gpa='echo "git pull --all" && git pull --all'
 alias gpom='echo "git push -u origin master" && git push -u origin master'
 
+#kitty
+alias icat="kitty +kitten icat"
+
+# php
+
 alias runphp='php -S localhost:8000'
 
-# private setting
-[ -f ~/.dotfiles-priv/zshrc.priv ]
-source ~/.dotfiles-priv/zshrc.priv
+
+#fzf - https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
+export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
 
