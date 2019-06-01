@@ -10,7 +10,8 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
 endif
 
-call plug#begin('~/.config/nvim/plugged')
+"call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " vim / theme / design
 Plug 'junegunn/limelight.vim'                   "Hyperfocus-writing in Vim
