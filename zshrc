@@ -48,6 +48,7 @@ alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias duh='du -h --max-depth=1'
 alias dot='cd ~/.dotfiles'
 alias ez='vim ~/.dotfiles/zshrc'
+alias ei3='vim ~/.dotfiles/.config/i3/config'
 alias install='sudo aptitude install'
 # get current background image
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'

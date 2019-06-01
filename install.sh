@@ -124,6 +124,8 @@ git config --global user.name 	"Rafael Bernard Araújo"
 back_dir="$HOME/.dotfiles-backup"
 
 if [[ -f $backup_dir ]]; then
+    echo "{$backup_dir} exists";
+    ls $backup_dir
 fi
 
 mkdir $backup_dir
