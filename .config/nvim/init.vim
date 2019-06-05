@@ -81,8 +81,8 @@ set rtp+=~/.fzf                                   "enable fzf integration
 set clipboard+=unnamed
 
 " Key mapping
-nnoremap <leader>] :bnext<CR>
-nnoremap <leader>[ :bprev<CR>
+nnoremap <leader>] :tabn<CR>
+nnoremap <leader>[ :tabp<CR>
 nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
