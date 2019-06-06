@@ -1,4 +1,8 @@
 
+# keyboard
+# map caps to control
+setxkbmap -option caps:ctrl_modifier
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/rafael/.oh-my-zsh
 
@@ -32,8 +36,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-setxkbmap -option caps:ctrl_modifier
 
 autoload -Uz compinit
 compinit
