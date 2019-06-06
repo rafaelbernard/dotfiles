@@ -55,6 +55,8 @@ alias install='sudo aptitude install'
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
 alias ll='ls -l'
 alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
+alias yt='youtube-dl -ic' # Download youtube link
+alias yta='youtube-dl -xic' # Download youtube link audio only
 
 alias vi='vim'
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
