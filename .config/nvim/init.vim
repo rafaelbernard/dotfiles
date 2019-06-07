@@ -47,6 +47,8 @@ Plug 'noahfrederick/vim-composer'     "|
 Plug 'noahfrederick/vim-laravel'
 call plug#end()
 
+" # Configurations {{{
+
 set number                                      "number all lines
 set relativenumber                              " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
 set expandtab tabstop=4                         "transform tab into 2 spaces
@@ -79,12 +81,20 @@ set rtp+=~/.fzf                                   "enable fzf integration
 "Enabling clipboard pastes to be available to OS
 set clipboard+=unnamed
 
-" Key mapping
+" }}}
+
+" Key mapping ##### {{{
+
 nnoremap <leader>] :tabn<CR>
 nnoremap <leader>[ :tabp<CR>
 nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
+
+" Check file in shellcheck
+map <leader>s :!clear && shellcheck %<CR>
+
+" }}}
 
 " fzf ##########  {{{
 
