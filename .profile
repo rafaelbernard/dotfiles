@@ -8,6 +8,14 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Keyboard {{{
+# map caps to control
+setxkbmap -option caps:ctrl_modifier
+
+sxhkd & # binding keys
+
+# }}}
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists

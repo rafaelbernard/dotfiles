@@ -57,6 +57,7 @@ alias install='sudo aptitude install'
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
 alias ll='ls -l'
 alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
+alias szsh='source ~/.zshrc'
 alias yt='youtube-dl -ic' # Download youtube link
 alias yta='youtube-dl -xic' # Download youtube link audio only
 
@@ -87,4 +88,6 @@ alias runphp='php -S localhost:8000'
 #fzf - https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
 export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
+
+export PATH=$PATH:~/.scripts
 

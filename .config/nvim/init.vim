@@ -1,7 +1,6 @@
 "vim settings
 "rafael araujo <rafael dot araujo at initd dot info>
 
-
 let mapleader=','
 
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
@@ -11,7 +10,7 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 "call plug#begin('~/.config/nvim/plugged')
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged') "Trying to centralize for vim and nvim
 
 " vim / theme / design
 Plug 'junegunn/limelight.vim'                   "Hyperfocus-writing in Vim
@@ -72,7 +71,7 @@ set shiftround                                  "Round indent to multiple of 'sh
 set cursorline                                    "underline at cursor line
 "set synmaxcol=2048
 set laststatus=2                                   "The value of this option influences when the last window will have a status line. 2 = always
-set wildmode=longest,list,full
+set wildmode=longest,list,full                  "Enables autocomplete
 
 " # Integrations
 set rtp+=~/.fzf                                   "enable fzf integration
