@@ -89,5 +89,5 @@ alias runphp='php -S localhost:8000'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
 export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
 
-export PATH=$PATH:~/.scripts
+#export PATH=$PATH:~/.scripts
 
