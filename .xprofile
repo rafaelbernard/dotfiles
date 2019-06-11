@@ -2,7 +2,7 @@
 
 # Keyboard {{{
 
-sxhkd &         # binding keys
+#sxhkd &         # binding keys
 
 # map caps to control
 setxkbmap -option caps:ctrl_modifier
