@@ -17,6 +17,10 @@ fi
 [ -f ~/.dotfiles-priv/zshrc.priv ]
 source ~/.dotfiles-priv/zshrc.priv
 
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -89,5 +93,17 @@ alias runphp='php -S localhost:8000'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
 export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
 
-#export PATH=$PATH:~/.scripts
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
+export PATH="$PYENV_ROOT/completions/pyenv.bash:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
+# pyenv-virtualenv
+if which pyenv-virtualenv-init > /dev/null; then
+    eval "$(pyenv virtualenv-init -)"
+fi
 

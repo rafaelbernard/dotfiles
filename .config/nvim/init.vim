@@ -57,7 +57,7 @@ set smartindent                                 "reacts to the syntax/style of t
 "set ruler
 set autowrite                                   "Write the contents of the file, if it has been modified, on each :next, :rewind, :last, :first, :previous, :stop, :suspend, :tag, :!, 	:make, CTRL-] and CTRL-^ command;
 set autoread                                    "When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again.
-"set noshowmode              "If in Insert, Replace or Visual mode put a message on the last line.
+"set noshowmode                                 "If in Insert, Replace or Visual mode put a message on the last line.
 "set hidden
 "set nojoinspaces            "Insert two spaces after a '.', '?' and '!' with a join command.
 set shiftwidth=4            "Returns the effective value of 'shiftwidth'. This is the 'shiftwidth' value unless it is zero, in which case it is the 'tabstop' value.
@@ -91,8 +91,10 @@ nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 
+map <F10> :Goyo<CR>
+
 " Check file in shellcheck
-map <leader>s :!clear && shellcheck %<CR>
+map <leader><F6> :!clear && shellcheck %<CR>
 
 " }}}
 
