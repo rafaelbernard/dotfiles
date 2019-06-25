@@ -134,6 +134,7 @@ mkdir $backup_dir
 ZSH_FILE=$HOME/.zsh
 if [ -e $ZSH_FILE ]; then
     # do nothing
+    echo "exists"
 fi
 
 #echo "tmux"
