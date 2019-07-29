@@ -48,7 +48,8 @@ set expandtab tabstop=4                         "transform tab into 2 spaces
 set autoindent
 set smartindent                                 "reacts to the syntax/style of the code you are editing
 "set ruler
-set autowrite                                   "Write the contents of the file, if it has been modified, on each :next, :rewind, :last, :first, :previous, :stop, :suspend, :tag, :!, 	:make, CTRL-] and CTRL-^ command;
+set autowrite                                   "Write the contents of the file, if it has been modified, on each 
+                                                " :next, :rewind, :last, :first, :previous, :stop, :suspend, :tag, :!, 	:make, CTRL-] and CTRL-^ command;
 set autoread                                    "When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again.
 "set noshowmode              "If in Insert, Replace or Visual mode put a message on the last line.
 "set hidden
@@ -66,6 +67,7 @@ set shiftround                                  "Round indent to multiple of 'sh
 set cursorline                                    "underline at cursor line
 "set synmaxcol=2048
 set laststatus=2                                   "The value of this option influences when the last window will have a status line. 2 = always
+set mouse=n                                     " Modes where mouse is enabled. n = normal
 set wildmode=longest,list,full
 
 " # Integrations
