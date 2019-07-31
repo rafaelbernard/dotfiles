@@ -19,6 +19,7 @@ Plug 'junegunn/seoul256.vim'
 "Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'thinca/vim-localrc'                       "Enable local vimrc files
 
 " integration
 Plug 'PotatoesMaster/i3-vim-syntax'
