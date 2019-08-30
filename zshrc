@@ -70,8 +70,9 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim fo
 command -v nvim >/dev/null && alias vi="nvim" vidiff="nvim -d" # Use neovim for vim if present.
 
 # docker
-alias dcu='docker-compose up'
-alias dcud='docker-compose up -d'
+alias dcua='docker-compose up'
+alias dcu='docker-compose up -d'
+alias dcs='docker-compose stop'
 
 # fzfz
 alias fcd='cd find . -type d | fzf'
