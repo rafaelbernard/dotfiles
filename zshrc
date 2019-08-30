@@ -108,4 +108,4 @@ if which pyenv-virtualenv-init > /dev/null; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-[ -f ~/.resh/shellrc ] && source ~/.resh/shellrc
+#[ -f ~/.resh/shellrc ] && source ~/.resh/shellrc
