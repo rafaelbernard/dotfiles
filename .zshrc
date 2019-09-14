@@ -8,9 +8,9 @@ export ZSH=/home/rafael/.oh-my-zsh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+        export EDITOR='vim'
 else
-  export EDITOR='nvim'
+        export EDITOR='nvim'
 fi
 
 # private setting
@@ -86,11 +86,10 @@ alias gpom='echo "git push -u origin master" && git push -u origin master'
 alias icat="kitty +kitten icat"
 
 # php
-
 alias runphp='php -S localhost:8000'
 
 
-#fzf - https://github.com/junegunn/fzf
+# fzf - https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
 export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
 
@@ -108,4 +107,3 @@ if which pyenv-virtualenv-init > /dev/null; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-#[ -f ~/.resh/shellrc ] && source ~/.resh/shellrc
