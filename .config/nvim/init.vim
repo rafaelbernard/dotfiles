@@ -73,7 +73,7 @@ set shiftround                                  "Round indent to multiple of 'sh
 set cursorline                                    "underline at cursor line
 "set synmaxcol=2048
 set laststatus=2                                   "The value of this option influences when the last window will have a status line. 2 = always
-set wildmode=longest,list,full                  "Enables autocomplete
+set wildmode=longest,list,full                     "Enables autocomplete
 
 " # Integrations
 set rtp+=~/.fzf                                   "enable fzf integration
