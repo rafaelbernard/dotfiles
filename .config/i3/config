@@ -1,3 +1,4 @@
+# vim filetype=i3
 # i3 config file (v4)
 # Rafael Bernard Araujo
 #
@@ -12,9 +13,6 @@
 gaps inner 10
 gaps outer 10
 
-#smart_gaps On
-#smart_borders On
-
 # }}}
 
 set $mod Mod4
@@ -25,7 +23,7 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -188,7 +186,9 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        font pango:mono 10
         status_command i3status
+        position top
 }
 
 # keyboard - I will leave keyboard to profile
@@ -218,8 +218,6 @@ for_window [class=".*"] border pixel 0
 # }}}
 
 # === INITIAL PROGRAMS {{{
-
-exec variety
 
 # background wallpaper
 #exec_always --no-startup-id feh --bg-scale ~/.config/wall.png
