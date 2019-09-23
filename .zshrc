@@ -6,20 +6,6 @@ setxkbmap -option caps:ctrl_modifier
 # Path to your oh-my-zsh installation.
 export ZSH=/home/rafael/.oh-my-zsh
 
-source $ZSH/oh-my-zsh.sh
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-        export EDITOR='vim'
-else
-        export EDITOR='nvim'
-fi
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="jispwoso"
@@ -33,6 +19,9 @@ HISTFILE=~/.cache/zsh/history
 plugins=(
         git aws ubuntu 
 )
+
+# Load zsh
+source $ZSH/oh-my-zsh.sh
 
 # Enable auto/tab completions
 autoload -Uz compinit
@@ -57,6 +46,19 @@ kitty + complete setup zsh | source /dev/stdin
 if [ -d "$HOME/.local/bin" ] ; then
         PATH="$HOME/.local/bin:$PATH"
 fi
+
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+        export EDITOR='vim'
+else
+        export EDITOR='nvim'
+fi
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # -----------
 # aliases
