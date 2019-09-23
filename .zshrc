@@ -6,6 +6,48 @@ setxkbmap -option caps:ctrl_modifier
 # Path to your oh-my-zsh installation.
 export ZSH=/home/rafael/.oh-my-zsh
 
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="jispwoso"
+
+# History and cache
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE=~/.cache/zsh/history
+
+# Plugins
+plugins=(
+        git aws ubuntu 
+)
+
+# Load zsh
+source $ZSH/oh-my-zsh.sh
+
+# Enable auto/tab completions
+autoload -Uz compinit
+compinit
+
+# Enable vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Edit line in vim (ctrl+e)
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+# fzf - https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
+export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
+
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
+# Local scripts and binaries
+if [ -d "$HOME/.local/bin" ] ; then
+        PATH="$HOME/.local/bin:$PATH"
+fi
+
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
         export EDITOR='vim'
@@ -13,39 +55,10 @@ else
         export EDITOR='nvim'
 fi
 
-# private setting
-[ -f ~/.dotfiles-priv/zshrc.priv ]
-source ~/.dotfiles-priv/zshrc.priv
-
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="superjarin"
-ZSH_THEME="jispwoso"
-
-# History file size
-HISTSIZE=1000000
-
-# Plugins
-plugins=(
- git aws ubuntu
-)
-
-source $ZSH/oh-my-zsh.sh
-
-autoload -Uz compinit
-compinit
-
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
 
 # -----------
 # aliases
@@ -54,9 +67,9 @@ alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias duh='du -h --max-depth=1'
 alias dot='cd ~/.dotfiles'
 alias cdot='cd ~/.dotfiles'
-alias ei3='vim ~/.dotfiles/.config/i3/config'
-alias evim='vim ~/.vimrc'
-alias ez='vim ~/.dotfiles/zshrc'
+alias ei3='vim ~/.dotfiles/config/i3/config'
+alias evim='vim ~/.dotfiles/vimrc'
+alias ez='vim ~/.dotfiles/.zshrc'
 alias install='sudo aptitude install'
 # get current background image
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
@@ -90,10 +103,6 @@ alias icat="kitty +kitten icat"
 alias runphp='php -S localhost:8000'
 
 
-# fzf - https://github.com/junegunn/fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
-export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
-
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -107,4 +116,8 @@ fi
 if which pyenv-virtualenv-init > /dev/null; then
     eval "$(pyenv virtualenv-init -)"
 fi
+
+# loading private setting
+[ -f ~/.dotfiles-priv/zshrc.priv ]
+source ~/.dotfiles-priv/zshrc.priv
 
