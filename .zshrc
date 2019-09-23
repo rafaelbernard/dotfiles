@@ -43,8 +43,8 @@ bindkey -v
 export KEYTIMEOUT=1
 
 # Edit line in vim (ctrl+e)
-autoload edit-command-line: gle -W edit-command-line
-bindkey '*' edit-command-line
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 # fzf - https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
