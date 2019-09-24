@@ -189,6 +189,7 @@ bar {
         font pango:mono 10
         status_command i3status
         position top
+        mode dock
 }
 
 # keyboard - I will leave keyboard to profile
@@ -216,6 +217,8 @@ for_window [class=".*"] border pixel 0
 
 # ssh agent / keyring
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
+
+exec --no-startup-id compton -b -f -c --backend glx
 
 # }}}
 
