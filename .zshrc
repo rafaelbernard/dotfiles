@@ -11,8 +11,8 @@ export ZSH=/home/rafael/.oh-my-zsh
 ZSH_THEME="jispwoso"
 
 # History and cache
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=1000000
+SAVEHIST=1000000
 HISTFILE=~/.cache/zsh/history
 
 # Plugins
@@ -28,8 +28,8 @@ autoload -Uz compinit
 compinit
 
 # Enable vi mode
-bindkey -v
-export KEYTIMEOUT=1
+#bindkey -v
+#export KEYTIMEOUT=1
 
 # Edit line in vim (ctrl+e)
 autoload edit-command-line; zle -N edit-command-line
@@ -102,8 +102,6 @@ alias icat="kitty +kitten icat"
 # php
 alias runphp='php -S localhost:8000'
 
-
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -112,7 +110,7 @@ export PATH="$PYENV_ROOT/completions/pyenv.bash:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
-# pyenv-virtualenv
+
 if which pyenv-virtualenv-init > /dev/null; then
     eval "$(pyenv virtualenv-init -)"
 fi
