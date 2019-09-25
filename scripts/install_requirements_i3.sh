@@ -40,9 +40,10 @@ export hostname=`hostname -s`
 backup_do ">>> INSTALLING PREREQUISITES FOR $platform"
 if [[ $platform == 'linux' ]]; then
   PACKAGES_TO_INSTALL="\
+    compton \
     suckeless-tools \
     i3bar \
-    i3status \
+    i3blocks \
     feh \
     zsh
   "
