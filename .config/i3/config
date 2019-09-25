@@ -128,15 +128,6 @@ bindsym $mod+0 workspace $ws10
 ##==================================================##
 #   *** Workspace specific settings ***             #
 ##=================================================##
-# Assign Workspaces:
-assign [class="Franz"] $ws4
-assign [class="^slack"] $ws4
-assign [class="Firefox"] $ws1
-
-# Floatings
-#for_window [class="^slack"] floating enable
-#for_window [class="Franz"] floating enable
-
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -154,7 +145,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -214,12 +205,27 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Disabling window titlebars
 for_window [class=".*"] border pixel 0
 
+# ------------ WINDOWS ---------------#
+
+# Assign Workspaces:
+assign [class="Franz"] $ws4
+assign [class="^slack"] $ws4
+assign [class="Firefox"] $ws1
+#assign [class="Firefox"] $ws1
+
+# Floatings
+#for_window [class="^slack"] floating enable
+for_window [class="intellij"] tabbed enable
+
+# ---- apps ------#
+
 # apps {{{
 
 # ssh agent / keyring
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
 
 exec --no-startup-id compton -b -f -c --backend glx
+exec --no-startup-id pcloud
 
 # }}}
 

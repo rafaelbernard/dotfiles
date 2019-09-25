@@ -1,0 +1,5 @@
+#!/bin/sh
+file=$(shuf -n1 -e ~/Pictures/*)
+echo "Arquivo selecionado: {$file}"
+ln -sf $file ~/.cache/wallpaper
+feh --bg-scale ~/.cache/wallpaper
