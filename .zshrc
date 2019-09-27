@@ -68,7 +68,7 @@ alias duh='du -h --max-depth=1'
 alias dot='cd ~/.dotfiles'
 alias cdot='cd ~/.dotfiles'
 alias ei3='vim ~/.dotfiles/.config/i3/config'
-alias evim='vim ~/.dotfiles/vimrc'
+alias evim='vim ~/.dotfiles/.vimrc'
 alias ez='vim ~/.dotfiles/.zshrc'
 alias install='sudo aptitude install'
 # get current background image

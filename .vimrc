@@ -84,6 +84,11 @@ nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+
 " fzf ##########  {{{
 
 " enables preview when exec :Files
