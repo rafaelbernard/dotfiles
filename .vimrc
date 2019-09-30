@@ -89,6 +89,9 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 
+" automatically going to guide
+inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+
 " fzf ##########  {{{
 
 " enables preview when exec :Files
