@@ -16,19 +16,37 @@ set $mod Mod4
 set $browser firefox
 set $term kitty
 
+# ---- dropdown/scrathpad ---- #
+# Will be bind to mod+u
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 625 400
+for_window [instance="dropdown"] move postion center
+for_window [instance="dropdown"] move scratchpad
+exec --no-startup-id $term -name dropdown -e tmux
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 #floating_modifier $mod
 
-# start a terminal
+# ---- Main bindings ---- #
 #bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+Return exec st
 bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec $term -e tmux
+
+bindsym $mod+Shift+Backspace exec sudo reboot
+
+# hide everything
+bindsym $mod+Shift+Delete       workspace lmao ; exec $term -e htop ; exec $term -e ranger
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
+
+# ---- letter key bindings ---- #
+bindsym $mod+u                  [instance="dropdown"] scratchpad show; move position center
+bindsym $mod+Shift+u            resize shrink height 10 px or 10 ppt
 
 # change focus
 bindsym $mod+j focus left
@@ -187,6 +205,7 @@ assign [class="idea"] $ws4
 # Floatings
 for_window [class="^Slack"] tabbed enable
 for_window [class="^slack"] tabbed enable
+for_window [class="Franz"] tabbed enable
 for_window [class="intellij"] tabbed enable
 for_window [class="datagrip"] tabbed enable
 
