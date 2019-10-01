@@ -16,6 +16,27 @@ set $mod Mod4
 set $browser firefox
 set $term kitty
 
+### -- WINDOWS -- ###
+
+# Disabling window titlebars
+for_window [class=".*"] border pixel 0
+
+# ------------ WINDOWS ---------------#
+
+# Assign Workspaces:
+assign [class="Franz"] $ws3
+assign [class="^Slack"] $ws3
+#assign [class="Firefox"] $ws1
+assign [class="intellij"] $ws4
+assign [class="idea"] $ws4
+assign [class="(?i)datagrip"] $ws4
+
+# Floatings
+for_window [class="(?i)slack"] tabbed enable
+for_window [class="(?i)franz"] tabbed enable
+for_window [class="(?i)idea"] tabbed enable
+for_window [class="(?i)datagrip"] tabbed enable
+
 # ---- dropdown/scrathpad ---- #
 # Will be bind to mod+u
 for_window [instance="dropdown"] floating enable
@@ -189,25 +210,6 @@ bar {
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Disabling window titlebars
-for_window [class=".*"] border pixel 0
-
-# ------------ WINDOWS ---------------#
-
-# Assign Workspaces:
-assign [class="Franz"] $ws3
-assign [class="^Slack"] $ws3
-#assign [class="Firefox"] $ws1
-assign [class="intellij"] $ws4
-assign [class="idea"] $ws4
-
-# Floatings
-for_window [class="^Slack"] tabbed enable
-for_window [class="^slack"] tabbed enable
-for_window [class="Franz"] tabbed enable
-for_window [class="intellij"] tabbed enable
-for_window [class="datagrip"] tabbed enable
 
 # ---- apps ------#
 
