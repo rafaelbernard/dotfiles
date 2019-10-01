@@ -200,7 +200,7 @@ bindsym $mod+Shift+z exec "xtrlock"
 # ssh agent / keyring
 exec --no-startup-id compton
 exec --no-startup-id pcloud
-exec --no-startup-id feh-background-changer
+exec --no-startup-id ~/.config/scripts/feh-background-changer
 
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
 exec autolock -time 15 -locker '~/.config/i3/lock-screen.sh' & 

@@ -47,6 +47,9 @@ if [ -d "$HOME/.local/bin" ] ; then
         PATH="$HOME/.local/bin:$PATH"
 fi
 
+# my scripts to PATH
+[ -d "$HOME/.dotfiles/scripts" ]
+PATH="$PATH:$HOME/.dotfiles/scripts"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
