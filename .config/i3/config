@@ -4,13 +4,16 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+### ----- FONTS ----- ###
+
+font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8, Terminus Bold Semi-Condensed 9
 
 ### -- DISPLAYS AND BASICS -- ##
 
 gaps inner 10
 gaps outer 10
 
-font pango:DejaVu Sans Mono 8
 
 set $mod            Mod4
 set $browser        firefox
@@ -214,7 +217,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 
 # ---- apps ------#
 
-bindsym $mod+b exec "~/.config/i3/lock-screen.sh"
+bindsym $mod+b exec "~/.config/i3/scripts/lock-screen.sh"
 bindsym $mod+Shift+z exec "xtrlock"
 
 # apps {{{
