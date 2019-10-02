@@ -12,9 +12,10 @@ gaps outer 10
 
 font pango:DejaVu Sans Mono 8
 
-set $mod Mod4
-set $browser firefox
-set $term kitty
+set $mod            Mod4
+set $browser        firefox
+set $term_default   xterm
+set $term           kitty
 
 ### -- WINDOWS -- ###
 
@@ -31,7 +32,7 @@ assign [class="intellij"] $ws4
 assign [class="idea"] $ws4
 assign [class="(?i)datagrip"] $ws4
 
-# Floatings
+# tabbeds
 for_window [class="(?i)slack"] tabbed enable
 for_window [class="(?i)franz"] tabbed enable
 for_window [class="(?i)idea"] tabbed enable
@@ -51,7 +52,7 @@ exec --no-startup-id $term -name dropdown -e tmux
 # ---- Main bindings ---- #
 #bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+Return exec st
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term -e tmux
 
 bindsym $mod+Shift+Backspace exec sudo reboot
@@ -221,7 +222,7 @@ bindsym $mod+Shift+z exec "xtrlock"
 # ssh agent / keyring
 exec --no-startup-id compton
 exec --no-startup-id pcloud
-exec --no-startup-id ~/.config/scripts/feh-background-changer
+exec --no-startup-id ~/.dotfiles/scripts/feh-background-changer
 
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
 exec autolock -time 15 -locker '~/.config/i3/lock-screen.sh' & 

@@ -1,4 +1,8 @@
 #!/bin/sh
+# NOTE: If you add to your crontab, remember to check the display
+# `env | grep -i DISPLAY` (i.e. `DISPLAY=:0`
+# then, crontab should know the display
+# */5 * * * * DISPLAY=:0 feh-background-changer
 file=$(shuf -n1 -e ~/Pictures/*)
 echo "Arquivo selecionado: {$file}"
 ln -sf $file ~/.cache/wallpaper
