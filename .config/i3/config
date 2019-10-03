@@ -8,7 +8,8 @@
 ### ----- FONTS ----- ###
 
 font pango:DejaVu Sans Mono 8
-font pango:DejaVu Sans Mono 8, Terminus Bold Semi-Condensed 9
+font pango:DejaVu Sans Mono 8, Terminus Semi-Condensed 9
+font pango:DejaVu Sans Mono 8, Ubuntu 9
 
 
 ### ----- KEYBOARD BINDINGS ----- ###
@@ -241,7 +242,7 @@ bindsym $mod+Shift+z exec "xtrlock"
 # ssh agent / keyring
 exec --no-startup-id compton
 exec --no-startup-id pcloud
-exec --no-startup-id ~/.dotfiles/scripts/feh-background-changer
+exec --no-startup-id ~/.dotfiles/scripts/background-changer
 
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
 exec autolock -time 15 -locker '~/.config/i3/scripts/lock-screen.sh' & 
