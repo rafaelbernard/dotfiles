@@ -5,6 +5,30 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 
+### -- SETS AND BASICS -- ###
+
+gaps inner 10
+gaps outer 10
+
+
+set $mod            Mod4
+set $browser        firefox
+set $term_default   xterm
+set $term           kitty
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
 ### ----- FONTS ----- ###
 
 font pango:DejaVu Sans Mono 8
@@ -15,58 +39,90 @@ font pango:DejaVu Sans Mono 8, Ubuntu 9
 ### ----- KEYBOARD BINDINGS ----- ###
 
 
-bindsym $mod+Return                 exec $term
-bindsym $mod+Shift+Return           exec $term -e tmux
+bindsym $mod+Return                     exec $term
+bindsym $mod+Shift+Return               exec $term -e tmux
 
-bindsym $mod+Shift+Backspace        exec sudo reboot
+bindsym $mod+Shift+Backspace            exec sudo reboot
 
 # hide everything
 #bindsym $mod+Shift+Delete       workspace lmao ; exec $term -e htop ; exec $term -e ranger
 
 # kill focused window
-bindsym $mod+Shift+q                kill
+bindsym $mod+Shift+q                    kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d                      exec dmenu_run
+bindsym $mod+d                          exec dmenu_run
 
-bindsym $mod+z                      exec $term -e ranger
+bindsym $mod+z                          exec $term -e ranger
 
 # Take a screenshot upon pressing $mod+x (select an area)
-bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
+bindsym --release $mod+x                exec --no-startup-id import ~/temp/latest-screenshot.png
 
-bindsym $mod+u                  [instance="dropdown"] scratchpad show; move position center
-bindsym $mod+Shift+u            resize shrink height 10 px or 10 ppt
+bindsym $mod+u                          [instance="dropdown"] scratchpad show; move position center
+bindsym $mod+Shift+u                    resize shrink height 10 px or 10 ppt
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+j              focus left
+bindsym $mod+k              focus down
+bindsym $mod+l              focus up
+bindsym $mod+semicolon      focus right
+bindsym $mod+Left           focus left
+bindsym $mod+Down           focus down
+bindsym $mod+Up             focus up
+bindsym $mod+Right          focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-## ----- Workpace bindings ----- ##
-
+# ----- Workpace bindings -----
 bindsym $mod+Home                       workspace $ws1
 bindsym $mod+End                        workspace $ws10
 bindsym $mod+Prior                      workspace prev
 bindsym $mod+Next                       workspace next
 bindsym $mod+Tab                        workspace back_and_forth
 
-## -- DISPLAYS AND BASICS -- #
+# Transparency
+bindsym $mod+F7                         exec transset -a --dec .15
+bindsym $mod+F8                         exec transset -a --inc .15
 
-gaps inner 10
-gaps outer 10
+## ----- Binding Modes ----- ##
 
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 
-set $mod            Mod4
-set $browser        firefox
-set $term_default   xterm
-set $term           kitty
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return  mode "default"
+        bindsym Escape  mode "default"
+        bindsym $mod+r  mode "default"
+}
+
+# wallpapers
+bindsym $mod+Shift+w        mode "$wallpaper_mode"
+
+mode "$wallpaper_mode" {
+    bindsym c               exec ~/.dotfiles/scripts/background-changer
+    bindsym i               exec feh $(readlink ~/.cache/wallpaper)
+    bindsym d               exec rm $(readlink ~/.cache.wallpaper)
+
+    bindsym Escape          mode "default"
+    bindsym Return          mode "default"
+    bindsym $mod+Shift+w    mode "default"
+}
 
 ### -- WINDOWS -- ###
 
@@ -79,15 +135,18 @@ for_window [class=".*"] border pixel 0
 assign [class="Franz"] $ws3
 assign [class="^Slack"] $ws3
 #assign [class="Firefox"] $ws1
+assign [title="^Firefox Developer"] $ws6
 assign [class="intellij"] $ws4
 assign [class="idea"] $ws4
 assign [class="(?i)datagrip"] $ws5
 
-# tabbeds
+
 for_window [class="(?i)slack"] tabbed enable
 for_window [class="(?i)franz"] tabbed enable
 for_window [class="(?i)idea"] tabbed enable
 for_window [class="(?i)datagrip"] tabbed enable
+#for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
+
 
 # ---- dropdown/scrathpad ---- #
 # Will be bind to mod+u
@@ -140,19 +199,6 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -187,32 +233,6 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
