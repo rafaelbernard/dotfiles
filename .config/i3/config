@@ -29,7 +29,12 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
 ### ----- FONTS ----- ###
+
 
 font pango:DejaVu Sans Mono 8
 font pango:DejaVu Sans Mono 8, Terminus Semi-Condensed 9
@@ -62,14 +67,49 @@ bindsym $mod+u                          [instance="dropdown"] scratchpad show; m
 bindsym $mod+Shift+u                    resize shrink height 10 px or 10 ppt
 
 # change focus
-bindsym $mod+j              focus left
-bindsym $mod+k              focus down
-bindsym $mod+l              focus up
-bindsym $mod+semicolon      focus right
-bindsym $mod+Left           focus left
-bindsym $mod+Down           focus down
-bindsym $mod+Up             focus up
-bindsym $mod+Right          focus right
+bindsym $mod+j                          focus left
+bindsym $mod+k                          focus down
+bindsym $mod+l                          focus up
+bindsym $mod+semicolon                  focus right
+bindsym $mod+Left                       focus left
+bindsym $mod+Down                       focus down
+bindsym $mod+Up                         focus up
+bindsym $mod+Right                      focus right
+
+# move focused window
+bindsym $mod+Shift+j                    move left
+bindsym $mod+Shift+k                    move down
+bindsym $mod+Shift+l                    move up
+bindsym $mod+Shift+semicolon            move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
 
 # ----- Workpace bindings -----
 bindsym $mod+Home                       workspace $ws1
@@ -117,7 +157,8 @@ bindsym $mod+Shift+w        mode "$wallpaper_mode"
 mode "$wallpaper_mode" {
     bindsym c               exec ~/.dotfiles/scripts/background-changer
     bindsym i               exec feh $(readlink ~/.cache/wallpaper)
-    bindsym d               exec rm $(readlink ~/.cache.wallpaper) 
+    bindsym d               exec rm $(readlink ~/.cache/wallpaper); ~/.dotfiles/scripts/background-changer
+    bindsym Shift+d         exec rm $(readlink ~/.cache/wallpaper)
 
     bindsym Escape          mode "default"
     bindsym Return          mode "default"
@@ -146,6 +187,7 @@ for_window [class="(?i)franz"] tabbed enable
 for_window [class="(?i)idea"] tabbed enable
 for_window [class="(?i)datagrip"] tabbed enable
 #for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
+for_window [class="(?i)pcloud"] floating enable
 
 
 # ---- dropdown/scrathpad ---- #
@@ -156,45 +198,8 @@ for_window [instance="dropdown"] move postion center
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown -e tmux
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-#floating_modifier $mod
 
 
-
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -248,14 +253,14 @@ bar {
 #exec "setxkbmap -layout br"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume 0 +5%    # increase sound volume
+bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume 0 -5%    # decrease sound volume
+bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute 0 toggle   # mute sound
 
 # ---- apps ------#
 
-bindsym $mod+b exec "~/.config/i3/scripts/lock-screen.sh"
-bindsym $mod+Shift+z exec "xtrlock"
+bindsym $mod+b exec     ~/.config/i3/scripts/lock-screen.sh
+bindsym $mod+Shift+z    exec xtrlock
 
 # apps {{{
 
@@ -265,7 +270,7 @@ exec --no-startup-id pcloud
 exec --no-startup-id ~/.dotfiles/scripts/background-changer
 
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
-exec autolock -time 15 -locker '~/.config/i3/scripts/lock-screen.sh' & 
+exec --no-startup-id autolock -time 15 -locker '~/.config/i3/scripts/lock-screen.sh'
 
 # }}}
 

@@ -8,4 +8,5 @@ echo "Arquivo selecionado: {$file}"
 ln -sf "$file" ~/.cache/wallpaper
 #feh --bg-scale ~/.cache/wallpaper
 #feh --bg-center ~/.cache/wallpaper
-feh --bg-fill ~/.cache/wallpaper
+feh --bg-max ~/.cache/wallpaper
+#feh --bg-fill ~/.cache/wallpaper
