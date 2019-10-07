@@ -157,7 +157,7 @@ bindsym $mod+Shift+w        mode "$wallpaper_mode"
 mode "$wallpaper_mode" {
     bindsym c               exec ~/.dotfiles/scripts/background-changer
     bindsym i               exec feh $(readlink ~/.cache/wallpaper)
-    bindsym d               exec rm $(readlink ~/.cache/wallpaper); ~/.dotfiles/scripts/background-changer
+    bindsym d               exec rm $(readlink ~/.cache/wallpaper) 
     bindsym Shift+d         exec rm $(readlink ~/.cache/wallpaper)
 
     bindsym Escape          mode "default"
@@ -173,13 +173,13 @@ for_window [class=".*"] border pixel 0
 # ------------ WINDOWS ---------------#
 
 # Assign Workspaces:
-assign [class="Franz"] $ws3
-assign [class="^Slack"] $ws3
-#assign [class="Firefox"] $ws1
+assign [class="Franz"]              $ws3
+assign [class="^Slack"]             $ws3
+#assign [class="Firefox"]            $ws1
 assign [title="^Firefox Developer"] $ws6
-assign [class="intellij"] $ws4
-assign [class="idea"] $ws4
-assign [class="(?i)datagrip"] $ws5
+assign [class="intellij"]           $ws4
+assign [class="idea"]               $ws4
+assign [class="(?i)datagrip"]       $ws5
 
 
 for_window [class="(?i)slack"] tabbed enable
