@@ -62,6 +62,8 @@ bindsym $mod+z                          exec $term -e ranger
 
 # Take a screenshot upon pressing $mod+x (select an area)
 bindsym --release $mod+x                exec --no-startup-id import ~/temp/latest-screenshot.png
+bindsym Print                           exec --no-startup-id scrot
+bindsym Shift+Print                     exec --no-startup-id scrot -u
 
 bindsym $mod+u                          [instance="dropdown"] scratchpad show; move position center
 bindsym $mod+Shift+u                    resize shrink height 10 px or 10 ppt
@@ -83,19 +85,17 @@ bindsym $mod+Shift+l                    move up
 bindsym $mod+Shift+semicolon            move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left                 move left
+bindsym $mod+Shift+Down                 move down
+bindsym $mod+Shift+Up                   move up
+bindsym $mod+Shift+Right                move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
-
+bindsym $mod+h                          split h
 # split in vertical orientation
-bindsym $mod+v split v
-
+bindsym $mod+v                          split v
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f                          fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -197,8 +197,6 @@ for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move postion center
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown -e tmux
-
-
 
 
 # focus the child container

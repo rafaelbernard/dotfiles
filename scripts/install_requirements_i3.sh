@@ -45,6 +45,7 @@ if [[ $platform == 'linux' ]]; then
     i3bar \
     i3blocks \
     feh \
+    scrot \
     zsh
   "
 
