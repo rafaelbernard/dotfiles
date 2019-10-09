@@ -214,10 +214,10 @@ assign [class="idea"]               $ws4
 assign [class="(?i)datagrip"]       $ws5
 
 
-for_window [class="(?i)slack"] tabbed enable
-for_window [class="(?i)franz"] tabbed enable
-for_window [class="(?i)idea"] tabbed enable
-for_window [class="(?i)datagrip"] tabbed enable
+for_window [class="(?i)slack"] layout tabbed
+for_window [class="(?i)franz"] layout tabbed
+for_window [class="(?i)idea"] layout tabbed 
+for_window [class="(?i)datagrip"] layout tabbed 
 #for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
 for_window [class="(?i)pcloud"] floating enable
 
