@@ -49,8 +49,46 @@ bindsym $mod+Shift+Return               exec $term -e tmux
 
 bindsym $mod+Shift+Backspace            exec sudo reboot
 
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# ----- Workpace bindings -----
+bindsym $mod+Home                       workspace $ws1
+bindsym $mod+End                        workspace $ws10
+bindsym $mod+Prior                      workspace prev
+bindsym $mod+Next                       workspace next
+bindsym $mod+Tab                        workspace back_and_forth
+
 # hide everything
 #bindsym $mod+Shift+Delete       workspace lmao ; exec $term -e htop ; exec $term -e ranger
+
+# reload the configuration file
+bindsym $mod+Shift+c                    reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r                    restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e                    exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # kill focused window
 bindsym $mod+Shift+q                    kill
@@ -111,16 +149,10 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# ----- Workpace bindings -----
-bindsym $mod+Home                       workspace $ws1
-bindsym $mod+End                        workspace $ws10
-bindsym $mod+Prior                      workspace prev
-bindsym $mod+Next                       workspace next
-bindsym $mod+Tab                        workspace back_and_forth
-
 # Transparency
 bindsym $mod+F7                         exec transset -a --dec .15
 bindsym $mod+F8                         exec transset -a --inc .15
+
 
 ## ----- Binding Modes ----- ##
 
@@ -198,43 +230,6 @@ for_window [instance="dropdown"] move postion center
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown -e tmux
 
-
-# focus the child container
-#bindsym $mod+d focus child
-
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
-
-##==================================================##
-#   *** Workspace specific settings ***             #
-##=================================================##
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
