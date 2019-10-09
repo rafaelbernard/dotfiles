@@ -44,11 +44,6 @@ font pango:DejaVu Sans Mono 8, Ubuntu 9
 ### ----- KEYBOARD BINDINGS ----- ###
 
 
-bindsym $mod+Return                     exec $term
-bindsym $mod+Shift+Return               exec $term -e tmux
-
-bindsym $mod+Shift+Backspace            exec sudo reboot
-
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -73,12 +68,17 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# ----- Workpace bindings -----
+# workspaces bindings
 bindsym $mod+Home                       workspace $ws1
 bindsym $mod+End                        workspace $ws10
 bindsym $mod+Prior                      workspace prev
 bindsym $mod+Next                       workspace next
 bindsym $mod+Tab                        workspace back_and_forth
+
+bindsym $mod+Return                     exec $term
+bindsym $mod+Shift+Return               exec $term -e tmux
+
+bindsym $mod+Shift+Backspace            exec sudo reboot
 
 # hide everything
 #bindsym $mod+Shift+Delete       workspace lmao ; exec $term -e htop ; exec $term -e ranger
@@ -136,9 +136,9 @@ bindsym $mod+v                          split v
 bindsym $mod+f                          fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+s                          layout stacking
+bindsym $mod+w                          layout tabbed
+bindsym $mod+e                          layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -152,6 +152,14 @@ bindsym $mod+a focus parent
 # Transparency
 bindsym $mod+F7                         exec transset -a --dec .15
 bindsym $mod+F8                         exec transset -a --inc .15
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume 0 +5%    # increase sound volume
+bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume 0 -5%    # decrease sound volume
+bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute 0 toggle   # mute sound
+
+bindsym $mod+b                          exec ~/.config/i3/scripts/lock-screen.sh
+bindsym $mod+Shift+z                    exec xtrlock
 
 
 ## ----- Binding Modes ----- ##
@@ -199,7 +207,7 @@ mode "$wallpaper_mode" {
 
 ### -- WINDOWS -- ###
 
-# Disabling window titlebars
+# Disabling window titlebars - REQUIRED FOR GAPS
 for_window [class=".*"] border pixel 0
 
 # ------------ WINDOWS ---------------#
@@ -241,19 +249,6 @@ bar {
         position top
         mode dock
 }
-
-# keyboard - I will leave keyboard to profile
-#exec "setxkbmap -layout br"
-
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume 0 +5%    # increase sound volume
-bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume 0 -5%    # decrease sound volume
-bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute 0 toggle   # mute sound
-
-# ---- apps ------#
-
-bindsym $mod+b exec     ~/.config/i3/scripts/lock-screen.sh
-bindsym $mod+Shift+z    exec xtrlock
 
 # apps {{{
 
