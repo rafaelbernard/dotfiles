@@ -195,10 +195,10 @@ mode "resize" {
 bindsym $mod+Shift+w        mode "$wallpaper_mode"
 
 mode "$wallpaper_mode" {
-    bindsym c               exec ~/.dotfiles/scripts/background-changer
-    bindsym i               exec feh $(readlink ~/.cache/wallpaper)
-    bindsym d               exec rm $(readlink ~/.cache/wallpaper) 
-    bindsym Shift+d         exec rm $(readlink ~/.cache/wallpaper)
+    bindsym c                   exec $HOME/.dotfiles/scripts/background-changer
+    bindsym i                   exec feh $(readlink ~/.cache/wallpaper)
+    bindsym d                   exec rm $(readlink ~/.cache/wallpaper); sleep 1; $HOME/.dotfiles/scripts/background-changer
+    bindsym Shift+d             exec rm $(readlink ~/.cache/wallpaper)
 
     bindsym Escape          mode "default"
     bindsym Return          mode "default"
