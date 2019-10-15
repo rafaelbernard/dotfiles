@@ -50,7 +50,7 @@ if [[ $platform == 'linux' ]]; then
 
   	PACKAGES_TO_INSTALL="\
     		compton \
-    		suckeless-tools \
+    		suckless-tools \
                 i3-gaps-wm \
     		i3bar \
     		i3blocks \
