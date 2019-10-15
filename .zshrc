@@ -77,6 +77,8 @@ alias install='sudo aptitude install'
 # get current background image
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
 alias ll='ls -l'
+alias kbus='setxkbmap -layout us -variant intl'
+alias kbbr='setxkbmap -layout pt_br'
 alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
 alias szsh='source ~/.zshrc'
 alias yt='youtube-dl -ic' # Download youtube link
