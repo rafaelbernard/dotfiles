@@ -40,11 +40,11 @@ export hostname=`hostname -s`
 backup_do ">>> INSTALLING PREREQUISITES FOR $platform"
 if [[ $platform == 'linux' ]]; then
 
-        PACKAGES_TO_UNINSTALL="\
-                i3 i3-wm
-        "
+        #PACKAGES_TO_UNINSTALL="\
+        #        i3 i3-wm
+        #"
 
-        sudo apt-get remove -y $PACKAGES_TO_UNINSTALL
+        #sudo apt-get remove -y $PACKAGES_TO_UNINSTALL
 
         sudo add-apt-repository -y ppa:kgilmer/speed-ricer
 
@@ -52,7 +52,6 @@ if [[ $platform == 'linux' ]]; then
     		compton \
     		suckless-tools \
                 i3-gaps-wm \
-    		i3bar \
     		i3blocks \
                 i3lock \
     		feh \
