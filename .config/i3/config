@@ -174,10 +174,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j               resize shrink width 10 px or 10 ppt
+        bindsym k               resize grow height 10 px or 10 ppt
+        bindsym l               resize shrink height 10 px or 10 ppt
+        bindsym semicolon       resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -197,7 +197,7 @@ bindsym $mod+Shift+w        mode "$wallpaper_mode"
 mode "$wallpaper_mode" {
     bindsym c                   exec $HOME/.dotfiles/scripts/background-changer
     bindsym i                   exec feh $(readlink ~/.cache/wallpaper)
-    bindsym d                   exec rm $(readlink ~/.cache/wallpaper); sleep 1; $HOME/.dotfiles/scripts/background-changer
+    bindsym d                   exec "mv $(readlink ~/.cache/wallpaper) ~/.local/share/Trash", "$HOME/.dotfiles/scripts/background-changer"
     bindsym Shift+d             exec rm $(readlink ~/.cache/wallpaper)
 
     bindsym Escape          mode "default"
@@ -209,18 +209,6 @@ mode "$wallpaper_mode" {
 
 # Disabling window titlebars - REQUIRED FOR GAPS
 for_window [class=".*"] border pixel 0
-
-# ------------ WINDOWS ---------------#
-
-# Assign Workspaces:
-assign [class="Franz"]              $ws3
-assign [class="^Slack"]             $ws3
-#assign [class="Firefox"]            $ws1
-assign [title="^Firefox Developer"] $ws9
-assign [class="intellij"]           $ws4
-assign [class="idea"]               $ws4
-assign [class="(?i)datagrip"]       $ws5
-
 
 for_window [class="(?i)slack"] layout tabbed
 for_window [class="(?i)franz"] layout tabbed
@@ -237,6 +225,17 @@ for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move postion center
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown -e tmux
+
+# ------------ WINDOWS ---------------#
+
+# Assign Workspaces:
+assign [class="Franz"]              $ws3
+assign [class="^Slack"]             $ws3
+#assign [class="Firefox"]            $ws1
+assign [title="^Firefox Developer"] $ws9
+assign [class="intellij"]           $ws4
+assign [class="idea"]               $ws4
+assign [class="(?i)datagrip"]       $ws5
 
 
 
