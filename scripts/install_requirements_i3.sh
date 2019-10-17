@@ -55,6 +55,7 @@ if [[ $platform == 'linux' ]]; then
     		i3blocks \
                 i3lock \
     		feh \
+                mupdf \
     		scrot \
     		zsh
   "
