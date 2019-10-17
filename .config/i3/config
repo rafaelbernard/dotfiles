@@ -197,7 +197,7 @@ bindsym $mod+Shift+w        mode "$wallpaper_mode"
 mode "$wallpaper_mode" {
     bindsym c                   exec $HOME/.dotfiles/scripts/background-changer
     bindsym i                   exec feh $(readlink ~/.cache/wallpaper)
-    bindsym d                   exec "mv $(readlink ~/.cache/wallpaper) ~/.local/share/Trash", "$HOME/.dotfiles/scripts/background-changer"
+    bindsym d                   exec "mv $(readlink ~/.cache/wallpaper) ~/.local/share/Trash", exec "$HOME/.dotfiles/scripts/background-changer"
     bindsym Shift+d             exec rm $(readlink ~/.cache/wallpaper)
 
     bindsym Escape          mode "default"
@@ -255,9 +255,10 @@ bar {
 exec --no-startup-id compton
 exec --no-startup-id pcloud
 exec --no-startup-id ~/.dotfiles/scripts/background-changer
+exec --no-startup-id autolock -time 15 -locker '~/.config/i3/scripts/lock-screen.sh'
+exec --no-startup-id nm-applet &
 
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
-exec --no-startup-id autolock -time 15 -locker '~/.config/i3/scripts/lock-screen.sh'
 
 # }}}
 
