@@ -49,7 +49,8 @@ if [[ $platform == 'linux' ]]; then
         sudo add-apt-repository -y ppa:kgilmer/speed-ricer
 
   	PACKAGES_TO_INSTALL="\
-    		compton \
+    		brightnessctl \
+                compton \
     		suckless-tools \
                 i3-gaps-wm \
     		i3blocks \

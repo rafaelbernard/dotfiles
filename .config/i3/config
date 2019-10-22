@@ -153,13 +153,18 @@ bindsym $mod+a focus parent
 bindsym $mod+F7                         exec transset -a --dec .15
 bindsym $mod+F8                         exec transset -a --inc .15
 
+bindsym $mod+b                          exec ~/.config/i3/scripts/lock-screen.sh
+bindsym $mod+Shift+z                    exec xtrlock
+
+## Screen brightness controls
+## TODO: Solve brightnes control for notebook: https://github.com/Hummer12007/brightnessctl
+bindsym XF86BrightnessUp exec brightnessctl set +10%
+bindsym XF86BrightnessDown exec brightnessctl set 10%-
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +5%    # increase sound volume
 bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -5%    # decrease sound volume
 bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle   # mute sound
-
-bindsym $mod+b                          exec ~/.config/i3/scripts/lock-screen.sh
-bindsym $mod+Shift+z                    exec xtrlock
 
 
 ## ----- Binding Modes ----- ##
@@ -262,4 +267,4 @@ exec --no-startup-id nm-applet &
 
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
 
-
+# TODO: Try to add custom config for desktop and notebook (different keyboards, screens, etc) 
