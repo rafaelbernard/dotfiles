@@ -5,7 +5,9 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 
+### --------------------- ###
 ### -- SETS AND BASICS -- ###
+### --------------------- ###
 
 gaps inner 10
 gaps outer 10
@@ -238,7 +240,7 @@ exec --no-startup-id $term -name dropdown -e tmux
 # Assign Workspaces:
 assign [class="Franz"]              $ws3
 assign [class="^Slack"]             $ws3
-#assign [class="Firefox"]            $ws1
+assign [class="^Firefox$"]          $ws1
 assign [title="^Firefox Developer"] $ws9
 assign [class="intellij"]           $ws4
 assign [class="idea"]               $ws4
@@ -247,11 +249,12 @@ assign [class="(?i)datagrip"]       $ws5
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango:mono 10
+        font            pango:mono 10
+        font            pango:Ubuntu Mono 12
         #status_command i3status
-        status_command i3blocks
-        position top
-        mode dock
+        status_command  i3blocks
+        position        top
+        mode            dock
 }
 
 ### ---------------- ###
