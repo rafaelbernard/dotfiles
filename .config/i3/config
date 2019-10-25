@@ -160,8 +160,8 @@ bindsym $mod+Shift+z                    exec xtrlock
 
 ## Screen brightness controls
 ## TODO: Solve brightnes control for notebook: https://github.com/Hummer12007/brightnessctl
-bindsym XF86BrightnessUp exec brightnessctl set +10%
-bindsym XF86BrightnessDown exec brightnessctl set 10%-
+bindsym XF86BrightnessUp                exec brightnessctl set +10%
+bindsym XF86BrightnessDown              exec brightnessctl set 10%-
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +5%    # increase sound volume
@@ -265,7 +265,7 @@ bar {
 exec --no-startup-id compton
 exec --no-startup-id pcloud
 exec --no-startup-id ~/.dotfiles/scripts/background-changer
-exec --no-startup-id autolock -time 15 -locker '~/.config/i3/scripts/lock-screen.sh'
+exec --no-startup-id xautolock -time 15 -locker '~/.config/i3/scripts/lock-screen.sh'
 exec --no-startup-id nm-applet &
 
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
