@@ -1,3 +1,8 @@
+# vi=zsh
+# rafael bernard rodrigues araujo - zsh config file
+
+# enable for zsh profiling
+#zmodload zsh/zprof
 
 # keyboard
 # map caps to control
@@ -124,3 +129,5 @@ fi
 [ -f ~/.dotfiles-priv/zshrc.priv ]
 source ~/.dotfiles-priv/zshrc.priv
 
+# enable for zsh startup profiling
+#zprof
