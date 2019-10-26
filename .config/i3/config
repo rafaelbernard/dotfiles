@@ -219,12 +219,12 @@ mode "$wallpaper_mode" {
 # Disabling window titlebars - REQUIRED FOR GAPS
 for_window [class=".*"] border pixel 0
 
-for_window [class="(?i)slack"] layout tabbed
-for_window [class="(?i)franz"] layout tabbed
-for_window [class="(?i)idea"] layout tabbed 
-for_window [class="(?i)datagrip"] layout tabbed 
+for_window [class="(?i)slack"]          layout tabbed
+for_window [class="(?i)franz"]          layout tabbed
+for_window [class="(?i)idea"]           layout tabbed 
+for_window [class="(?i)datagrip"]       layout tabbed 
 #for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
-for_window [class="(?i)pcloud"] floating enable
+for_window [class="(?i)pcloud"]         floating enable
 
 
 # ---- dropdown/scrathpad ---- #
