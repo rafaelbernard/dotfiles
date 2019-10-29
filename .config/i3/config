@@ -118,12 +118,6 @@ bindsym $mod+Down                       focus down
 bindsym $mod+Up                         focus up
 bindsym $mod+Right                      focus right
 
-# move focused window
-bindsym $mod+Shift+j                    move left
-bindsym $mod+Shift+k                    move down
-bindsym $mod+Shift+l                    move up
-bindsym $mod+Shift+semicolon            move right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left                 move left
 bindsym $mod+Shift+Down                 move down
@@ -156,6 +150,7 @@ bindsym $mod+F7                         exec transset -a --dec .15
 bindsym $mod+F8                         exec transset -a --inc .15
 
 bindsym $mod+b                          exec ~/.config/i3/scripts/lock-screen.sh
+bindsym $mod+Shift+l                    exec xtrlock
 bindsym $mod+Shift+z                    exec xtrlock
 
 ## Screen brightness controls
@@ -202,15 +197,27 @@ mode "resize" {
 bindsym $mod+Shift+w        mode "$wallpaper_mode"
 
 mode "$wallpaper_mode" {
-    bindsym c                   exec $HOME/.dotfiles/scripts/background-changer
-    bindsym i                   exec feh $(readlink ~/.cache/wallpaper)
-    bindsym d                   exec "mv $(readlink ~/.cache/wallpaper) ~/.local/share/Trash", exec "$HOME/.dotfiles/scripts/background-changer"
-    bindsym Shift+d             exec rm $(readlink ~/.cache/wallpaper)
+        bindsym c                   exec $HOME/.dotfiles/scripts/background-changer
+        bindsym i                   exec feh $(readlink ~/.cache/wallpaper)
+        bindsym d                   exec "mv $(readlink ~/.cache/wallpaper) ~/.local/share/Trash", exec "$HOME/.dotfiles/scripts/background-changer"
+        bindsym Shift+d             exec rm $(readlink ~/.cache/wallpaper)
 
-    bindsym Escape          mode "default"
-    bindsym Return          mode "default"
-    bindsym $mod+Shift+w    mode "default"
+        bindsym Escape          mode "default"
+        bindsym Return          mode "default"
+        bindsym $mod+Shift+w    mode "default"
 }
+
+# move mode
+
+bindsym $mod+Shift+m    mode "$move_mode"
+mode "$move_mode" {
+        # move focused window
+        bindsym $mod+Shift+j                    move left
+        bindsym $mod+Shift+k                    move down
+        bindsym $mod+Shift+l                    move up
+        bindsym $mod+Shift+semicolon            move right
+}
+
 
 ### ------------------ ###
 ### ---- WINDOWS ----- ###
