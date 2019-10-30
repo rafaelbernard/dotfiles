@@ -6,9 +6,10 @@ set -g status-style "none"
 set -g message-command-style "bg=colour239"
 #set -g message-command-bg "colour239"
 set -g status-left-length "100"
-set -g pane-active-border-fg "colour109"
+#set -g pane-active-border-fg "colour109"
+set -g pane-active-border-style fg=colour109
 set -g status-bg "colour237"
-set -g message-command-fg "colour151"
+set -g message-command-style fg=colour151
 set -g pane-border-fg "colour239"
 set -g message-bg "colour239"
 set -g status-left-attr "none"
