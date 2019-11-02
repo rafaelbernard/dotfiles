@@ -58,6 +58,7 @@ if [[ $platform == 'linux' ]]; then
     		feh \
                 mupdf \
     		scrot \
+                xautolock \
     		zsh
   "
 
