@@ -28,7 +28,7 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
+set $ws9 "9:float"
 set $ws10 "10"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -47,7 +47,7 @@ font pango:DejaVu Sans Mono 8, Ubuntu 9
 
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
+bindsym $mod+1 workspace $ws1 
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
