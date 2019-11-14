@@ -23,7 +23,7 @@ setw -g window-status-activity-style "bg=colour237"
 setw -g window-status-activity-style "attr=none"
 setw -g window-status-activity-style "fg=colour109"
 setw -g window-status-separator ""
-setw -g window-status-bg "colour237"
+setw -g window-status-style "bg=colour237"
 
 tm_host="#[fg=bold]#h"
 
