@@ -231,7 +231,12 @@ bindsym $mod+Shift+F12    mode "$especial_mode"
 mode "$especial_mode" {
         bindsym s                               exec --no-startup-id pactl set-sink-volume 1 -5%
         bindsym Shift+s                         exec --no-startup-id pactl set-sink-volume 1 +5%
+
+        bindsym b                               exec brightnessctl set 10%-
+        bindsym Shift+b                         exec brightnessctl set +10%
+        
         bindsym Escape                          mode "default"
+        bindsym Return                          mode "default"
         bindsym $mod+Shift+F12                  mode "default"
 }
 
