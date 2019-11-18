@@ -290,13 +290,14 @@ bar {
 ### ----- APPS ----- ###
 ### ---------------- ### 
 
-# ssh agent / keyring
+exec rm -fr ~/temp/*
 exec --no-startup-id compton
 exec --no-startup-id pcloud
 exec --no-startup-id ~/.dotfiles/scripts/background-changer
 exec --no-startup-id xautolock -time 5 -locker '~/.config/i3/scripts/lock-screen.sh'
 exec --no-startup-id nm-applet &
 
+# ssh agent / keyring
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
 
 # TODO: Try to add custom config for desktop and notebook (different keyboards, screens, etc) 
