@@ -229,6 +229,12 @@ mode "$move_mode" {
 
 bindsym $mod+Shift+F12    mode "$especial_mode"
 mode "$especial_mode" {
+        bindsym 0                               exec --no-startup-id pactl set-sink-volume 0 -5%
+        bindsym Shift+0                         exec --no-startup-id pactl set-sink-volume 0 +5%
+        
+        bindsym 1                               exec --no-startup-id pactl set-sink-volume 1 -5%
+        bindsym Shift+1                         exec --no-startup-id pactl set-sink-volume 1 +5%
+
         bindsym s                               exec --no-startup-id pactl set-sink-volume 1 -5%
         bindsym Shift+s                         exec --no-startup-id pactl set-sink-volume 1 +5%
 
