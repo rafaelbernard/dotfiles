@@ -22,7 +22,7 @@ set $term           kitty
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:www"
 set $ws2 "2:term"
-set $ws3 "3"
+set $ws3 "3:com"
 set $ws4 "4:dev"
 set $ws5 "5:db"
 set $ws6 "6"
