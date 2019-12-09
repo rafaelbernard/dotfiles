@@ -287,7 +287,11 @@ bar {
         font            pango:mono 10
         font            pango:Ubuntu Mono 12
         #status_command i3status
-        status_command  i3blocks
+        #status_command  i3blocks
+        status_command  bumblebee-status \
+                -m amixer docker_ps disk cpu memory battery vpn datetz timetz \
+                -p datetz.format="%d/%m/%Y" timetz.format="%H:%i" datetz.locale="America/Sao_Paulo" \
+                -t solarized-powerline
         position        top
         mode            dock
 }
