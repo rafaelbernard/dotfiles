@@ -5,8 +5,8 @@
 # */5 * * * * DISPLAY=:0 background-changer
 file=$(shuf -n1 -e ~/Pictures/*)
 echo "Arquivo selecionado: {$file}"
+echo $file >> /tmp/backgrounds
 ln -sf "$file" ~/.cache/wallpaper
 #feh --bg-scale ~/.cache/wallpaper
 #feh --bg-center ~/.cache/wallpaper
 feh --bg-max ~/.cache/wallpaper
-#feh --bg-fill ~/.cache/wallpaper
