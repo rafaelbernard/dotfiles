@@ -5,3 +5,5 @@
 # change owner
 
 # link to /usr/bin/local
+
+# install python-psutil python-netifaces
