@@ -2,7 +2,7 @@
 
 # dependencies
 # TODO: enable other distributions
-sudo apt-get install -y python-psutil python-netifaces dnf pactl
+sudo apt-get install -y python-psutil python-netifaces dnf pactl xbacklight
 
 # downloard bumblebee-status at opt
 
