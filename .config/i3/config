@@ -241,8 +241,10 @@ mode "$especial_mode" {
         bindsym s                               exec --no-startup-id pactl set-sink-volume 1 -5%
         bindsym Shift+s                         exec --no-startup-id pactl set-sink-volume 1 +5%
 
-        bindsym b                               exec brightnessctl set 10%-
-        bindsym Shift+b                         exec brightnessctl set +10%
+        bindsym b                               exec --no-startup-id sudo brightnessctl set 10%-
+        bindsym Shift+b                         exec --no-startup-id sudo brightnessctl set +10%
+
+        bindsym r                               exec --no-startup-id xexit reboot, mode "default"
         
         bindsym Escape                          mode "default"
         bindsym Return                          mode "default"
