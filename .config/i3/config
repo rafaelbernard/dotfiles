@@ -286,19 +286,31 @@ assign [class="intellij"]           $ws4
 assign [class="idea"]               $ws4
 assign [class="(?i)datagrip"]       $ws5
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# ---------- BAR ----------#
+
+# TOP
 bar {
         font            pango:mono 10
         font            pango:Ubuntu Mono 12
         #status_command i3status
         #status_command  i3blocks
         status_command  bumblebee-status \
-                -m nic disk:home cpu memory amixer pulseaudio brightness bluetooth battery datetz timetz \
-                -p home.path=/home datetz.format="%d/%m/%Y" timetz.format="%H:%M:%S" datetz.locale="America/Sao_Paulo" \
+                -m cpu memory amixer pulseaudio brightness bluetooth battery datetz timetz \
+                -p datetz.format="%d/%m/%Y" timetz.format="%H:%M:%S" datetz.timezone="America/Sao_Paulo" \
                 -t solarized-powerline
         position        top
-        mode            dock
+        #mode            dock
+}
+
+# BOTTOM
+bar {
+        font            pango:mono 8
+        font            pango:Ubuntu Mono 10
+        position        bottom
+        status_command  bumblebee-status \
+                -m nic disk:home sensors timetz:twashdc \
+                -p home.path=/home twashdc.format="%H:%M:%S" twashdc.timezone="EST" \
+                -t dracula-powerline
 }
 
 ### ---------------- ###
