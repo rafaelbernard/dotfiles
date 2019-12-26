@@ -308,8 +308,10 @@ bar {
         font            pango:Ubuntu Mono 10
         position        bottom
         status_command  bumblebee-status \
-                -m nic disk:home sensors timetz:tnz timetz:twashdc \
-                -p home.path=/home twashdc.format="EST %H:%M:%S" twashdc.timezone="EST" tnz.timezone="Pacific/Auckland" \
+                -m nic disk:home sensors timetz:testz timetz:tor timetz:tuk timetz:tnz \
+                -p home.path=/home testz.format="EST %H:%M:%S" \
+                   tuk.format="KV %H:%M:%S" tor.format="OR %H:%M:%S" \
+                   twashdc.timezone="EST" tnz.timezone="Pacific/Auckland" tuk.timezone="Europe/Kiev" tor.timezone="America/Los_Angeles" \
                 -t dracula-powerline
 }
 
