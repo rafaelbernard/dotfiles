@@ -295,8 +295,8 @@ bar {
         #status_command i3status
         #status_command  i3blocks
         status_command  bumblebee-status \
-                -m cpu memory amixer pulseaudio brightness bluetooth battery datetz timetz \
-                -p datetz.format="%d/%m/%Y" timetz.format="%H:%M:%S" datetz.timezone="America/Sao_Paulo" \
+                -m cpu memory amixer pulseaudio brightness bluetooth battery datetz \
+                -p datetz.format="%d/%m/%Y %H:%M:%S" datetz.timezone="America/Sao_Paulo" \
                 -t solarized-powerline
         position        top
         #mode            dock
