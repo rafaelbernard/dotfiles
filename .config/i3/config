@@ -265,6 +265,8 @@ for_window [class="(?i)idea"]           layout tabbed
 for_window [class="(?i)datagrip"]       layout tabbed 
 #for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
 for_window [class="(?i)pcloud"]         floating enable
+for_window [title="Rename Parameters"]  floating enable
+for_window [class="InputOutput"]  floating enable
 
 
 # ---- dropdown/scrathpad ---- #
@@ -314,6 +316,15 @@ bar {
                    twashdc.timezone="EST" tnz.timezone="Pacific/Auckland" tuk.timezone="Europe/Kiev" tor.timezone="America/Los_Angeles" \
                 -t dracula-powerline
 }
+
+### ---------------- ###
+### ---- CONFIG ---- ###
+### ---------------- ###
+
+# enable touchpad tapping
+exec_always --no-startup-id xinput set-prop 12 324 1
+exec_always --no-startup-id xinput set-prop 12 325 1
+
 
 ### ---------------- ###
 ### ----- APPS ----- ###
