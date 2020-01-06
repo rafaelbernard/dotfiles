@@ -259,16 +259,6 @@ mode "$especial_mode" {
 # Disabling window titlebars - REQUIRED FOR GAPS
 for_window [class=".*"] border pixel 0
 
-for_window [class="(?i)slack"]                          layout tabbed
-for_window [class="(?i)franz"]                          layout tabbed
-for_window [class="(?i)idea"]                           layout tabbed 
-for_window [class="jetbrains-idea" title="win0"]        floating enable;
-for_window [class="(?i)datagrip"]                       layout tabbed 
-#for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
-for_window [class="(?i)pcloud"]                         floating enable
-for_window [title="Rename Parameters"]                  floating enable
-
-
 # ---- dropdown/scrathpad ---- #
 # Will be bind to mod+u
 for_window [instance="dropdown"] floating enable
@@ -276,6 +266,19 @@ for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move postion center
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown -e tmux
+
+# ----- layouts -----#
+for_window [class="(?i)slack"]                          layout tabbed
+for_window [class="(?i)franz"]                          layout tabbed
+for_window [class="(?i)idea"]                           layout tabbed 
+for_window [class="(?i)datagrip"]                       layout tabbed 
+#for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
+
+# ----- floated windows -----#
+for_window [class="(?i)pcloud"]         floating enable
+for_window [title="(?i)pcloud"]         floating enable
+for_window [title="Rename Parameters"]  floating enable
+
 
 # ------------ WINDOWS ---------------#
 
