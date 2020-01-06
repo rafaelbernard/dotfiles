@@ -259,14 +259,14 @@ mode "$especial_mode" {
 # Disabling window titlebars - REQUIRED FOR GAPS
 for_window [class=".*"] border pixel 0
 
-for_window [class="(?i)slack"]          layout tabbed
-for_window [class="(?i)franz"]          layout tabbed
-for_window [class="(?i)idea"]           layout tabbed 
-for_window [class="(?i)datagrip"]       layout tabbed 
+for_window [class="(?i)slack"]                          layout tabbed
+for_window [class="(?i)franz"]                          layout tabbed
+for_window [class="(?i)idea"]                           layout tabbed 
+for_window [class="jetbrains-idea" title="win0"]        floating enable;
+for_window [class="(?i)datagrip"]                       layout tabbed 
 #for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
-for_window [class="(?i)pcloud"]         floating enable
-for_window [title="Rename Parameters"]  floating enable
-for_window [class="InputOutput"]  floating enable
+for_window [class="(?i)pcloud"]                         floating enable
+for_window [title="Rename Parameters"]                  floating enable
 
 
 # ---- dropdown/scrathpad ---- #
@@ -310,9 +310,9 @@ bar {
         font            pango:Ubuntu Mono 10
         position        bottom
         status_command  bumblebee-status \
-                -m nic disk:home sensors timetz:testz timetz:tor timetz:tuk timetz:tnz \
-                -p home.path=/home testz.format="EST %H:%M:%S" \
-                   tuk.format="KV %H:%M:%S" tor.format="OR %H:%M:%S" \
+                -m nic disk:home sensors timetz:twashdc timetz:tor timetz:tuk timetz:tnz \
+                -p home.path=/home twashdc.format="EST %H:%M" \
+                   tuk.format="KV %H:%M" tor.format="OR %H:%M" \
                    twashdc.timezone="EST" tnz.timezone="Pacific/Auckland" tuk.timezone="Europe/Kiev" tor.timezone="America/Los_Angeles" \
                 -t dracula-powerline
 }
