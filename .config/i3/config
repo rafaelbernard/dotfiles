@@ -108,7 +108,7 @@ bindsym Shift+Print                     exec --no-startup-id scrot -u
 bindsym $mod+Shift+minus                move scratchpad
 bindsym $mod+minus                      scratchpad show
 
-bindsym $mod+u                          [instance="dropdown"] scratchpad show; move position center
+#bindsym $mod+u                          [instance="dropdown"] scratchpad show; move position center
 bindsym $mod+Shift+u                    resize shrink height 10 px or 10 ppt
 
 # change focus
