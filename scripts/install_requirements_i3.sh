@@ -52,6 +52,7 @@ if [[ $platform == 'linux' ]]; then
     		brightnessctl \
                 compton \
     		suckless-tools \
+                i3-gaps \
                 i3-gaps-wm \
     		i3blocks \
                 i3lock \
