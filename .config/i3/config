@@ -235,9 +235,18 @@ mode "$especial_mode" {
         bindsym 1                               exec --no-startup-id pactl set-sink-volume 1 -5%
         bindsym Shift+1                         exec --no-startup-id pactl set-sink-volume 1 +5%
 
+        bindsym 2                               exec --no-startup-id pactl set-sink-volume 2 -5%
+        bindsym Shift+2                         exec --no-startup-id pactl set-sink-volume 2 +5%
+
         bindsym 4                               exec --no-startup-id pactl set-sink-volume 4 -5%
         bindsym Shift+4                         exec --no-startup-id pactl set-sink-volume 4 +5%
         
+        bindsym 5                               exec --no-startup-id pactl set-sink-volume 5 -5%
+        bindsym Shift+5                         exec --no-startup-id pactl set-sink-volume 5 +5%
+
+        bindsym 6                               exec --no-startup-id pactl set-sink-volume 6 -5%
+        bindsym Shift+6                         exec --no-startup-id pactl set-sink-volume 6 +5%
+
         bindsym s                               exec --no-startup-id pactl set-sink-volume 1 -5%
         bindsym Shift+s                         exec --no-startup-id pactl set-sink-volume 1 +5%
 
