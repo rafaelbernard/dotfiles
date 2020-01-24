@@ -1,0 +1,45 @@
+# -----------
+# aliases
+# -----------
+alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
+alias duh='du -h --max-depth=1'
+alias dot='cd ~/.dotfiles'
+alias cdot='cd ~/.dotfiles'
+alias ei3='vim ~/.dotfiles/.config/i3/config'
+alias evim='vim ~/.dotfiles/.vimrc'
+alias ez='vim ~/.dotfiles/.zshrc'
+alias install='sudo aptitude install'
+# get current background image
+alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
+alias ll='ls -l'
+alias kbus='setxkbmap -layout us -variant intl'
+alias kbus2='setxkbmap -layout us'
+alias kbbr='setxkbmap -layout pt_br'
+alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
+alias szsh='source ~/.zshrc'
+alias yt='youtube-dl -ic' # Download youtube link
+alias yta='youtube-dl -xic' # Download youtube link audio only
+
+alias vi='vim'
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
+command -v nvim >/dev/null && alias vi="nvim" vidiff="nvim -d" # Use neovim for vim if present.
+
+# docker
+alias dcua='docker-compose up'
+alias dcu='docker-compose up -d'
+alias dcs='docker-compose stop'
+
+# fzfz
+alias fcd='cd find . -type d | fzf'
+
+# GIT
+alias gok='echo "git commit -a -m \"OK\"" && git commit -a -m "OK"'
+alias gpa='echo "git pull --all --prune" && git pull --all --prune'
+alias gpom='echo "git push -u origin master" && git push -u origin master'
+
+#kitty
+alias icat="kitty +kitten icat"
+
+# php
+alias runphp='php -S localhost:8000'
+
