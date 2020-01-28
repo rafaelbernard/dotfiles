@@ -40,11 +40,11 @@ export hostname=`hostname -s`
 backup_do ">>> INSTALLING PREREQUISITES FOR $platform"
 if [[ $platform == 'linux' ]]; then
 
-        #PACKAGES_TO_UNINSTALL="\
-        #        i3 i3-wm
-        #"
+        # TODO: check if file exists
 
-        #sudo apt-get remove -y $PACKAGES_TO_UNINSTALL
+        #if [[ (find /etc/apt/sources.listd./kgilmer* -type f) != "" ]] ; then
+        #        echo "exists";
+        #fi
 
         sudo add-apt-repository -y ppa:kgilmer/speed-ricer
 
