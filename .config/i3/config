@@ -284,8 +284,8 @@ for_window [class="(?i)datagrip"]                       layout tabbed
 #for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
 
 # ----- floated windows -----#
-for_window [class="(?i)pcloud"]         floating enable
-for_window [title="(?i)pcloud"]         floating enable
+for_window [class="pcloud"]             floating enable
+for_window [title="pcloud"]             floating enable
 for_window [title="Rename Parameters"]  floating enable
 
 
