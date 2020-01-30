@@ -1,5 +1,5 @@
 # vi=tmux
-set -g status-justify "left"
+set-option -g status-justify left
 set -g status "on"
 #set -g status-attr "none"
 set -g status-style "none"
@@ -17,13 +17,13 @@ set -g status-right-attr "none"
 set -g status-right-length "100"
 set -g message-style "fg=colour151"
 setw -g window-status-style "fg=colour247"
-#setw -g window-status-attr "none"
 setw -g window-status-style "attr=none"
-setw -g window-status-activity-style "bg=colour237"
-setw -g window-status-activity-style "attr=none"
-setw -g window-status-activity-style "fg=colour109"
+setw -g window-status-bg colour237
+#setw -g window-status-activity-attr none
+setw -g window-status-activity-attr default
 setw -g window-status-separator ""
-setw -g window-status-style "bg=colour237"
+#setw -g window-status-activity-fg colour109
+setw -g window-status-activity-fg yellow
 
 tm_host="#[fg=bold]#h"
 
