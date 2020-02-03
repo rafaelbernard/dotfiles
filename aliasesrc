@@ -8,6 +8,7 @@ alias cdot='cd ~/.dotfiles'
 alias ei3='vim ~/.dotfiles/.config/i3/config'
 alias evim='vim ~/.dotfiles/.vimrc'
 alias ez='vim ~/.dotfiles/.zshrc'
+alias ealias='vim ~/.dotfiles/aliasesrc'
 alias install='sudo aptitude install'
 # get current background image
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
