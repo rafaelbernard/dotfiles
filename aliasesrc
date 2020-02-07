@@ -10,7 +10,7 @@ alias evim='vim ~/.dotfiles/.vimrc'
 alias ez='vim ~/.dotfiles/.zshrc'
 alias ealias='vim ~/.dotfiles/aliasesrc'
 alias install='sudo aptitude install'
-# get current background image
+alias ipp='curl ipinfo.io/ip'
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
 alias ll='ls -l'
 alias kbus='setxkbmap -layout us -variant intl'
