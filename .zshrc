@@ -22,7 +22,7 @@ HISTFILE=~/.cache/zsh/history
 
 # Plugins
 plugins=(
-        git aws ubuntu 
+        git aws ubuntu z
 )
 
 # Load zsh
