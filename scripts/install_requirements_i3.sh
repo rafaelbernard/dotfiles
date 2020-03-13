@@ -1,4 +1,5 @@
 #!/bin/bash
+# vi:set tabspaces=8
 set -x
 
 echo "Installing dotfiles"
@@ -71,18 +72,18 @@ if [[ $platform == 'linux' ]]; then
 elif [[ $platform == 'arch' ]]; then
   PACKAGES_TO_INSTALL="\
     git \
-    		brightnessctl \
-                compton \
-    		suckless-tools \
-                i3-gaps \
-    		i3blocks \
-                i3lock \
-    		feh \
-                python-tzlocal \
-                mupdf \
-    		scrot \
-                xautolock \
-    		zsh
+    brightnessctl \
+    compton \
+    suckless-tools \
+    i3-gaps \
+    i3blocks \
+    i3lock \
+    feh \
+    python-tzlocal \
+    mupdf \
+    scrot \
+    xautolock \
+    zsh
     rsync \
     man-pages \
     xscreensaver \
@@ -92,7 +93,6 @@ elif [[ $platform == 'arch' ]]; then
     source-highlight \
     imagemagick \
     dolphin \
-    chromium \
     firefox \
     ranger \
     scrot \
@@ -112,11 +112,8 @@ elif [[ $platform == 'arch' ]]; then
     "
 
   sudo pacman -Syy
-  # uncomment this if keys are out of date - it is really slow
-#  sudo pacman-key --refresh-keys
-  gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-  sudo pacman -S --noconfirm $PACKAGES_TO_INSTALL
-  ln -sf /usr/bin/chromium /usr/local/bin/google-chrome
+
+  # YAY
   if [[ ! -e ~/github/arch/yay ]]; then
     mkdir -p ~/github/arch
     cd ~/github/arch

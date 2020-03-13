@@ -4,9 +4,21 @@
 # then, crontab should know the display
 # */5 * * * * DISPLAY=:0 background-changer
 file=$(shuf -n1 -e ~/Pictures/*)
+
+if [ ! -e ~/.cache/wallpaper ]
+then
+        echo "Creating wallpaper cache file";
+        mkdir -p ~/.cache
+        touch /tmp/cache-wallpaper
+        ln -s ~/.cache/wallpaper
+fi
+
+
 echo "Arquivo selecionado: {$file}"
+
 echo $file >> /tmp/backgrounds
 ln -sf "$file" ~/.cache/wallpaper
+
 #feh --bg-scale ~/.cache/wallpaper
 #feh --bg-center ~/.cache/wallpaper
 feh --bg-max ~/.cache/wallpaper
