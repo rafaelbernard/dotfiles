@@ -113,8 +113,8 @@ if which pyenv-virtualenv-init > /dev/null; then
 fi
 
 # loading private setting
-[ -f ~/.dotfiles-priv/aliases.priv ]
-source ~/.dotfiles-priv/aliases.priv
+#[ -f ~/.dotfiles-priv/aliases.priv ]
+#source ~/.dotfiles-priv/aliases.priv
 
 # enable for zsh startup profiling
 #zprof

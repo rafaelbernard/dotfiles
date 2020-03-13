@@ -71,6 +71,18 @@ if [[ $platform == 'linux' ]]; then
 elif [[ $platform == 'arch' ]]; then
   PACKAGES_TO_INSTALL="\
     git \
+    		brightnessctl \
+                compton \
+    		suckless-tools \
+                i3-gaps \
+    		i3blocks \
+                i3lock \
+    		feh \
+                python-tzlocal \
+                mupdf \
+    		scrot \
+                xautolock \
+    		zsh
     rsync \
     man-pages \
     xscreensaver \

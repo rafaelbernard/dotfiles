@@ -351,6 +351,9 @@ exec --no-startup-id xautolock -time 5 -locker '~/.config/i3/scripts/lock-screen
 exec --no-startup-id nm-applet &
 
 # ssh agent / keyring
-exec_always ~/.config/i3/scripts/gnome-keyring.sh
+exec_always ~/.config/i3/scripts/keyring.sh
 
 # TODO: Try to add custom config for desktop and notebook (different keyboards, screens, etc) 
+
+#exec --no-startup-id xrandr --output HDMI1 --auto --left-of VGA1
+#exec --no-startup-id xrandr --output VGA1 --auto --left-of HDMI1
