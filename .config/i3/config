@@ -173,6 +173,9 @@ bindsym $mod+F3                         exec --no-startup-id pactl set-sink-volu
 bindsym $mod+F2                         exec --no-startup-id pactl set-sink-volume 1 -5%    # decrease sound volume
 bindsym $mod+F1                         exec --no-startup-id pactl set-sink-mute 1 toggle   # mute sound
 
+bindsym $mod+Shift+comma                 exec xrandr --output HDMI1 --auto --left-of VGA1
+bindsym $mod+Shift+period                exec xrandr --output VGA1 --auto --left-of HDMI1
+
 ## ----- Binding Modes ----- ##
 
 # resize window (you can also use the mouse for that)

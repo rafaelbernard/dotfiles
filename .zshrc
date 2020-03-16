@@ -1,4 +1,4 @@
-# vi=zsh
+ vi=zsh
 # rafael bernard rodrigues araujo - zsh config file
 
 # enable for zsh profiling
@@ -113,8 +113,17 @@ if which pyenv-virtualenv-init > /dev/null; then
 fi
 
 # loading private setting
-#[ -f ~/.dotfiles-priv/aliases.priv ]
-#source ~/.dotfiles-priv/aliases.priv
+[ -f ~/.dotfiles-priv/aliases.priv ]
+source ~/.dotfiles-priv/aliases.priv
 
 # enable for zsh startup profiling
 #zprof
+#
+#
+
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
+fi
