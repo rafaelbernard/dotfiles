@@ -72,6 +72,7 @@ if [[ $platform == 'linux' ]]; then
 elif [[ $platform == 'arch' ]]; then
   PACKAGES_TO_INSTALL="\
     git \
+    kitty \
     brightnessctl \
     compton \
     suckless-tools \
@@ -109,9 +110,10 @@ elif [[ $platform == 'arch' ]]; then
     clang \
     rust \
     hub \
+    fakeroot \
     "
 
-  sudo pacman -Syy
+  sudo pacman -Syy $PACKAGES_TO_INSTALL
 
   # YAY
   if [[ ! -e ~/github/arch/yay ]]; then
