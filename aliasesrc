@@ -5,10 +5,13 @@ alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias duh='du -h --max-depth=1'
 alias dot='cd ~/.dotfiles'
 alias cdot='cd ~/.dotfiles'
+
 alias ei3='vim ~/.dotfiles/.config/i3/config'
 alias evim='vim ~/.dotfiles/.vimrc'
 alias ez='vim ~/.dotfiles/.zshrc'
 alias ealias='vim ~/.dotfiles/aliasesrc'
+alias ehosts='sudo vim /etc/hosts'
+
 alias install='sudo aptitude install'
 alias ipp='curl ipinfo.io/ip'
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
