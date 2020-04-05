@@ -120,8 +120,6 @@ source ~/.dotfiles-priv/aliases.priv
 
 # enable for zsh startup profiling
 #zprof
-#
-#
 
 # ssh-agent for all sessions? (trying)
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
