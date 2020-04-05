@@ -1,5 +1,6 @@
 #!/bin/bash
-# vi:set tabspaces=8
+. platform.sh
+
 set -x
 
 echo "Installing dotfiles"
@@ -75,7 +76,6 @@ elif [[ $platform == 'arch' ]]; then
     kitty \
     brightnessctl \
     compton \
-    suckless-tools \
     i3-gaps \
     i3blocks \
     i3lock \
@@ -111,6 +111,8 @@ elif [[ $platform == 'arch' ]]; then
     rust \
     hub \
     fakeroot \
+    make \
+    go \
     "
 
   sudo pacman -Syy $PACKAGES_TO_INSTALL
@@ -163,3 +165,5 @@ fi
 
 # add kitty
 # add ranger
+	
+# vi:set tabspaces=8
