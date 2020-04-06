@@ -1,4 +1,3 @@
- vi=zsh
 # rafael bernard rodrigues araujo - zsh config file
 
 # enable for zsh profiling
@@ -128,3 +127,6 @@ fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
 fi
+
+
+# vim: tabstop=8 softtabstop=8
