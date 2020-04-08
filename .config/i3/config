@@ -343,8 +343,8 @@ bar {
 ### ---------------- ###
 
 # enable touchpad tapping
-exec_always --no-startup-id xinput set-prop 12 324 1
-exec_always --no-startup-id xinput set-prop 12 325 1
+#exec_always --no-startup-id xinput set-prop 12 324 1
+#exec_always --no-startup-id xinput set-prop 12 325 1
 
 
 ### ---------------- ###
