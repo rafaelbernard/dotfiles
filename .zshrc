@@ -97,7 +97,7 @@ export NVM_DIR="$HOME/.nvm"
 # aliases
 # -----------
 
-[ -f ~/.dotfiles/aliasesrc ]
+[ -f "$HOME/.dotfiles/aliasesrc" ]
 source ~/.dotfiles/aliasesrc
 
 # pyenv
