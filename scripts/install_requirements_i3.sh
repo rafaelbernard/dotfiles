@@ -127,7 +127,8 @@ elif [[ $platform == 'arch' ]]; then
   fi
   # install AUR packages
   yay -S --noconfirm unzip unrar hwinfo mhwd tree fontconfig-infinality checkupdates pacman-contrib thermald geekbench
-  yay -S --noconfirm google-chrome slack-desktop htop glxinfo traceroute wavebox-bin rr-bin gometalinter python python2 python-pip
+  yay -S --noconfirm slack-desktop htop glxinfo traceroute wavebox-bin rr-bin gometalinter python python2 python-pip
+  yay -S --noconfirm bumblebee-status-git 
 
   # enable services
   sudo systemctl enable thermald.service
