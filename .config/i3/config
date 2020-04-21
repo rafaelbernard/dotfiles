@@ -9,8 +9,8 @@
 ### -- SETS AND BASICS -- ###
 ### --------------------- ###
 
-gaps inner 10
-gaps outer 10
+gaps inner 7
+gaps outer 7
 
 
 set $mod            Mod4
