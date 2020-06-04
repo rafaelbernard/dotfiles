@@ -327,11 +327,13 @@ bar {
         position        bottom
         status_command  bumblebee-status \
                 -m nic disk:home timetz:twashdc timetz:tor timetz:tuk timetz:tnz timetz:br \
-                -p home.path=/home twashdc.format="EST %H:%M" \
-                   tuk.format="KV %H:%M" tor.format="OR %H:%M" \
-                   br.format="%H:%M:%I" \
-                   twashdc.timezone="America/New_York" tnz.timezone="Pacific/Auckland" tuk.timezone="Europe/Kiev" tor.timezone="America/Los_Angeles" \
-                   br.timezone="America/Sao_Paulo" \
+                -p home.path=/home \
+                    twashdc.format="EST %H:%M" \
+                    tnz.format="NZ %d/%m/%Y %H:%M" \
+                    tuk.format="KV %H:%M" tor.format="OR %H:%M" \
+                    br.format="BR %H:%M:%I" \
+                    twashdc.timezone="America/New_York" tnz.timezone="Pacific/Auckland" tuk.timezone="Europe/Kiev" tor.timezone="America/Los_Angeles" \
+                    br.timezone="America/Sao_Paulo" \
                 -t dracula-powerline
 }
 
