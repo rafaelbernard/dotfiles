@@ -16,4 +16,4 @@
     prune = fetch --prune
     undo = reset --soft HEAD^
 [pull]
-	rebase = true
+	rebase = false
