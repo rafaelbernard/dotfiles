@@ -15,3 +15,5 @@
     stash-all = stash save --include-untracked
     prune = fetch --prune
     undo = reset --soft HEAD^
+[pull]
+	rebase = true
