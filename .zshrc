@@ -21,7 +21,7 @@ HISTFILE=~/.cache/zsh/history
 
 # Plugins
 plugins=(
-        git aws ubuntu z
+        git aws archlinux z
 )
 
 # Load zsh
@@ -101,17 +101,17 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.dotfiles/aliasesrc
 
 # pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-        export PYENV_ROOT="$HOME/.pyenv"
-        export PATH="$PYENV_ROOT/bin:$PATH"
-        export PATH="$PYENV_ROOT/shims:$PATH"
-        export PATH="$PYENV_ROOT/completions/pyenv.bash:$PATH"
-        eval "$(pyenv init -)"
-fi
+#if command -v pyenv 1>/dev/null 2>&1; then
+#        export PYENV_ROOT="$HOME/.pyenv"
+#        export PATH="$PYENV_ROOT/bin:$PATH"
+#        export PATH="$PYENV_ROOT/shims:$PATH"
+#        export PATH="$PYENV_ROOT/completions/pyenv.bash:$PATH"
+#        eval "$(pyenv init -)"
+#fi
 
-if which pyenv-virtualenv-init > /dev/null; then
-    eval "$(pyenv virtualenv-init -)"
-fi
+#if which pyenv-virtualenv-init > /dev/null; then
+#    eval "$(pyenv virtualenv-init -)"
+#fi
 
 # loading private setting
 [ -f ~/.dotfiles-priv/aliases.priv ]
