@@ -21,7 +21,7 @@ HISTFILE=~/.cache/zsh/history
 
 # Plugins
 plugins=(
-        git aws archlinux z
+        archlinux aws git terraform z
 )
 
 # Load zsh

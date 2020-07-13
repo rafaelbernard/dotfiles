@@ -1,5 +1,5 @@
 [user]
-	email = rafael.araujo@initd.info
+    email = rafael.araujo@initd.info
     name = Rafael Bernard Araújo
 
 [alias]
@@ -15,10 +15,12 @@
     stash-all = stash save --include-untracked
     prune = fetch --prune
     undo = reset --soft HEAD^
+
 [pull]
-	rebase = false
+    rebase = false
+
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
