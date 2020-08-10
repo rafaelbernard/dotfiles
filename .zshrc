@@ -100,6 +100,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -f "$HOME/.dotfiles/aliasesrc" ]
 source ~/.dotfiles/aliasesrc
 
+export DOCKER_BUILDKIT=1
+
 # pyenv
 #if command -v pyenv 1>/dev/null 2>&1; then
 #        export PYENV_ROOT="$HOME/.pyenv"
@@ -141,3 +143,4 @@ export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
 # vim: tabstop=8 softtabstop=8
+
