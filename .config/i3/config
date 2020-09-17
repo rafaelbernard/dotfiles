@@ -284,7 +284,6 @@ exec --no-startup-id $term -name dropdown -e tmux
 
 # ----- layouts -----#
 for_window [class="(?i)slack"]                          layout tabbed
-for_window [class="(?i)franz"]                          layout tabbed
 for_window [class="(?i)idea"]                           layout tabbed 
 for_window [class="(?i)datagrip"]                       layout tabbed 
 #for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
