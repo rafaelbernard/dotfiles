@@ -75,7 +75,7 @@ if [ -d "$HOME/.local/bin" ] ; then
         PATH="$HOME/.local/bin:$PATH"
 fi
 
-[ -d "$HOME/bin" ] && PATH="${PATH}:${HOME}/bin"
+[ -d "$HOME/bin" ] && PATH="${HOME}/bin:${PATH}"
 
 # my scripts to PATH
 [ -d "$HOME/.dotfiles/scripts" ]
