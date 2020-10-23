@@ -15,8 +15,8 @@ export ZSH=/home/rafael/.oh-my-zsh
 ZSH_THEME="jispwoso"
 
 # History and cache
-HISTSIZE=10000000
-SAVEHIST=10000000
+HISTSIZE=100000000
+SAVEHIST=100000000
 HISTFILE=~/.cache/zsh/history
 
 # Plugins
@@ -87,6 +87,8 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
         export EDITOR='nvim'
 fi
+# uncomment to force all vim
+export EDITOR='vim'
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -143,4 +145,3 @@ export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
 # vim: tabstop=8 softtabstop=8
-
