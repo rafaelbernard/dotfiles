@@ -88,7 +88,7 @@ else
         export EDITOR='nvim'
 fi
 # uncomment to force all vim
-export EDITOR='vim'
+#export EDITOR='vim'
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
