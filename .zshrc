@@ -15,8 +15,8 @@ export ZSH=/home/rafael/.oh-my-zsh
 ZSH_THEME="jispwoso"
 
 # History and cache
-HISTSIZE=100000000
-SAVEHIST=100000000
+HISTSIZE=1000000
+SAVEHIST=1000000
 HISTFILE=~/.cache/zsh/history
 
 # Plugins
