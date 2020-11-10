@@ -43,10 +43,31 @@ Plug 'evidens/vim-twig'
 
 call plug#end()
 
+" Set 'nocompatible' to ward off unexpected thisngs that your distro might
+" have made, as well as sanely reset options when re-sourcing .vimrc
+set nocompatible
+
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+filetype indent plugin on
+
+"------------------------------------------------------------------------------
+" Useful
+
+" Highligh searches (<C-L> to temporarily turn off)
+"set hlsearch
+
+"------------------------------------------------------------------------------
+" Usability
+
+
 set number                                      "number all lines
 set relativenumber                              " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
 set expandtab tabstop=4                         "transform tab into 2 spaces
-set autoindent
+
+set autoindent                                  " When opening a new line and no filetype-specific indenting is enabled, keep the same indent as the line you're currently on.
+
 set smartindent                                 "reacts to the syntax/style of the code you are editing
 "set ruler
 set autowrite                                   "Write the contents of the file, if it has been modified, on each 
@@ -69,6 +90,15 @@ set cursorline                                    "underline at cursor line
 "set synmaxcol=2048
 set laststatus=2                                   "The value of this option influences when the last window will have a status line. 2 = always
 set mouse=n                                     " Modes where mouse is enabled. n = normal
+
+" Use visual bell instead of beeping when doing something wrong
+set visualbell
+
+" And reset the terminal code for the visual bell. If visualbell is set, and
+" this line is also included, vim will neither flash nor beep. If visualbell
+" is unset, this does nothing.
+set t_vb=
+
 set wildmode=longest,list,full
 
 " # Integrations
@@ -77,6 +107,7 @@ set rtp+=~/.fzf                                   "enable fzf integration
 "Enabling clipboard pastes to be available to OS
 set clipboard+=unnamed
 
+" ----------------------------------------------------------------------------- 
 " Key mapping
 nnoremap <leader>] :tabn<CR>
 nnoremap <leader>[ :tabp<CR>
