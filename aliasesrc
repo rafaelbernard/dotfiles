@@ -1,18 +1,19 @@
 # -----------
 # aliases
 # -----------
-alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
-alias duh='du -h --max-depth=1'
-alias dot='cd ~/.dotfiles'
-alias cdot='cd ~/.dotfiles'
 
+# Files
 alias ei3='vim ~/.dotfiles/.config/i3/config'
 alias evim='vim ~/.dotfiles/.vimrc'
 alias ez='vim ~/.dotfiles/.zshrc'
 alias ealias='vim ~/.dotfiles/aliasesrc'
 alias ehosts='sudo vim /etc/hosts'
 
-alias install='sudo aptitude install'
+# SO useful
+alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
+alias duh='du -h --max-depth=1'
+alias dot='cd ~/.dotfiles'
+alias cdot='cd ~/.dotfiles'
 alias ipp='curl ipinfo.io/ip'
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
 alias ll='ls -l'
@@ -24,6 +25,10 @@ alias szsh='source ~/.zshrc'
 alias yt='youtube-dl -ic' # Download youtube link
 alias yta='youtube-dl -xic' # Download youtube link audio only
 
+# commands
+command -v bat>/dev/null && alias cat='bat'
+
+# vi
 alias vi='vim'
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vi="nvim" vidiff="nvim -d" # Use neovim for vim if present.
