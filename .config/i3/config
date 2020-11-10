@@ -231,6 +231,10 @@ mode "$move_mode" {
         bindsym $mod+Shift+k                    move down
         bindsym $mod+Shift+l                    move up
         bindsym $mod+Shift+semicolon            move right
+
+        bindsym Escape                          mode "default"
+        bindsym Enter                           mode "default"
+        bindsym $mod+Shift+m                    mode "default"
 }
 
 bindsym $mod+Shift+F12    mode "$especial_mode"
