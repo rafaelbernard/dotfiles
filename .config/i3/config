@@ -293,7 +293,6 @@ exec --no-startup-id $term -name dropdown -e tmux
 for_window [class="(?i)slack"]                          layout tabbed
 for_window [class="(?i)idea"]                           layout tabbed 
 for_window [class="(?i)datagrip"]                       layout tabbed 
-#for_window [title="^Firefox Developer"] move to workspace $ws6; tabbed enable
 
 # ----- floated windows -----#
 for_window [class="pcloud"]             floating enable
@@ -304,13 +303,13 @@ for_window [title="Rename Parameters"]  floating enable
 # ------------ WINDOWS ---------------#
 
 # Assign Workspaces:
-assign [class="Franz"]              $ws3
 assign [class="^Slack"]             $ws3
 assign [class="^Firefox$"]          $ws1
 assign [title="^Firefox Developer"] $ws9
 assign [class="intellij"]           $ws4
 assign [class="idea"]               $ws4
 assign [class="(?i)datagrip"]       $ws5
+assign [class="(?i)virtualbox"]     $ws8
 
 # ---------- BAR ----------#
 

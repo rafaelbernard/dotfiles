@@ -28,7 +28,14 @@ alias yta='youtube-dl -xic' # Download youtube link audio only
 # commands
 command -v bat>/dev/null && alias cat='bat'
 
-# vi
+# thanks to https://dev.to/joaovitor/exa-instead-of-ls-1onl
+# but adapted
+command -v exa>/dev/null && alias l='exa'
+command -v exa>/dev/null && alias la='exa -a'
+command -v exa>/dev/null && alias ll='exa -lah'
+command -v exa>/dev/null && alias ls='exa --color=auto'
+
+## vi
 alias vi='vim'
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vi="nvim" vidiff="nvim -d" # Use neovim for vim if present.

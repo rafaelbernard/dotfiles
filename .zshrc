@@ -121,9 +121,6 @@ export DOCKER_BUILDKIT=1
 [ -f ~/.dotfiles-priv/aliases.priv ]
 source ~/.dotfiles-priv/aliases.priv
 
-# enable for zsh startup profiling
-#zprof
-
 # ssh-agent for all sessions? (trying)
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
@@ -143,5 +140,14 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 # go
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
+
+export AWS_CONFIGURE_SSO_DEFAULT_SSO_START_URL=https://hobsons-sso.awsapps.com/start
+export AWS_CONFIGURE_SSO_DEFAULT_SSO_REGION=us-east-1
+sso(){
+  unset AWS_PROFILE
+  export AWS_PROFILE=$1
+  aws sts get-caller-identity &> /dev/null || aws sso login || (unset AWS_PROFILE && aws-configure-sso-profile --profile $1)
+  eval $(aws-export-credentials --env-export)
+}
 
 # vim: tabstop=8 softtabstop=8
