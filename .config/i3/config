@@ -365,6 +365,7 @@ exec --no-startup-id pcloud
 exec --no-startup-id ~/.dotfiles/scripts/background-changer
 exec --no-startup-id xautolock -time 15 -locker '~/.config/i3/scripts/lock-screen.sh'
 exec --no-startup-id nm-applet &
+exec --no-startup-id blueman-applet &
 
 # ssh agent / keyring
 exec_always ~/.config/i3/scripts/keyring.sh
