@@ -40,6 +40,7 @@ Plug 'Townk/vim-autoclose'
 Plug 'pangloss/vim-javascript' 
 Plug 'mxw/vim-jsx' 
 Plug 'evidens/vim-twig'
+Plug 'webastien/vim-ctags'
 
 call plug#end()
 
