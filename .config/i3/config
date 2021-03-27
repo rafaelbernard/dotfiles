@@ -317,12 +317,12 @@ assign [class="(?i)virtualbox"]     $ws8
 bar {
         font            pango:mono 10
         font            pango:Ubuntu Mono 12
+        tray_output     primary
+        position        top
         status_command  bumblebee-status \
                 -m cpu load memory amixer brightness bluetooth2 caffeine layout battery datetz \
                 -p datetz.format="%a, %d/%m/%Y %H:%M:%S" datetz.timezone="America/Sao_Paulo" datetz.interval=1s \
                 -t solarized-powerline
-        position        top
-        #mode            dock
 }
 
 #-m cpu load memory amixer brightness bluetooth layout battery datetz \
@@ -332,6 +332,7 @@ bar {
         font            pango:mono 8
         font            pango:Ubuntu Mono 10
         position        bottom
+        tray_output     none
         status_command  bumblebee-status \
                 -m nic disk:home timetz:tor timetz:twashdc timetz:tnz timetz:br \
                 -p home.path=/home \
