@@ -26,6 +26,7 @@ alias yt='youtube-dl -ic' # Download youtube link
 alias yta='youtube-dl -xic' # Download youtube link audio only
 
 # commands
+alias zcat=/usr/bin/cat
 command -v bat>/dev/null && alias cat='bat'
 
 # thanks to https://dev.to/joaovitor/exa-instead-of-ls-1onl
