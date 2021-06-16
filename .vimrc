@@ -32,10 +32,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'                      "file management - Nerdtree -- Tree file navigation
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
-" For telescope
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'            "Telescope - File explorer
 
 "plugins - dev
 Plug 'honza/dockerfile.vim'
