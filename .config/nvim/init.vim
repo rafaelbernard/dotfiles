@@ -19,6 +19,7 @@ Plug 'junegunn/seoul256.vim'
 "Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'gruvbox-community/gruvbox'                "gruvbox-community color scheme -- https://github.com/gruvbox-community/gruvbox
 
 " integration
 Plug 'PotatoesMaster/i3-vim-syntax'
@@ -123,3 +124,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 "Update binds when sxhkdrc is updated
         autocmd BufWritePost +sxhkdrc !killall sxhkd; setsid sxhkd &
+
+"To enable gruvbox scheme
+"colorscheme gruvbox
