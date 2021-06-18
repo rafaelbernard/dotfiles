@@ -1,4 +1,4 @@
-"vim settings
+"neovim settings
 "rafael araujo <rafael dot araujo at initd dot info>
 
 let mapleader=','
@@ -10,7 +10,7 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 "call plug#begin('~/.config/nvim/plugged')
-call plug#begin('~/.vim/plugged') "Trying to centralize for vim and nvim
+call plug#begin('~/.vim/plugged')               "Trying to centralize for vim and nvim into the same pluggin path
 
 " vim / theme / design
 Plug 'junegunn/limelight.vim'                   "Hyperfocus-writing in Vim
@@ -31,6 +31,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'                      "file management - Nerdtree -- Tree file navigation
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
+"It requires nvim 0.5 -- not working so far
 "Plug 'nvim-lua/popup.nvim'                      "Popup for telescope
 "Plug 'nvim-lua/plenary.nvim'                    "Plenary for telescope
 "Plug 'nvim-telescope/telescope.nvim'            "Telescope file explorer
