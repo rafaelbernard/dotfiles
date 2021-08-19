@@ -79,6 +79,8 @@ bindsym $mod+Tab                        workspace back_and_forth
 
 bindsym $mod+Return                     exec $term
 bindsym $mod+Shift+Return               exec $term -e tmux
+bindsym $mod+t                          exec alacritty
+bindsym $mod+Shift+t                    exec alacritty -e tmux
 
 bindsym $mod+Shift+Backspace            exec sudo reboot
 
