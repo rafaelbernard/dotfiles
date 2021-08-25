@@ -12,11 +12,13 @@
 gaps inner 7
 gaps outer 7
 
+set $term_kitty     kitty
+set $term_alacritty alacritty
 
 set $mod            Mod4
 set $browser        firefox
 set $term_default   xterm
-set $term           kitty
+set $term           alacritty
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
