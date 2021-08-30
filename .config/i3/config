@@ -166,7 +166,9 @@ bindsym $mod+Shift+z                    exec xtrlock
 ## Screen brightness controls
 ## TODO: Solve brightnes control for notebook: https://github.com/Hummer12007/brightnessctl
 bindsym XF86MonBrightnessUp             exec xbacklight -inc 5
+bindsym XF86KbdBrightnessUp             exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown           exec xbacklight -dec 5
+bindsym XF86KbdBrightnessDown           exec xbacklight -dec 5
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 1 +5%    # increase sound volume
@@ -179,9 +181,9 @@ bindsym $mod+F1                         exec --no-startup-id pactl set-sink-mute
 bindsym $mod+Shift+comma                 exec xrandr --output HDMI1 --auto --left-of VGA1
 bindsym $mod+Shift+period                exec xrandr --output VGA1 --auto --left-of HDMI1
 
+bindsym XF86MonBluetooth                exec bluetoothctl power on
+bindsym XF86KbdBluetooth                exec bluetoothctl power on
 
-bindsym XF86KbdBrightnessUp exec light -s sysfs/leds/smc::kbd\_backlight -A 5   #increase Kbd brightness
-bindsym XF86KbdBrightnessDown exec light -s sysfs/leds/smc::kbd\_backlight -U 5 #decrease Kbd brightness
 
 ## ----- Binding Modes ----- ##
 
@@ -264,11 +266,13 @@ mode "$especial_mode" {
         bindsym s                               exec --no-startup-id pactl set-sink-volume 1 -5%
         bindsym Shift+s                         exec --no-startup-id pactl set-sink-volume 1 +5%
 
-        bindsym b                               exec --no-startup-id xbacklight -dec 10
-        bindsym Shift+b                         exec --no-startup-id xbacklight -inc 10
+        bindsym b                               exec --no-startup-id brightnessctl set 10%-
+        bindsym Shift+b                         exec --no-startup-id brightnessctl set 10%+
 
         bindsym t                               exec --no-startup-id xinput --set-prop "$(xinput list --name-only | grep -i Synaptics)" "Device Enabled" 0
         bindsym Shift+t                         exec --no-startup-id xinput --set-prop "$(xinput list --name-only | grep -i Synaptics)" "Device Enabled" 1
+
+        bindsym F10                             exec bluetoothctl power on
 
         bindsym r                               exec --no-startup-id xexit reboot, mode "default"
         
@@ -328,8 +332,6 @@ bar {
                 -p datetz.format="%a, %d/%m/%Y %H:%M:%S" datetz.timezone="America/Sao_Paulo" datetz.interval=1s \
                 -t solarized-powerline
 }
-
-#-m cpu load memory amixer brightness bluetooth layout battery datetz \
 
 # BOTTOM
 bar {
