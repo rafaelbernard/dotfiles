@@ -266,8 +266,8 @@ mode "$especial_mode" {
         bindsym s                               exec --no-startup-id pactl set-sink-volume 1 -5%
         bindsym Shift+s                         exec --no-startup-id pactl set-sink-volume 1 +5%
 
-        bindsym b                               exec --no-startup-id brightnessctl set 10%-
-        bindsym Shift+b                         exec --no-startup-id brightnessctl set 10%+
+        bindsym b                               exec --no-startup-id brightnessctl set 5%-
+        bindsym Shift+b                         exec --no-startup-id brightnessctl set 5%+
 
         bindsym t                               exec --no-startup-id xinput --set-prop "$(xinput list --name-only | grep -i Synaptics)" "Device Enabled" 0
         bindsym Shift+t                         exec --no-startup-id xinput --set-prop "$(xinput list --name-only | grep -i Synaptics)" "Device Enabled" 1
