@@ -1,5 +1,6 @@
 [*]
+indent_size=4
+
+[.sh]
 indent_size=8
 
-[.gitconfig]
-indent_size=4
