@@ -50,6 +50,7 @@ Plug 'tpope/vim-projectionist'        "|
 "Plug 'roxma/nvim-completion-manager'  "|
 Plug 'noahfrederick/vim-composer'     "|
 Plug 'noahfrederick/vim-laravel'
+Plug 'neoclide/coc.nvim'
 call plug#end()
 
 " # Configurations {{{
