@@ -18,11 +18,9 @@ set -g message-style "fg=colour151"
 setw -g window-status-style "fg=colour247"
 #setw -g window-status-style "attr=none"
 setw -g window-status-style "bg=colour237"
-#setw -g window-status-bg colour237
-setw -g window-status-activity-attr default
-setw -g window-status-separator ""
+#setw -g window-status-separator ""
 #setw -g window-status-activity-fg colour109
-setw -g window-status-activity-fg yellow
+#setw -g window-status-activity-fg yellow
 
 tm_host="#[fg=bold]#h"
 
