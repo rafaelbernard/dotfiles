@@ -4,6 +4,7 @@
 
 # Files
 alias ealias='vim ~/.dotfiles/aliasesrc'
+alias ealiaspriv='vim ~/.dotfiles-priv/aliases.priv'
 alias ealacritty='vim ~/.dotfiles/.config/alacritty/alacritty.yml'
 alias ei3='vim ~/.dotfiles/.config/i3/config'
 alias ehosts='sudo vim /etc/hosts'
