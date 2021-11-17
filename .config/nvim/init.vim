@@ -127,3 +127,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 "To enable gruvbox scheme
 "colorscheme gruvbox
+
+" Thanks to https://stackoverflow.com/questions/9051837/how-to-map-c-to-toggle-comments-in-vim
+" C-_ works as Control+/
+nmap <C-_>   <Plug>NERDCommenterToggle
+vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
