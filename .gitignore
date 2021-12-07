@@ -2,3 +2,4 @@
 *.swp
 plugged
 .config/nvim/plugged/
+.idea
