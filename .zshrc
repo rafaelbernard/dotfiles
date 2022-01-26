@@ -21,7 +21,7 @@ HISTFILE=~/.cache/zsh/history
 
 # Plugins
 plugins=(
-        archlinux aws docker docker-compose git terraform z
+        archlinux aws docker docker-compose git terraform z npm
 )
 
 # Load zsh

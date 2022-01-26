@@ -119,7 +119,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " }}}
 
 "Autoload zshrc
-        autocmd BufWritePost +zshrc source ~/.zshrc &
+autocmd BufWritePost +zshrc source ~/.zshrc &
 
 
 "Update binds when sxhkdrc is updated
