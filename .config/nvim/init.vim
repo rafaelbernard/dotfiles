@@ -33,9 +33,9 @@ Plug 'scrooloose/nerdtree'                      "file management - Nerdtree -- T
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
 "It requires nvim 0.5 -- not working so far
-"Plug 'nvim-lua/popup.nvim'                      "Popup for telescope
-"Plug 'nvim-lua/plenary.nvim'                    "Plenary for telescope
-"Plug 'nvim-telescope/telescope.nvim'            "Telescope file explorer
+Plug 'nvim-lua/popup.nvim'                      "Popup for telescope
+Plug 'nvim-lua/plenary.nvim'                    "Plenary for telescope
+Plug 'nvim-telescope/telescope.nvim'            "Telescope file explorer
 
 "plugins - dev
 Plug 'honza/dockerfile.vim'

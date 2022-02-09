@@ -123,4 +123,10 @@ sso(){
   eval $(aws-export-credentials --env-export)
 }
 
-# vim: tabstop=8 softtabstop=8
+# phpbrew - https://github.com/phpbrew/phpbrew
+source /home/rafael/.phpbrew/bashrc
+# not setting prompt for now
+export PHPBREW_SET_PROMPT=0
+export PHPBREW_RC_ENABLE=1
+
+# vi: tabstop=8 softtabstop=8
