@@ -340,13 +340,15 @@ bar {
         position        bottom
         tray_output     none
         status_command  bumblebee-status \
-                -m nic disk:home timetz:tor timetz:twashdc timetz:tnz timetz:br \
+                -m nic disk:home timetz:tor timetz:twashdc timetz:tau timetz:tnz timetz:br \
                 -p home.path=/home \
                     twashdc.format="EST %H:%M" \
                     twashdc.timezone="America/New_York" \
+                    tau.format="AU %d/%m/%Y %H:%M" \
                     tnz.format="NZ %d/%m/%Y %H:%M" \
                     tor.format="OR %H:%M" \
                     br.format="BR %H:%M:%I" \
+                    tau.timezone="Australia/Sydney" \
                     tnz.timezone="Pacific/Auckland" \
                     tor.timezone="America/Los_Angeles" \
                     br.timezone="America/Sao_Paulo" \
