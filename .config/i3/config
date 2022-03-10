@@ -369,7 +369,8 @@ bar {
 ### ---------------- ### 
 
 exec rm -fr ~/temp/*
-exec --no-startup-id compton
+#exec --no-startup-id compton
+exec --no-startup-id picom
 exec --no-startup-id pcloud
 exec --no-startup-id ~/.dotfiles/scripts/background-changer
 exec --no-startup-id xautolock -time 15 -locker '~/.config/i3/scripts/lock-screen.sh'
