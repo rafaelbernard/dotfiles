@@ -20,7 +20,6 @@ alias cdot='cd ~/.dotfiles'
 alias ipp='curl ipinfo.io/ip'
 alias current_background_image='gsettings get org.gnome.desktop.background picture-uri | sed s/file://g'
 alias ll='ls -l'
-alias keys='ssh-add ~/.ssh/id_ed25519 && ssh-add ~/.ssh/id_rsa'
 alias kbus='setxkbmap -layout us -variant intl'
 alias kbus2='setxkbmap -layout us'
 alias kbbr='setxkbmap -layout pt_br'
@@ -44,10 +43,6 @@ command -v exa>/dev/null && alias ls='exa --color=auto'
 alias vi='vim'
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vi="nvim" vidiff="nvim -d" # Use neovim for vim if present.
-
-alias zipdev='zip -r dev ~/dev \
-        -x ".gradle/*" \
-        -x "*node_modules*" -x "*.git*" -x "*vendor/*"'
 
 # docker
 alias dcua='docker-compose up'
