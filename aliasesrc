@@ -29,15 +29,16 @@ alias yt='youtube-dl -ic' # Download youtube link
 alias yta='youtube-dl -xic' # Download youtube link audio only
 
 # commands
-alias zcat=/usr/bin/cat
+# thanks to https://dev.to/joaovitor/exa-instead-of-ls-1onl - adapted
+alias _cat=/usr/bin/cat
 command -v bat>/dev/null && alias cat='bat'
-
-# thanks to https://dev.to/joaovitor/exa-instead-of-ls-1onl
-# but adapted
 command -v exa>/dev/null && alias l='exa'
 command -v exa>/dev/null && alias la='exa -a'
 command -v exa>/dev/null && alias ll='exa -lah'
 command -v exa>/dev/null && alias ls='exa --color=auto'
+
+## ack
+alias ackcode='ack --ignore-dir .idea --ignore-dir build'
 
 ## vi
 alias vi='vim'
