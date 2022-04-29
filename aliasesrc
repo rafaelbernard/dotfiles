@@ -38,7 +38,7 @@ command -v exa>/dev/null && alias ll='exa -lah'
 command -v exa>/dev/null && alias ls='exa --color=auto'
 
 ## ack
-alias ackcode='ack --ignore-dir .idea --ignore-dir build --ignore-dir vendor'
+alias ackcode='ack --ignore-dir .idea --ignore-dir build --ignore-dir vendor --ignore-dir dist'
 
 ## vi
 alias vi='vim'
