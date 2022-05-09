@@ -27,6 +27,7 @@ alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
 alias szsh='source ~/.zshrc'
 alias yt='youtube-dl -ic' # Download youtube link
 alias yta='youtube-dl -xic' # Download youtube link audio only
+alias rename-images-to-galery='rename .jpeg .jpg *.jpeg ; exiv2 -F -r %Y-%m-%d_%H.%M.%S rename *.jpg'
 
 # commands
 # thanks to https://dev.to/joaovitor/exa-instead-of-ls-1onl - adapted
