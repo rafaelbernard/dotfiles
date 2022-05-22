@@ -27,7 +27,7 @@ set $ws2 "2:term"
 set $ws3 "3:com"
 set $ws4 "4:dev"
 set $ws5 "5:db"
-set $ws6 "6"
+set $ws6 "6:mix"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9:float"
@@ -316,11 +316,11 @@ for_window [title="Rename Parameters"]  floating enable
 assign [class="^Slack"]                         $ws3
 assign [class="^firefox$" instance="Navigator"] $ws1
 assign [title="^Firefox Developer"]             $ws9
-assign [class="intellij"]           $ws4
-assign [class="idea"]               $ws4
-assign [class="(?i)datagrip"]       $ws5
+assign [class="intellij"]                       $ws4
+assign [class="idea"]                           $ws4
+assign [class="(?i)datagrip"]                   $ws5
 assign [class="(?i)virtualbox"]                 $ws8
-assign [class="appgate" instance="VPN"]         $ws5
+assign [instance="appgate sdp"]                 $ws6
 
 
 # ---------- BAR ----------#
