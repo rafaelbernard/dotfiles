@@ -23,6 +23,7 @@ alias ll='ls -l'
 alias kbus='setxkbmap -layout us -variant intl'
 alias kbus2='setxkbmap -layout us'
 alias kbbr='setxkbmap -layout pt_br'
+alias pair-unify='ltunify pair'
 alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
 alias szsh='source ~/.zshrc'
 alias yt='youtube-dl -ic' # Download youtube link
