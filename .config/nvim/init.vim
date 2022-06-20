@@ -13,7 +13,7 @@ set number                                      "number all lines
 set relativenumber                              " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
 set autoindent
 set smartindent
-set autowrite                                   "Write the contents of the file, if it has been modified, on each :next, :rewind, :last, :first, :previous, :stop, :suspend, :tag, :!, 	:make, CTRL-] and CTRL-^ command;
+set autowrite
 set autoread
 "set noshowmode                                 "If in Insert, Replace or Visual mode put a message on the last line.
 "set hidden
