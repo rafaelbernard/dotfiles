@@ -14,7 +14,7 @@ set relativenumber                              " each line in your file is numb
 set autoindent
 set smartindent
 set autowrite                                   "Write the contents of the file, if it has been modified, on each :next, :rewind, :last, :first, :previous, :stop, :suspend, :tag, :!, 	:make, CTRL-] and CTRL-^ command;
-set autoread                                    "When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again.
+set autoread
 "set noshowmode                                 "If in Insert, Replace or Visual mode put a message on the last line.
 "set hidden
 set softtabstop=4
