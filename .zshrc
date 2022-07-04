@@ -114,7 +114,6 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
-export AWS_CONFIGURE_SSO_DEFAULT_SSO_START_URL=https://hobsons-sso.awsapps.com/start
 export AWS_CONFIGURE_SSO_DEFAULT_SSO_REGION=us-east-1
 sso(){
   unset AWS_PROFILE
