@@ -9,7 +9,7 @@ let mapleader=','
 set expandtab 
 set tabstop=4
 set shiftwidth=4
-set number                                      "number all lines
+set number
 set relativenumber                              " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
 set autoindent
 set smartindent
@@ -115,6 +115,7 @@ Plug 'scrooloose/nerdtree'                      "file management - Nerdtree -- T
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'                       "git - For git file manipulation
 source ~/.config/nvim/plugins/telescope.vim
+source ~/.config/nvim/plugins/harpoon.vim
 
 "plugins - dev
 Plug 'honza/dockerfile.vim'
@@ -124,7 +125,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx' 
 Plug 'evidens/vim-twig'
 
-"Plug 'tpope/vim-dispatch'             "| Optional
 Plug 'tpope/vim-projectionist'        "|
 "Plug 'roxma/nvim-completion-manager'  "|
 Plug 'noahfrederick/vim-composer'
