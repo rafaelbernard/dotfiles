@@ -111,6 +111,7 @@ elif [[ $platform == 'arch' ]]; then
   # install AUR packages
   yay -S --noconfirm unzip unrar hwinfo mhwd tree fontconfig-infinality checkupdates pacman-contrib thermald geekbench
   yay -S --noconfirm \
+      dunst \
       fastfetch \
       google-chrome slack-desktop htop glxinfo traceroute wavebox-bin rr-bin gometalinter python
 
