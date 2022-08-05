@@ -21,7 +21,11 @@ HISTFILE=~/.cache/zsh/history
 
 # Plugins
 plugins=(
-        archlinux aws docker docker-compose git terraform z npm
+        aws 
+        docker 
+        docker-compose git terraform
+        npm 
+        z
 )
 
 # Load zsh
@@ -35,6 +39,8 @@ _comp_options+=(globdots)       # Enable autocompleting hidden files
 # Edit line in vim (ctrl+e)
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+
+# bindkey -v
 
 # fzf - https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
@@ -76,19 +82,6 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.dotfiles/aliasesrc
 
 export DOCKER_BUILDKIT=1
-
-# pyenv
-#if command -v pyenv 1>/dev/null 2>&1; then
-#        export PYENV_ROOT="$HOME/.pyenv"
-#        export PATH="$PYENV_ROOT/bin:$PATH"
-#        export PATH="$PYENV_ROOT/shims:$PATH"
-#        export PATH="$PYENV_ROOT/completions/pyenv.bash:$PATH"
-#        eval "$(pyenv init -)"
-#fi
-
-#if which pyenv-virtualenv-init > /dev/null; then
-#    eval "$(pyenv virtualenv-init -)"
-#fi
 
 # loading private setting
 [ -f ~/.dotfiles-priv/aliases.priv ]
