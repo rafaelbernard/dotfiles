@@ -125,7 +125,7 @@ fi
 git config --global user.email	"rafael.araujo@initd.info"
 git config --global user.name 	"Rafael Bernard Araújo"
 
-back_dir="$HOME/.dotfiles-backup"
+backup_dir="$HOME/.dotfiles-backup"
 
 if [[ -f $backup_dir ]]; then
     echo "{$backup_dir} exists";
