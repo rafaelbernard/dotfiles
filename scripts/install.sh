@@ -77,7 +77,6 @@ elif [[ $platform == 'arch' ]]; then
     imagemagick \
     dolphin \
     chromium \
-    firefox \
     ranger \
     scrot \
     ntp \
@@ -86,8 +85,6 @@ elif [[ $platform == 'arch' ]]; then
     pass \
     gnupg \
     w3m \
-    notmuch \
-    abook \
     cronie \
     cmake \
     clang \
@@ -109,11 +106,15 @@ elif [[ $platform == 'arch' ]]; then
     makepkg -si
   fi
   # install AUR packages
-  yay -S --noconfirm unzip unrar hwinfo mhwd tree fontconfig-infinality checkupdates pacman-contrib thermald geekbench
-  yay -S --noconfirm \
-      dunst \
-      fastfetch \
-      google-chrome slack-desktop htop glxinfo traceroute wavebox-bin rr-bin gometalinter python
+    yay -S --noconfirm unzip unrar hwinfo mhwd tree fontconfig-infinality checkupdates pacman-contrib thermald geekbench
+    yay -S --noconfirm \
+        abook \
+        dunst \
+        fastfetch \
+        firefox \
+        google-chrome \ 
+        slack-desktop \
+        htop glxinfo traceroute wavebox-bin rr-bin gometalinter python
 
   # enable services
   sudo systemctl enable thermald.service
