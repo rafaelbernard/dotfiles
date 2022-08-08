@@ -98,23 +98,20 @@ elif [[ $platform == 'arch' ]]; then
   gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
   sudo pacman -S --noconfirm $PACKAGES_TO_INSTALL
   ln -sf /usr/bin/chromium /usr/local/bin/google-chrome
-  if [[ ! -e ~/github/arch/yay ]]; then
-    mkdir -p ~/github/arch
-    cd ~/github/arch
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
-  fi
   # install AUR packages
     yay -S --noconfirm unzip unrar hwinfo mhwd tree fontconfig-infinality checkupdates pacman-contrib thermald geekbench
     yay -S --noconfirm \
         abook \
+        brightnessctl \
+        bumblebee-status \
         dunst \
         fastfetch \
         firefox \
         google-chrome \ 
+        neovim \
         slack-desktop \
-        htop glxinfo traceroute wavebox-bin rr-bin gometalinter python
+        htop \
+        glxinfo traceroute wavebox-bin rr-bin gometalinter python
 
   # enable services
   sudo systemctl enable thermald.service

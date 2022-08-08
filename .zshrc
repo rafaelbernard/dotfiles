@@ -84,8 +84,8 @@ source ~/.dotfiles/aliasesrc
 export DOCKER_BUILDKIT=1
 
 # loading private setting
-[ -f ~/.dotfiles-priv/aliases.priv ]
-source ~/.dotfiles-priv/aliases.priv
+#[ -f "~/.dotfiles-priv/aliases.priv" ] 
+#source ~/.dotfiles-priv/aliases.priv
 
 # ssh-agent for all sessions? (trying)
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
@@ -116,7 +116,7 @@ sso(){
 }
 
 # phpbrew - https://github.com/phpbrew/phpbrew
-source /home/rafael/.phpbrew/bashrc
+#source /home/rafael/.phpbrew/bashrc
 # not setting prompt for now
 export PHPBREW_SET_PROMPT=0
 export PHPBREW_RC_ENABLE=1

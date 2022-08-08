@@ -1,0 +1,391 @@
+# vim filetype=i3
+# i3 config file (v4)
+# Rafael Bernard Araujo
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+
+### --------------------- ###
+### -- SETS AND BASICS -- ###
+### --------------------- ###
+
+gaps inner 7
+gaps outer 7
+
+set $term_kitty     kitty
+set $term_alacritty alacritty
+
+set $mod            Mod4
+set $browser        firefox
+set $term_default   xterm
+set $term           alacritty
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1:www"
+set $ws2 "2:term"
+set $ws3 "3:com"
+set $ws4 "4:dev"
+set $ws5 "5:db"
+set $ws6 "6:mix"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9:float"
+set $ws10 "10"
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
+### ----- FONTS ----- ###
+
+
+font pango:DejaVu Sans Mono 8
+
+font pango:DejaVu Sans Mono 8, Terminus Semi-Condensed 9
+font pango:DejaVu Sans Mono 8, Ubuntu 9
+
+
+### ----- KEYBOARD BINDINGS ----- ###
+
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1 
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# workspaces bindings
+bindsym $mod+Home                       workspace $ws1
+bindsym $mod+End                        workspace $ws10
+bindsym $mod+Prior                      workspace prev
+bindsym $mod+Next                       workspace next
+bindsym $mod+Tab                        workspace back_and_forth
+
+bindsym $mod+Return                     exec $term
+bindsym $mod+Shift+Return               exec $term -e tmux
+bindsym $mod+t                          exec alacritty
+bindsym $mod+Shift+t                    exec alacritty -e tmux
+
+bindsym $mod+Shift+Backspace            exec sudo reboot
+
+# hide everything
+#bindsym $mod+Shift+Delete       workspace lmao ; exec $term -e htop ; exec $term -e ranger
+
+# reload the configuration file
+bindsym $mod+Shift+c                    reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r                    restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e                    exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# kill focused window
+bindsym $mod+Shift+q                    kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d                          exec dmenu_run
+
+bindsym $mod+z                          exec $term -e ranger
+
+# Take a screenshot upon pressing $mod+x (select an area)
+bindsym --release $mod+x                exec --no-startup-id import ~/temp/latest-screenshot.png
+bindsym Print                           exec --no-startup-id scrot
+bindsym Shift+Print                     exec --no-startup-id scrot -u
+
+bindsym $mod+Shift+minus                move scratchpad
+bindsym $mod+minus                      scratchpad show
+
+#bindsym $mod+u                          [instance="dropdown"] scratchpad show; move position center
+bindsym $mod+Shift+u                    resize shrink height 10 px or 10 ppt
+
+# change focus
+bindsym $mod+j                          focus left
+bindsym $mod+k                          focus down
+bindsym $mod+l                          focus up
+bindsym $mod+semicolon                  focus right
+bindsym $mod+Left                       focus left
+bindsym $mod+Down                       focus down
+bindsym $mod+Up                         focus up
+bindsym $mod+Right                      focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left                 move left
+bindsym $mod+Shift+Down                 move down
+bindsym $mod+Shift+Up                   move up
+bindsym $mod+Shift+Right                move right
+
+# split in horizontal orientation
+bindsym $mod+h                          split horizontal
+# split in vertical orientation
+bindsym $mod+v                          split vertical
+# enter fullscreen mode for the focused container
+bindsym $mod+f                          fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s                          layout stacking
+bindsym $mod+w                          layout tabbed
+bindsym $mod+e                          layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space                floating toggle
+
+# Sticky mode - it only take effect when window is floating
+bindsym $mod+Shift+s                    sticky toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space                      focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a                          focus parent
+
+# Transparency
+bindsym $mod+F7                         exec transset -a --dec .15
+bindsym $mod+F8                         exec transset -a --inc .15
+
+bindsym $mod+b                          exec ~/.config/i3/scripts/lock-screen.sh
+bindsym $mod+Shift+l                    exec xtrlock
+bindsym $mod+Shift+z                    exec xtrlock
+
+## Screen brightness controls
+## TODO: Solve brightnes control for notebook: https://github.com/Hummer12007/brightnessctl
+bindsym XF86MonBrightnessUp             exec xbacklight -inc 5
+bindsym XF86KbdBrightnessUp             exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown           exec xbacklight -dec 5
+bindsym XF86KbdBrightnessDown           exec xbacklight -dec 5
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 1 +5%    # increase sound volume
+bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 1 -5%    # decrease sound volume
+bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 1 toggle   # mute sound
+bindsym $mod+F3                         exec --no-startup-id pactl set-sink-volume 1 +5%    # increase sound volume
+bindsym $mod+F2                         exec --no-startup-id pactl set-sink-volume 1 -5%    # decrease sound volume
+bindsym $mod+F1                         exec --no-startup-id pactl set-sink-mute 1 toggle   # mute sound
+
+bindsym $mod+Shift+comma                 exec xrandr --output HDMI1 --auto --left-of VGA1
+bindsym $mod+Shift+period                exec xrandr --output VGA1 --auto --left-of HDMI1
+
+bindsym XF86MonBluetooth                exec bluetoothctl power on
+bindsym XF86KbdBluetooth                exec bluetoothctl power on
+
+
+## ----- Binding Modes ----- ##
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j               resize shrink width 10 px or 10 ppt
+        bindsym k               resize grow height 10 px or 10 ppt
+        bindsym l               resize shrink height 10 px or 10 ppt
+        bindsym semicolon       resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left    resize shrink width 10 px or 10 ppt
+        bindsym Down    resize grow height 10 px or 10 ppt
+        bindsym Up      resize shrink height 10 px or 10 ppt
+        bindsym Right   resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return  mode "default"
+        bindsym Escape  mode "default"
+        bindsym $mod+r  mode "default"
+}
+
+# wallpapers
+bindsym $mod+Shift+w        mode "$wallpaper_mode"
+
+mode "$wallpaper_mode" {
+        bindsym c                   exec $HOME/.dotfiles/scripts/background-changer
+        bindsym i                   exec feh "$(readlink ~/.cache/wallpaper)"
+        bindsym d                   exec "mv \\"$(readlink -f $HOME/.cache/wallpaper)\\" ~/.local/share/Trash", exec "$HOME/.dotfiles/scripts/background-changer"
+        bindsym Shift+d             exec rm $(readlink ~/.cache/wallpaper)
+
+        bindsym Escape          mode "default"
+        bindsym Return          mode "default"
+        bindsym $mod+Shift+w    mode "default"
+}
+
+# move mode
+
+bindsym $mod+Shift+m    mode "$move_mode"
+mode "$move_mode" {
+        # move focused window
+        bindsym $mod+Shift+j                    move left
+        bindsym $mod+Shift+k                    move down
+        bindsym $mod+Shift+l                    move up
+        bindsym $mod+Shift+semicolon            move right
+
+        bindsym Escape                          mode "default"
+        bindsym Enter                           mode "default"
+        bindsym $mod+Shift+m                    mode "default"
+}
+
+bindsym $mod+Shift+F12    mode "$especial_mode"
+mode "$especial_mode" {
+        bindsym 0                               exec --no-startup-id pactl set-sink-volume 0 -5%
+        bindsym Shift+0                         exec --no-startup-id pactl set-sink-volume 0 +5%
+        
+        bindsym 1                               exec --no-startup-id pactl set-sink-volume 1 -5%
+        bindsym Shift+1                         exec --no-startup-id pactl set-sink-volume 1 +5%
+
+        bindsym 2                               exec --no-startup-id pactl set-sink-volume 2 -5%
+        bindsym Shift+2                         exec --no-startup-id pactl set-sink-volume 2 +5%
+
+        bindsym 4                               exec --no-startup-id pactl set-sink-volume 4 -5%
+        bindsym Shift+4                         exec --no-startup-id pactl set-sink-volume 4 +5%
+        
+        bindsym 5                               exec --no-startup-id pactl set-sink-volume 5 -5%
+        bindsym Shift+5                         exec --no-startup-id pactl set-sink-volume 5 +5%
+
+        bindsym 6                               exec --no-startup-id pactl set-sink-volume 6 -5%
+        bindsym Shift+6                         exec --no-startup-id pactl set-sink-volume 6 +5%
+
+        bindsym s                               exec --no-startup-id pactl set-sink-volume 1 -5%
+        bindsym Shift+s                         exec --no-startup-id pactl set-sink-volume 1 +5%
+
+        bindsym b                               exec --no-startup-id brightnessctl set 5%-
+        bindsym Shift+b                         exec --no-startup-id brightnessctl set 5%+
+
+        bindsym t                               exec --no-startup-id xinput --set-prop "$(xinput list --name-only | grep -i Synaptics)" "Device Enabled" 0
+        bindsym Shift+t                         exec --no-startup-id xinput --set-prop "$(xinput list --name-only | grep -i Synaptics)" "Device Enabled" 1
+
+        bindsym F10                             exec bluetoothctl power on
+
+        bindsym r                               exec --no-startup-id xexit reboot, mode "default"
+        
+        bindsym Escape                          mode "default"
+        bindsym Return                          mode "default"
+        bindsym $mod+Shift+F12                  mode "default"
+}
+
+
+### ------------------ ###
+### ---- WINDOWS ----- ###
+### ------------------ ###
+
+# Disabling window titlebars - REQUIRED FOR GAPS
+for_window [class=".*"] border pixel 0
+
+# ---- dropdown/scrathpad ---- #
+# Will be bind to mod+u
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 625 400
+for_window [instance="dropdown"] move postion center
+for_window [instance="dropdown"] move scratchpad
+exec --no-startup-id $term -name dropdown -e tmux
+
+# ----- layouts -----#
+for_window [class="(?i)slack"]                          layout tabbed
+for_window [class="(?i)idea"]                           layout tabbed 
+for_window [class="(?i)datagrip"]                       layout tabbed 
+
+# ----- floated windows -----#
+for_window [window_role="pop-up"]       floating enable
+for_window [window_role="task_dialog"]  floating enable
+for_window [class="pcloud"]             floating enable
+#for_window [title="pcloud"]             floating enable
+for_window [title="Rename Parameters"]  floating enable
+
+
+# ------------ WINDOWS ---------------#
+
+# Assign Workspaces:
+assign [class="^Slack"]                         $ws3
+assign [class="^firefox$" instance="Navigator"] $ws1
+assign [title="^Firefox Developer"]             $ws9
+assign [class="intellij"]                       $ws4
+assign [class="idea"]                           $ws4
+assign [class="(?i)datagrip"]                   $ws5
+assign [class="(?i)virtualbox"]                 $ws8
+assign [instance="appgate sdp"]                 $ws6
+
+
+# ---------- BAR ----------#
+
+# TOP
+bar {
+        font            pango:mono 10
+        font            pango:Ubuntu Mono 12
+        tray_output     primary
+        position        top
+        status_command  bumblebee-status \
+                -m cpu load memory amixer brightness bluetooth2 caffeine layout battery datetz \
+                -p datetz.format="%a, %d/%m/%Y %H:%M:%S" datetz.timezone="America/Sao_Paulo" datetz.interval=1s \
+                -t solarized-powerline
+}
+
+# BOTTOM
+bar {
+        font            pango:mono 8
+        font            pango:Ubuntu Mono 10
+        position        bottom
+        tray_output     none
+        status_command  bumblebee-status \
+                -m nic disk:home timetz:tor timetz:twashdc timetz:tau timetz:tnz timetz:br \
+                -p home.path=/home \
+                    twashdc.format="EST %H:%M" \
+                    twashdc.timezone="America/New_York" \
+                    tau.format="AU %d/%m/%Y %H:%M" \
+                    tnz.format="NZ %d/%m/%Y %H:%M" \
+                    tor.format="OR %H:%M" \
+                    br.format="BR %H:%M:%I" \
+                    tau.timezone="Australia/Sydney" \
+                    tnz.timezone="Pacific/Auckland" \
+                    tor.timezone="America/Los_Angeles" \
+                    br.timezone="America/Sao_Paulo" \
+                -t dracula-powerline
+}
+
+### ---------------- ###
+### ---- CONFIG ---- ###
+### ---------------- ###
+
+# enable touchpad tapping
+#exec_always --no-startup-id xinput set-prop 12 324 1
+#exec_always --no-startup-id xinput set-prop 12 325 1
+
+
+### ---------------- ###
+### ----- APPS ----- ###
+### ---------------- ### 
+
+exec rm -fr ~/temp/*
+#exec --no-startup-id compton
+exec --no-startup-id picom
+exec --no-startup-id pcloud
+exec --no-startup-id ~/.dotfiles/scripts/background-changer
+exec --no-startup-id xautolock -time 15 -locker '~/.config/i3/scripts/lock-screen.sh'
+exec --no-startup-id nm-applet &
+exec --no-startup-id blueman-applet &
+
+# ssh agent / keyring
+exec_always ~/.config/i3/scripts/keyring.sh
+
+# TODO: Try to add custom config for desktop and notebook (different keyboards, screens, etc) 
+
+#exec --no-startup-id xrandr --output HDMI1 --auto --left-of VGA1
+#exec --no-startup-id xrandr --output VGA1 --auto --left-of HDMI1
