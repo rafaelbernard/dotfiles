@@ -9,8 +9,10 @@ let mapleader=','
 set expandtab 
 set tabstop=4
 set shiftwidth=4
+" number of the lines
 set number
-set relativenumber                              " each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
+" each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
+set relativenumber
 set autoindent
 set smartindent
 set autowrite
