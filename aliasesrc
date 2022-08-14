@@ -53,6 +53,7 @@ command -v nvim >/dev/null && alias vi="nvim" vidiff="nvim -d" # Use neovim for 
 alias dcua='docker-compose up'
 alias dcu='docker-compose up -d'
 alias dcs='docker-compose stop'
+alias dcst='docker stop $(docker ps -q)'
 
 # fzfz
 alias fcd='cd find . -type d | fzf'
