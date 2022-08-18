@@ -66,17 +66,18 @@ if [[ $platform == 'linux' ]]; then
 
 elif [[ $platform == 'arch' ]]; then
   PACKAGES_TO_INSTALL="\
-    git \
-    rsync \
-    man-pages \
+        cmake \  
+        git \
+        make \
+        man-pages \
+        pkg-config \
+        rsync \
     xscreensaver \
     tmux \
     neofetch \
-    speedtest-cli \
     source-highlight \
     imagemagick \
     dolphin \
-    chromium \
     ranger \
     scrot \
     ntp \
@@ -90,6 +91,7 @@ elif [[ $platform == 'arch' ]]; then
     clang \
     rust \
     hub \
+    yay \
     "
 
   sudo pacman -Syy
@@ -97,7 +99,6 @@ elif [[ $platform == 'arch' ]]; then
 #  sudo pacman-key --refresh-keys
   gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
   sudo pacman -S --noconfirm $PACKAGES_TO_INSTALL
-  ln -sf /usr/bin/chromium /usr/local/bin/google-chrome
   # install AUR packages
     yay -S --noconfirm unzip unrar hwinfo mhwd tree fontconfig-infinality checkupdates pacman-contrib thermald geekbench
     yay -S --noconfirm \
@@ -107,7 +108,6 @@ elif [[ $platform == 'arch' ]]; then
         dunst \
         fastfetch \
         firefox \
-        google-chrome \ 
         neovim \
         slack-desktop \
         htop \
