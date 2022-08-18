@@ -101,6 +101,10 @@ fi
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
+# flyctl
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
 export AWS_CONFIGURE_SSO_DEFAULT_SSO_REGION=us-east-1
 sso(){
   unset AWS_PROFILE
