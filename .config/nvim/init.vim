@@ -9,9 +9,7 @@ let mapleader=','
 set expandtab 
 set tabstop=4
 set shiftwidth=4
-" number of the lines
 set number
-" each line in your file is numbered relative to the cursor’s current position to show the distance to that line.
 set relativenumber
 set autoindent
 set smartindent
@@ -28,9 +26,9 @@ set listchars=tab:\ \ ,trail:•,extends:#,nbsp:.
 "set foldmethod=indent
 "set foldlevelstart=99
 "set incsearch
-set cursorline                                    "underline at cursor line
+set cursorline
 "set synmaxcol=2048
-set laststatus=2                                   "The value of this option influences when the last window will have a status line. 2 = always
+set laststatus=2
 set wildmode=longest,list,full                     "Enables autocomplete
 
 " # Integrations
