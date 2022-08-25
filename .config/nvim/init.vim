@@ -9,6 +9,7 @@ let mapleader=','
 set expandtab 
 set tabstop=4
 set shiftwidth=4
+set hidden
 set number
 set relativenumber
 set autoindent
@@ -18,7 +19,7 @@ set autoread
 "set noshowmode                                 "If in Insert, Replace or Visual mode put a message on the last line.
 "set hidden
 set softtabstop=4
-set shiftround                                  "Round indent to multiple of 'shiftwidth'.  Applies to > and < commands (...)
+set shiftround
 "set pumheight=15                                  "Determines the maximum number of items to show in the popup menu
 "set completeopt=menuone,longest                   "A comma separated list of options for Insert mode completion
 set list
