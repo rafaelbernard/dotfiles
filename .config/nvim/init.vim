@@ -30,7 +30,7 @@ set listchars=tab:\ \ ,trail:•,extends:#,nbsp:.
 set cursorline
 "set synmaxcol=2048
 set laststatus=2
-set wildmode=longest,list,full                     "Enables autocomplete
+set wildmode=longest:full,full
 
 " # Integrations
 set rtp+=~/.fzf                                   "enable fzf integration
