@@ -18,7 +18,7 @@
     undo = reset --soft HEAD^
 
 [pull]
-    rebase = false
+    rebase = true
 
 [filter "lfs"]
     process = git-lfs filter-process
