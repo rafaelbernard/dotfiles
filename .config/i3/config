@@ -313,14 +313,17 @@ for_window [title="Rename Parameters"]  floating enable
 # ------------ WINDOWS ---------------#
 
 # Assign Workspaces:
-assign [class="^Slack"]                         $ws3
 assign [class="^firefox$" instance="Navigator"] $ws1
-assign [title="^Firefox Developer"]             $ws9
+
+assign [class="^Slack"]                         $ws3
+
 assign [class="intellij"]                       $ws4
 assign [class="idea"]                           $ws4
 assign [class="(?i)datagrip"]                   $ws5
 assign [class="(?i)virtualbox"]                 $ws8
 assign [instance="appgate sdp"]                 $ws6
+assign [title="^Firefox Developer"]             $ws9
+assign [instance="thunderbird"]                 $ws9
 
 
 # ---------- BAR ----------#
