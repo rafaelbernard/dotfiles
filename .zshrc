@@ -6,6 +6,7 @@
 # keyboard
 # map caps to control
 setxkbmap -option caps:ctrl_modifier
+setxkbmap -layout us -variant intl 
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/rafael/.oh-my-zsh
@@ -114,9 +115,11 @@ sso(){
 }
 
 # phpbrew - https://github.com/phpbrew/phpbrew
-#source /home/rafael/.phpbrew/bashrc
-# not setting prompt for now
-export PHPBREW_SET_PROMPT=0
-export PHPBREW_RC_ENABLE=1
+if [ -f ~/.phpbrew/bashrc ]; then
+    # not setting prompt for now
+    export PHPBREW_SET_PROMPT=0
+    export PHPBREW_RC_ENABLE=1
+    source ~/.phpbrew/bashrc
+fi
 
 # vi: tabstop=8 softtabstop=8
