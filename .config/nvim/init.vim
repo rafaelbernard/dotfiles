@@ -18,14 +18,11 @@ set autowrite
 set autoread
 set softtabstop=4
 set shiftround
-"set pumheight=15                                  "Determines the maximum number of items to show in the popup menu
 "set completeopt=menuone,longest                   "A comma separated list of options for Insert mode completion
 set list
 set listchars=tab:\ \ ,trail:•,extends:#,nbsp:.
 "set foldlevelstart=99
-"set incsearch
 set cursorline
-"set synmaxcol=2048
 set laststatus=2
 set wildmode=longest:full,full
 set scrolloff=12
