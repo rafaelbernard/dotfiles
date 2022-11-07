@@ -34,6 +34,8 @@ set rtp+=~/.fzf                                   "enable fzf integration
 "Enabling clipboard pastes to be available to OS
 set clipboard+=unnamed
 
+set mouse=
+
 " }}}
 
 " Key mapping ##### {{{
