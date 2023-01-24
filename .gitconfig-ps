@@ -1,0 +1,6 @@
+# vi:filetype=.gitconfig
+
+[user]
+    email = rafael.araujo@powerschool.com
+    name = Rafael Bernard Araújo
+
