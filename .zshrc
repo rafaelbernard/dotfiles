@@ -50,7 +50,7 @@ bindkey '^e' edit-command-line
 export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
 
 # Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
+#kitty + complete setup zsh | source /dev/stdin
 
 # Local scripts and binaries
 if [ -d "$HOME/.local/bin" ] ; then
