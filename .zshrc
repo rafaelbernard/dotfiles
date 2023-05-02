@@ -5,8 +5,8 @@
 
 # keyboard
 # map caps to control
-setxkbmap -option caps:ctrl_modifier
-setxkbmap -layout us -variant intl 
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']" || echo 1 >> /dev/null
+setxkbmap -option caps:ctrl_modifier && setxkbmap -layout us -variant intl  || echo 1 >> /dev/null
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/rafael/.oh-my-zsh
