@@ -18,6 +18,7 @@ ZSH_THEME="jispwoso"
 # History and cache
 #HISTSIZE=1000000
 #SAVEHIST=1000000
+[ ! -f "~/.cache/zsh" ] && mkdir -p ~/.cache/zsh
 HISTFILE=~/.cache/zsh/history
 
 # Plugins
