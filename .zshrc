@@ -87,7 +87,7 @@ export NVM_DIR="$HOME/.nvm"
 export DOCKER_BUILDKIT=1
 
 # loading private setting
-[ -f "~/.dotfiles-priv/aliases.priv" ] && source ~/.dotfiles-priv/aliases.priv
+[ -e "~/.dotfiles-priv/aliases.priv" ] && source ~/.dotfiles-priv/aliases.priv
 
 # ssh-agent for all sessions? (trying)
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
