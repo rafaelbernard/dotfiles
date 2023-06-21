@@ -2,5 +2,11 @@
 
 DOTFILES=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
 
+echo "Creating link for zshrc"
 mv $HOME/.zshrc $HOME/.zshrc.bkp
 ln -s $DOTFILES/.zshrc $HOME/.zshrc
+
+FILE=".psqlrc"
+echo "Creating link for $FILE"
+mv $HOME/$FILE $HOME/$FILE.bkp
+ln -s $DOTFILES/$FILE $HOME/$FILE
