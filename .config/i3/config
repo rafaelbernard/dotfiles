@@ -334,7 +334,7 @@ bar {
         tray_output     primary
         position        top
         status_command  bumblebee-status \
-                -m cpu load memory amixer brightness bluetooth2 caffeine layout battery datetz \
+                -m cpu load memory amixer brightness bluetooth caffeine layout battery datetz \
                 -p datetz.format="%a, %d/%m/%Y %H:%M:%S" datetz.timezone="Pacific/Auckland" datetz.interval=1s \
                 -t solarized-powerline
 }
