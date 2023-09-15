@@ -42,16 +42,16 @@ export hostname=`hostname -s`
 backup_do ">>> INSTALLING PREREQUISITES FOR $platform"
 if [[ $platform == 'linux' ]]; then
 
-        # TODO: check if file exists
+    # TODO: check if file exists
 
-        #if [[ (find /etc/apt/sources.listd./kgilmer* -type f) != "" ]] ; then
-        #        echo "exists";
-        #fi
+    #if [[ (find /etc/apt/sources.listd./kgilmer* -type f) != "" ]] ; then
+    #        echo "exists";
+    #fi
 
-        sudo add-apt-repository -y ppa:kgilmer/speed-ricer
+    sudo add-apt-repository -y ppa:kgilmer/speed-ricer
 
   	PACKAGES_TO_INSTALL="\
-    		brightnessctl \
+    	brightnessctl \
                 compton \
     		suckless-tools \
                 i3-gaps \
@@ -71,14 +71,15 @@ if [[ $platform == 'linux' ]]; then
   sudo apt-get install -y $PACKAGES_TO_INSTALL
 
 elif [[ $platform == 'arch' ]]; then
-  PACKAGES_TO_INSTALL="\
-    git \
-    kitty \
-    brightnessctl \
-    compton \
-    i3-gaps \
-    i3blocks \
-    i3lock \
+    PACKAGES_TO_INSTALL="\
+        alacritty \
+        brightnessctl \
+        git \
+        i3-gaps \
+        i3blocks \
+        i3lock \
+        kitty \
+        picom \
     feh \
     python-tzlocal \
     mupdf \
@@ -115,7 +116,12 @@ elif [[ $platform == 'arch' ]]; then
     go \
     "
 
-  sudo pacman -Syy $PACKAGES_TO_INSTALL
+    # Install minimum to compile what we need
+    sudo pacman -Syy --noconfirm \
+        automake \
+        make
+
+  #sudo pacman -Syy $PACKAGES_TO_INSTALL
 
   # YAY
   if [[ ! -e ~/github/arch/yay ]]; then
@@ -126,6 +132,7 @@ elif [[ $platform == 'arch' ]]; then
     makepkg -si
   fi
   # install AUR packages
+  yay -S --noconfirm --cleanafter $PACKAGES_TO_INSTALL
   yay -S --noconfirm unzip unrar hwinfo mhwd tree fontconfig-infinality checkupdates pacman-contrib thermald geekbench
   yay -S --noconfirm slack-desktop htop glxinfo traceroute wavebox-bin rr-bin gometalinter python python2 python-pip
   yay -S --noconfirm bumblebee-status-git 

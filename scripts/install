@@ -72,7 +72,7 @@ elif [[ $platform == 'arch' ]]; then
         man-pages \
         pkg-config \
         rsync \
-    xscreensaver \
+        xscreensaver \
     tmux \
     neofetch \
     source-highlight \
@@ -98,9 +98,18 @@ elif [[ $platform == 'arch' ]]; then
   # uncomment this if keys are out of date - it is really slow
 #  sudo pacman-key --refresh-keys
   gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+  # Install base
+  sudo pacman -S --noconfirm yay
   sudo pacman -S --noconfirm $PACKAGES_TO_INSTALL
   # install AUR packages
-    yay -S --noconfirm unzip unrar hwinfo mhwd tree fontconfig-infinality checkupdates pacman-contrib thermald geekbench
+    yay -S --noconfirm \
+        aclocal \
+        geekbench \
+        make \
+        patch \
+        tlp \
+        tmux \
+        unzip unrar hwinfo mhwd tree fontconfig-infinality checkupdates pacman-contrib thermald
     yay -S --noconfirm \
         abook \
         brightnessctl \
