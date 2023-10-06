@@ -30,8 +30,10 @@
 [init]
     defaultBranch = master
 
-[includeIf "gitdir:~/dev/powerschool/"]
-	path = ~/.gitconfig-ps
-
-[includeIf "gitdir:~/dev/moduscreate/naviance/"]
-	path = ~/.gitconfig-ps
+# [includeIf "gitdir:~/dev/powerschool/"]
+# 	path = ~/.gitconfig-ps
+# 
+# [includeIf "gitdir:~/dev/moduscreate/naviance/"]
+# 	path = ~/.gitconfig-ps
+[protocol "file"]
+	allow = always
