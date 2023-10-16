@@ -1,7 +1,17 @@
 #!/bin/sh -e
 
+# check requirements
+error_log_file="$HOME/lock-screen.i3.error.log"
+
+if ! command -v xdpyinfo &> /dev/null ; then
+    msg="$(date) - xdpyinfo is not installed. Install xord-xdpyinfo package"
+    touch $error_log_file
+    echo $msg >> $error_log_file
+    echo $msg
+    exit
+fi
+
 wallpaper=$(readlink ~/.cache/wallpaper)
-#walpaper=''
 lockfile=$wallpaper
 
 if [ "$wallpaper" = "" ]; then
