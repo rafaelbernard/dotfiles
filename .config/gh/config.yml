@@ -1,5 +1,6 @@
 git_protocol: ssh
 editor: vim
 aliases:
-  co: pr checkout
+    co: pr checkout
 protocol: ssh
+version: "1"
