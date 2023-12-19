@@ -346,7 +346,7 @@ bar {
         position        bottom
         tray_output     none
         status_command  bumblebee-status \
-                -m nic disk:home timetz:tor timetz:tau timetz:tnz timetz:br \
+                -m nic disk:home timetz:utc timetz:tor timetz:tau timetz:tnz timetz:br \
                 -p home.path=/home \
                     tnz.format="NZ %H:%M" \
                     tau.format="AU %H:%M" \
@@ -356,6 +356,8 @@ bar {
                     tor.timezone="America/Los_Angeles" \
                     br.format="BR %d/%m %H:%M:%I" \
                     br.timezone="America/Sao_Paulo" \
+                    utc.format="UTC %d/%m %H:%M" \
+                    utc.timezone="UTC" \
                 -t dracula-powerline
 }
 
