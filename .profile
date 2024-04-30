@@ -29,3 +29,4 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 fi
 
+. "$HOME/.cargo/env"
