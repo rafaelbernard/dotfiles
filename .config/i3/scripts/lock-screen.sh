@@ -31,10 +31,9 @@ fi
 
 
 # lock screen displaying the image
-#i3lock -i /tmp/screen_shot.png
-#i3lock --color=000000 -i $lockfile
 # xss-lock so that the screen is locked *before* suspension
-xss-lock --transfer-sleep-lock -- i3lock --color=000000 -i $lockfile
+#xss-lock --transfer-sleep-lock -- i3lock --color=000000 -i $lockfile
 
+i3lock --color=000000 -i $lockfile
 # Turn the screen off after a delay
-#sleep 30; pgrep i3lock && xset dpms force off
+sleep 30; pgrep i3lock && xset dpms force off
