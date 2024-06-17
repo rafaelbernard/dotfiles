@@ -9,6 +9,7 @@ alias ealacritty='vim ~/.dotfiles/.config/alacritty/alacritty.yml'
 alias eawscf='vim ~/.aws/config'
 alias eawscr='vim ~/.aws/credentials'
 alias ei3='vim ~/.dotfiles/.config/i3/config'
+alias ek='vim ~/.dotfiles/.config/kitty/kitty.config'
 alias ehosts='sudo vim /etc/hosts'
 alias envim='vim ~/.dotfiles/.config/nvim/init.vim'
 alias evim='vim ~/.dotfiles/.vimrc'
@@ -36,12 +37,13 @@ alias rename-images-to-galery='rename .jpeg .jpg *.jpeg ; exiv2 -F -r %Y-%m-%d_%
 
 # commands
 # thanks to https://dev.to/joaovitor/exa-instead-of-ls-1onl - adapted
-alias _cat=/usr/bin/cat
-command -v bat>/dev/null && alias cat='bat'
-command -v exa>/dev/null && alias l='exa'
-command -v exa>/dev/null && alias la='exa -a'
-command -v exa>/dev/null && alias ll='exa -lah'
-command -v exa>/dev/null && alias ls='exa --color=auto'
+# alias _cat=/usr/bin/cat
+# alias _ls=/usr/bin/ls
+# command -v bat>/dev/null && alias cat='bat'
+# command -v exa>/dev/null && alias l='exa'
+# command -v exa>/dev/null && alias la='exa -a'
+# command -v exa>/dev/null && alias ll='exa -lah'
+# command -v exa>/dev/null && alias ls='exa --color=auto'
 
 ## ack
 alias ackcode='ack --ignore-dir .idea --ignore-dir build --ignore-dir vendor --ignore-dir dist'

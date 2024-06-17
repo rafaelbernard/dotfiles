@@ -19,6 +19,7 @@ set $mod            Mod4
 set $browser        firefox
 set $term_default   xterm
 set $term           alacritty
+#set $term           kitty
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -79,7 +80,7 @@ bindsym $mod+Prior                      workspace prev
 bindsym $mod+Next                       workspace next
 bindsym $mod+Tab                        workspace back_and_forth
 
-bindsym $mod+Return                     exec $term
+bindsym $mod+Return                     exec $term_kitty
 bindsym $mod+Shift+Return               exec $term -e tmux
 bindsym $mod+t                          exec alacritty
 bindsym $mod+Shift+t                    exec alacritty -e tmux
