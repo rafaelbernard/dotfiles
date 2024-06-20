@@ -122,4 +122,7 @@ if [ -f ~/.phpbrew/bashrc ]; then
     source ~/.phpbrew/bashrc
 fi
 
+# nix
+export NIX_REMOTE=daemon
+
 # vi: tabstop=8 softtabstop=8
