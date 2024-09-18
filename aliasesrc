@@ -28,7 +28,7 @@ alias kbus='setxkbmap -layout us -variant intl'
 alias kbus2='setxkbmap -layout us'
 alias kbbr='setxkbmap -layout pt_br'
 alias kbd-ligh-up="brightnessctl --device='tpacpi::kbd_backlight' set 1"
-alias kbd-ligh-up2="brightnessctl --device='tpacpi::kbd_backlight' set 1"
+alias kbd-ligh-up2="brightnessctl --device='tpacpi::kbd_backlight' set 2"
 alias pair-unify='ltunify pair'
 alias safe-upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
 alias szsh='source ~/.zshrc'
