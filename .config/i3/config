@@ -353,8 +353,8 @@ bar {
                     tau.format="AU %H:%M" \
                     tau.timezone="Australia/Sydney" \
                     tnz.timezone="Pacific/Auckland" \
-                    tor.format="OR %d/%m %H:%M" \
-                    tor.timezone="America/Los_Angeles" \
+                    tor.format="AW %d/%m %H:%M" \
+                    tor.timezone="Australia/Perth" \
                     br.format="BR %d/%m %H:%M:%I" \
                     br.timezone="America/Sao_Paulo" \
                     utc.format="UTC %d/%m %H:%M" \
