@@ -25,14 +25,14 @@ if [ "$wallpaper" = "" ]; then
 else
         screen_resolution=$(xdpyinfo | grep dimensions | awk '{print $2}')
         converted='/tmp/wallpaper.png'
-        convert $wallpaper -background black -gravity center -resize "$screen_resolution" $converted
+        magick "$wallpaper" -background black -gravity center -resize "$screen_resolution" $converted
         lockfile=$converted
 fi
 
 
 # lock screen displaying the image
 # xss-lock so that the screen is locked *before* suspension
-#xss-lock --transfer-sleep-lock -- i3lock --color=000000 -i $lockfile
+xss-lock --transfer-sleep-lock -- i3lock --color=000000 -i $lockfile
 
 i3lock --color=000000 -i $lockfile
 # Turn the screen off after a delay
