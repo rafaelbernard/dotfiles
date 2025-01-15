@@ -2,6 +2,7 @@
 
 # check requirements
 error_log_file="$HOME/lock-screen.i3.error.log"
+log_file="/tmp/lock-screen.log"
 
 if ! command -v xdpyinfo &> /dev/null ; then
     msg="$(date) - xdpyinfo is not installed. Install xord-xdpyinfo package"
@@ -16,24 +17,24 @@ lockfile=$wallpaper
 
 if [ "$wallpaper" = "" ]; then
         # take a screenshot
-        scrot -o /tmp/screen_shot.png
+        scrot -o /tmp/screen_shot.png >> $log_file
         
         # pixelit
-        mogrify -scale 10% -scale 1000% /tmp/screen_shot.png
+        mogrify -scale 10% -scale 1000% /tmp/screen_shot.png >> $log_file
 
         lockfile='/tmp/screen_shot.png'
 else
         screen_resolution=$(xdpyinfo | grep dimensions | awk '{print $2}')
         converted='/tmp/wallpaper.png'
-        magick "$wallpaper" -background black -gravity center -resize "$screen_resolution" $converted
+        magick "$wallpaper" -background black -gravity center -resize "$screen_resolution" $converted >> $log_file
         lockfile=$converted
 fi
 
 
 # lock screen displaying the image
 # xss-lock so that the screen is locked *before* suspension
-xss-lock --transfer-sleep-lock -- i3lock --color=000000 -i $lockfile
+xss-lock --transfer-sleep-lock -- i3lock --color=000000 -i $lockfile >> $log_file
 
-i3lock --color=000000 -i $lockfile
+i3lock --color=000000 -i $lockfile >> $log_file
 # Turn the screen off after a delay
 sleep 30; pgrep i3lock && xset dpms force off
