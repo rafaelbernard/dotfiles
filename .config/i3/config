@@ -160,7 +160,7 @@ bindsym $mod+a                          focus parent
 bindsym $mod+F7                         exec transset -a --dec .15
 bindsym $mod+F8                         exec transset -a --inc .15
 
-bindsym $mod+b                          exec ~/.config/i3/scripts/lock-screen.sh
+bindsym $mod+b                          exec i3lock -i /tmp/wallpaper.png
 bindsym $mod+Shift+l                    exec xtrlock
 bindsym $mod+Shift+z                    exec xtrlock
 
