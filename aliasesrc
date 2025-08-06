@@ -8,12 +8,15 @@ alias ealiaspriv='vim ~/.dotfiles-priv/aliases.priv'
 alias ealacritty='vim ~/.dotfiles/.config/alacritty/alacritty.yml'
 alias eawscf='vim ~/.aws/config'
 alias eawscr='vim ~/.aws/credentials'
+alias ehypr='vim ~/.config/hypr/hyprland.conf'
 alias ei3='vim ~/.dotfiles/.config/i3/config'
 alias ek='vim ~/.dotfiles/.config/kitty/kitty.config'
 alias ehosts='sudo vim /etc/hosts'
 alias envim='vim ~/.dotfiles/.config/nvim/init.vim'
 alias evim='vim ~/.dotfiles/.vimrc'
 alias ez='vim ~/.dotfiles/.zshrc'
+
+alias cdhypr='cd ~/.config/hypr/'
 
 # SO useful
 alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
