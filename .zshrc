@@ -5,8 +5,15 @@
 
 # keyboard
 # map caps to control
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']" || echo 1 >> /dev/null
-setxkbmap -option caps:ctrl_modifier && setxkbmap -layout us -variant intl  || echo 1 >> /dev/null
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+    # do nothing
+elif [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+    gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']" || echo 1 >> /dev/null
+    setxkbmap -option caps:ctrl_modifier && setxkbmap -layout us -variant intl  || echo 1 >> /dev/null
+else
+    echo "Unknown session type: $XDG_SESSION_TYPE"
+fi
+
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/rafael/.oh-my-zsh
@@ -16,8 +23,8 @@ export ZSH=/home/rafael/.oh-my-zsh
 ZSH_THEME="jispwoso"
 
 # History and cache
-#HISTSIZE=1000000
-#SAVEHIST=1000000
+HISTSIZE=100000000
+SAVEHIST=100000000
 [ ! -f "~/.cache/zsh" ] && mkdir -p ~/.cache/zsh
 HISTFILE=~/.cache/zsh/history
 
