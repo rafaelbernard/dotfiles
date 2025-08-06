@@ -1,6 +1,6 @@
 [user]
-	email = rafael.araujo@initd.info
-	name = Rafael Bernard Araújo
+	email = rafael@bernard-araujo.com
+	name = Rafael Araujo
 
 [alias]
     behind-ahead = "!git rev-list --left-right --count master...\"$(git rev-parse --abbrev-ref HEAD)\""
@@ -16,9 +16,13 @@
     stash-all = stash save --include-untracked
     prune = fetch --prune
     undo = reset --soft HEAD^
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
 
 [pull]
-    rebase = true
+	rebase = true
 
 [filter "lfs"]
     process = git-lfs filter-process
@@ -28,7 +32,7 @@
 [credential]
 	helper = store
 [init]
-    defaultBranch = master
+	defaultBranch = master
 
 # [includeIf "gitdir:~/dev/powerschool/"]
 # 	path = ~/.gitconfig-ps
