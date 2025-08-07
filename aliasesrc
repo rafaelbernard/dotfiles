@@ -16,8 +16,10 @@ alias envim='vim ~/.dotfiles/.config/nvim/init.vim'
 alias evim='vim ~/.dotfiles/.vimrc'
 alias ez='vim ~/.dotfiles/.zshrc'
 
+# hypr
 alias cdhypr='cd ~/.config/hypr/'
 alias cdhypr_defaults='cd ~/.local/share/omarchy/default/hypr'
+alias terminate_hypr='sudo systemctl stop omarchy-seamless-login && sleep 1 && gdmflexiserver'
 
 # SO useful
 alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
