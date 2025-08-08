@@ -132,4 +132,8 @@ fi
 # nix
 export NIX_REMOTE=daemon
 
+# omarchy
+export OMARCHY_PATH="$HOME/.local/share/omarchy"
+export PATH="$PATH:$OMARCHY_PATH/bin"
+
 # vi: tabstop=8 softtabstop=8
