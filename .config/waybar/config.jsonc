@@ -52,7 +52,7 @@
   "custom/update": {
     "format": "",
     "exec": "~/.local/share/omarchy/bin/omarchy-update-available",
-    "on-click": "alacritty --class Omarchy --title Omarchy -e omarchy-update",
+    "on-click": "alacritty --class Omarchy --title Omarchy -e ~/.local/share/omarchy/bin/omarchy-update",
     "interval": 3600
   },
   "cpu": {
@@ -93,8 +93,8 @@
       ]
     },
     "format-full": "󰂅",
-    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
-    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%\n{time}",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%\n{time}",
     "interval": 5,
     "states": {
       "warning": 20,
