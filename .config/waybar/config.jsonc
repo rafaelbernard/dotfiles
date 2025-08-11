@@ -22,7 +22,7 @@
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
-    "format": "{icon}",
+    "format": "{icon}:{name}",
     "format-icons": {
       "default": "",
       "1": "1",
@@ -40,8 +40,7 @@
       "1": [],
       "2": [],
       "3": [],
-      "4": [],
-      "5": []
+      "4": []
     }
   },
   "custom/omarchy": {
@@ -61,8 +60,8 @@
     "on-click": "alacritty -e btop"
   },
   "clock": {
-    "format": "{:%d-%m-%Y %A %H:%M}",
-    "format-alt": "{:%d %B W%V %Y}",
+    "format": "{:%d %A %H:%M}",
+    "format-alt": "{:%d-%m-%Y %A %H:%M}",
     "tooltip": false,
     "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
   },
