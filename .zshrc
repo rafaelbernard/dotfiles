@@ -68,8 +68,8 @@ fi
 [ -d "$HOME/bin" ] && PATH="${HOME}/bin:${PATH}"
 
 # my scripts to PATH
-[ -d "$HOME/.dotfiles/scripts" ]
-PATH="$PATH:$HOME/.dotfiles/scripts"
+[ -d "$HOME/.dotfiles/bin" ]
+PATH="$PATH:$HOME/.dotfiles/bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
