@@ -181,9 +181,15 @@
             "tooltip": false
         },
         "clock#au": {
-            "format": "| AU {:%d %H:%M}",
-            "format-alt": "| AU {:%d-%m-%Y %A %H:%M}",
-            "timezone": "Pacific/Sidney",
+            "format": "| ASyd {:%d %H:%M}",
+            "format-alt": "| ASyd {:%d-%m-%Y %A %H:%M}",
+            "timezone": "Australia/Sydney",
+            "tooltip": false
+        },
+        "clock#alb": {
+            "format": "| CA-A {:%d %H:%M}",
+            "format-alt": "| CA-A {:%d-%m-%Y %A %H:%M}",
+            "timezone": "MST",
             "tooltip": false
         }
     }
