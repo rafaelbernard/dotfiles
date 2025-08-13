@@ -171,6 +171,8 @@
         "layer": "top",
         "position": "bottom",
         "modules-right": [
+            "clock#alb",
+            "clock#por",
             "clock#au",
             "clock#br"
         ],
@@ -187,9 +189,15 @@
             "tooltip": false
         },
         "clock#alb": {
-            "format": "| CA-A {:%d %H:%M}",
-            "format-alt": "| CA-A {:%d-%m-%Y %A %H:%M}",
+            "format": "| CAlb {:%d %H:%M}",
+            "format-alt": "| CAlb {:%d-%m-%Y %A %H:%M}",
             "timezone": "MST",
+            "tooltip": false
+        },
+        "clock#por": {
+            "format": "| UPrt {:%d %H:%M}",
+            "format-alt": "| UPrt {:%d-%m-%Y %A %H:%M}",
+            "timezone": "PDT",
             "tooltip": false
         }
     }
