@@ -20,6 +20,10 @@ These are the software while using hyperland as a [Window](https://wiki.archlinu
 | Category             | App                                      | Misc                                                                                         |
 | -------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------- |
 | Window Manager       | [hypr.land](https://hypr.land/)          | [.config/hypr](https://github.com/rafaelbernard/dotfiles/tree/master/.config/hypr)           |
+| Network backend      | iwd                                      |                                                                                              |
+| Network Manager (1)  | NetworkManager                           | Toggling with Impala                                                                         |
+| Network Manager (2)  | Impala                                   | Requires a DHCP client                                                                       |
+| Network DHCP client  | systemd-resolv                           | Only with impala                                                                             |
 | Notification daemon  | [mako](https://github.com/emersion/mako) |                                                                                              |
 | Screen Locker        | hyprlock                                 |                                                                                              |
 | Status bar           | waybar                                   | [.config/waybar](https://github.com/rafaelbernard/dotfiles/tree/master/.config/waybar)       |
