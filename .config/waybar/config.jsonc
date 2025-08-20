@@ -197,7 +197,7 @@
         "clock#por": {
             "format": "| UPrt {:%d %H:%M}",
             "format-alt": "| UPrt {:%d-%m-%Y %A %H:%M}",
-            "timezone": "PDT",
+            "timezone": "America/Los_Angeles",
             "tooltip": false
         }
     }
