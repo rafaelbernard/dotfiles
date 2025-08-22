@@ -17,21 +17,23 @@ I have been switching between [i3wm](https://i3wm.org/) and [hyprland](https://h
 # hyprland - Window Manager
 These are the software while using hyperland as a [Window](https://wiki.archlinux.org/title/Hyprland) [Manager](https://wiki.archlinux.org/title/Window_manager)
 
-| Category             | App                                                                         | Misc                                                                                         |
-| -------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Window Manager       | [hypr.land](https://hypr.land/)                                             | [.config/hypr](https://github.com/rafaelbernard/dotfiles/tree/master/.config/hypr)           |
-| Audio                | pipewire<br>pipewire-alsa<br>pipewire-pulse<br>pipewire-jack<br>wireplumber | I had to unmask pipewire, due to legacy masking from my previous installations               |
-| Firewall             | ufw                                                                         |                                                                                              |
-| Network backend      | iwd                                                                         |                                                                                              |
-| Network Manager (1)  | NetworkManager                                                              | Toggling with Impala                                                                         |
-| Network Manager (2)  | Impala                                                                      | Requires a DHCP client                                                                       |
-| Network DHCP client  | systemd-resolv                                                              | Only with impala                                                                             |
-| Notification daemon  | [mako](https://github.com/emersion/mako)                                    |                                                                                              |
-| Screen Locker        | hyprlock                                                                    |                                                                                              |
-| Status bar           | waybar                                                                      | [.config/waybar](https://github.com/rafaelbernard/dotfiles/tree/master/.config/waybar)       |
-| Terminal emulator    | alacritty                                                                   | [.config/alacritty](https://github.com/rafaelbernard/dotfiles/tree/master/.config/alacritty) |
-| Terminal multiplexer | tmux                                                                        |                                                                                              |
-| Shell                | zsh<br>[oh-my-zsh](https://ohmyz.sh/)                                       |                                                                                              |
+| Category             | App                                                                         | Misc                                                                                          |     |
+| -------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --- |
+| Window Manager       | [hypr.land](https://hypr.land/)                                             | [.config/hypr](https://github.com/rafaelbernard/dotfiles/tree/master/.config/hypr)            |     |
+| Audio                | pipewire<br>pipewire-alsa<br>pipewire-pulse<br>pipewire-jack<br>wireplumber | I had to unmask pipewire, due to legacy masking from my previous installations                |     |
+| Firewall             | ufw                                                                         |                                                                                               |     |
+| Network backend      | iwd                                                                         |                                                                                               |     |
+| Network Manager (1)  | NetworkManager                                                              | Toggling with Impala                                                                          |     |
+| Network Manager (2)  | Impala                                                                      | Requires a DHCP client                                                                        |     |
+| Network DHCP client  | systemd-resolv                                                              | Only with impala                                                                              |     |
+| Notification daemon  | [mako](https://github.com/emersion/mako)                                    |                                                                                               |     |
+| Screen Locker        | hyprlock                                                                    |                                                                                               |     |
+| Status bar           | waybar                                                                      | [.config/waybar](https://github.com/rafaelbernard/dotfiles/tree/master/.config/waybar)        |     |
+| Terminal emulator    | alacritty                                                                   | [.config/alacritty](https://github.com/rafaelbernard/dotfiles/tree/master/.config/alacritty)  |     |
+| Terminal multiplexer | tmux                                                                        |                                                                                               |     |
+| Shell                | zsh<br>[oh-my-zsh](https://ohmyz.sh/)                                       | [.zshrc](https://github.com/rafaelbernard/dotfiles/blob/master/.zshrc)                        |     |
+| Battery              | tlp                                                                         | [/etc/conf.d/tpacpi](https://github.com/rafaelbernard/dotfiles/blob/master/etc/conf.d/tpacpi) |     |
+
 
 
 ## Software - i3wm
