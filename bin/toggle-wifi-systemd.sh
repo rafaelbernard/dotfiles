@@ -42,7 +42,10 @@ else
     [[ -n "$CURRENT_SSID" ]] && echo "$CURRENT_SSID" > "$IWD_LAST"
 
     # Stop systemd-networkd, start NM
-    sudo systemctl disable --now $NETD_SERVICE $RESOLVED_SERVICE
+    #sudo systemctl disable --now $NETD_SERVICE $RESOLVED_SERVICE
+    echo "NetworkManager is handing off DNS to systemd-resolved"
+    sudo systemctl enable --now $NETD_SERVICE $RESOLVED_SERVICE
+    sudo systemctl restart $NETD_SERVICE $RESOLVED_SERVICE
     sudo systemctl restart $IWD_SERVICE
     sudo systemctl start $NM_SERVICE
 

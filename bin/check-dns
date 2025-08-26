@@ -1,0 +1,56 @@
+#!/bin/bash
+# check-dns: Show current DNS configuration and controlling service
+
+echo "=== DNS Control Check ==="
+
+# 1. Who owns /etc/resolv.conf
+if [ -L /etc/resolv.conf ]; then
+    echo "/etc/resolv.conf -> $(readlink -f /etc/resolv.conf)"
+else
+    echo "/etc/resolv.conf is a plain file (not a symlink)"
+fi
+
+# 2. Show current /etc/resolv.conf
+echo
+echo "--- /etc/resolv.conf ---"
+cat /etc/resolv.conf
+echo "------------------------"
+
+# 3. systemd-resolved status (if running)
+if systemctl is-active --quiet systemd-resolved; then
+    echo
+    echo "systemd-resolved is active"
+    resolvectl status || systemd-resolve --status
+else
+    echo
+    echo "systemd-resolved is NOT running"
+fi
+
+# 4. NetworkManager check
+if systemctl is-active --quiet NetworkManager; then
+    echo
+    echo "NetworkManager is active"
+    nmcli device show | grep -A5 DNS
+else
+    echo
+    echo "NetworkManager is NOT running"
+fi
+
+# 5. systemd-networkd check
+if systemctl is-active --quiet systemd-networkd; then
+    echo
+    echo "systemd-networkd is active"
+    networkctl status | grep 'DNS'
+else
+    echo
+    echo "systemd-networkd is NOT running"
+fi
+
+# 6. Show active processes touching resolv.conf (just in case)
+echo
+echo "Processes accessing resolv.conf:"
+lsof /etc/resolv.conf 2>/dev/null | awk '{print $1,$2,$3,$9}' | tail -n +2
+
+echo
+echo "=== End of DNS check ==="
+
