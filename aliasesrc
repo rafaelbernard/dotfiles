@@ -22,6 +22,10 @@ alias ch='cdhypr'
 alias cdhypr_defaults='cd ~/.local/share/omarchy/default/hypr'
 alias terminate_hypr='sudo systemctl stop omarchy-seamless-login && sleep 1 && gdmflexiserver'
 
+# omarchy
+alias cdom='cd ~/.config/omarchy'
+alias cdlom='cd ~/.local/share/omarchy'
+
 # SO useful
 alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias duh='du -h --max-depth=1'
