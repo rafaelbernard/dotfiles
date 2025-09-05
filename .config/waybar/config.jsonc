@@ -173,6 +173,7 @@
         "position": "bottom",
         "height": 26,
         "modules-right": [
+            "clock#utc",
             "clock#alb",
             "clock#por",
             "clock#au",
@@ -200,6 +201,12 @@
             "format": "| UPrt {:%d %H:%M}",
             "format-alt": "| UPrt {:%d-%m-%Y %A %H:%M}",
             "timezone": "America/Los_Angeles",
+            "tooltip": false
+        },
+        "clock#utc": {
+            "format": "| UTC {:%d %H:%M}",
+            "format-alt": "| UTC {:%d-%m-%Y %A %H:%M}",
+            "timezone": "UTC",
             "tooltip": false
         }
     }
