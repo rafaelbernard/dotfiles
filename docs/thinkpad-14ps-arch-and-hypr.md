@@ -17,22 +17,23 @@ I have been switching between [i3wm](https://i3wm.org/) and [hyprland](https://h
 # hyprland - Window Manager
 These are the software while using hyperland as a [Window](https://wiki.archlinux.org/title/Hyprland) [Manager](https://wiki.archlinux.org/title/Window_manager)
 
-| Category             | App                                                                         | Misc                                                                                          |     |
-| -------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --- |
-| Window Manager       | [hypr.land](https://hypr.land/)                                             | [.config/hypr](https://github.com/rafaelbernard/dotfiles/tree/master/.config/hypr)            |     |
-| Audio                | pipewire<br>pipewire-alsa<br>pipewire-pulse<br>pipewire-jack<br>wireplumber | I had to unmask pipewire, due to legacy masking from my previous installations                |     |
-| Firewall             | ufw                                                                         |                                                                                               |     |
-| Network backend      | iwd                                                                         |                                                                                               |     |
-| Network Manager (1)  | NetworkManager                                                              | Toggling with Impala                                                                          |     |
-| Network Manager (2)  | Impala                                                                      | Requires a DHCP client                                                                        |     |
-| Network DHCP client  | systemd-resolv                                                              | Only with impala                                                                              |     |
-| Notification daemon  | [mako](https://github.com/emersion/mako)                                    |                                                                                               |     |
-| Screen Locker        | hyprlock                                                                    |                                                                                               |     |
-| Status bar           | waybar                                                                      | [.config/waybar](https://github.com/rafaelbernard/dotfiles/tree/master/.config/waybar)        |     |
-| Terminal emulator    | alacritty                                                                   | [.config/alacritty](https://github.com/rafaelbernard/dotfiles/tree/master/.config/alacritty)  |     |
-| Terminal multiplexer | tmux                                                                        |                                                                                               |     |
-| Shell                | zsh<br>[oh-my-zsh](https://ohmyz.sh/)                                       | [.zshrc](https://github.com/rafaelbernard/dotfiles/blob/master/.zshrc)                        |     |
-| Battery              | tlp                                                                         | [/etc/conf.d/tpacpi](https://github.com/rafaelbernard/dotfiles/blob/master/etc/conf.d/tpacpi) |     |
+| Category             | App                                                                         | Misc                                                                                          |     |     |
+| -------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --- | --- |
+| Window Manager       | [hypr.land](https://hypr.land/)                                             | [.config/hypr](https://github.com/rafaelbernard/dotfiles/tree/master/.config/hypr)            |     |     |
+| Audio                | pipewire<br>pipewire-alsa<br>pipewire-pulse<br>pipewire-jack<br>wireplumber | I had to unmask pipewire, due to legacy masking from my previous installations                |     |     |
+| Firewall             | ufw                                                                         |                                                                                               |     |     |
+| Network backend      | iwd                                                                         |                                                                                               |     |     |
+| Network Manager (1)  | NetworkManager                                                              | Toggling with Impala                                                                          |     |     |
+| Network Manager (2)  | Impala                                                                      | Requires a DHCP client                                                                        |     |     |
+| Network DHCP client  | systemd-resolv                                                              | Only with impala                                                                              |     |     |
+| Notification daemon  | [mako](https://github.com/emersion/mako)                                    |                                                                                               |     |     |
+| Screen Locker        | hyprlock                                                                    |                                                                                               |     |     |
+| Status bar           | waybar                                                                      | [.config/waybar](https://github.com/rafaelbernard/dotfiles/tree/master/.config/waybar)        |     |     |
+| Terminal emulator    | alacritty                                                                   | [.config/alacritty](https://github.com/rafaelbernard/dotfiles/tree/master/.config/alacritty)  |     |     |
+| Terminal multiplexer | tmux                                                                        |                                                                                               |     |     |
+| Shell                | zsh<br>[oh-my-zsh](https://ohmyz.sh/)                                       | [.zshrc](https://github.com/rafaelbernard/dotfiles/blob/master/.zshrc)                        |     |     |
+| Battery              | tlp                                                                         | [/etc/conf.d/tpacpi](https://github.com/rafaelbernard/dotfiles/blob/master/etc/conf.d/tpacpi) |     |     |
+| Clipboard            | [wl-clipboard](https://man.archlinux.org/man/wl-clipboard.1)                |                                                                                               |     |     |
 
 
 
@@ -43,8 +44,8 @@ These are the software while using hyperland as a [Window](https://wiki.archlinu
     - i3blocks
     - [bumbleblee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
 - locale (I use a US keyboard, but also want pt_BR locale)
-    - [Keyboard: `sudo localectl --no-convert set-x11-keymap us intl`](https://daniel.arneam.com/blog/linux/2018-11-20-How-to-set-us-keyboard-for-brazillian-portuguese-usage-in-arch-linux/)
-        - [Update 22/02/23]: `sudo localectl set-keymap --no-convert us && sudo localectl set-x11-keymap us us intl`
+    - [Keyboard: `sudo localectl --no-convert set-x11-keymap us intl`](https://daniel.arneam.com/blog/linux/2018-11-20-How-to-set-us-keyboard-for-brazillian-portuguese-usage-in-arch-linux/)  
+      - [Update 22/02/23]: `sudo localectl set-keymap --no-convert us && sudo localectl set-x11-keymap us us intl`
 - [tmux | Terminal Multiplexer](https://github.com/tmux/tmux/wiki)
 - [zsh](https://ohmyz.sh/)
 - [Dolphin](https://wiki.archlinux.org/title/Dolphin)
