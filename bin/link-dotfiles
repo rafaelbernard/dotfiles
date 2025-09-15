@@ -135,8 +135,10 @@ main() {
   done
 
   echo "Linking custom dotfiles outside .config"
-  # Example: link repo tmux/ to ~/tmux using the same function
   link_entry "$DOTFILES_DIR" "$HOME" "tmux"
+  link_entry "$DOTFILES_DIR" "$HOME" "tmux.conf"
+  link_entry "$DOTFILES_DIR" "$HOME" ".gitconfig"
+  link_entry "$DOTFILES_DIR" "$HOME" ".psqlrc"
 
   echo "All done."
 }
