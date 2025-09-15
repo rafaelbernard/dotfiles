@@ -84,6 +84,35 @@ See `docs/` directory for full environment setups, including:
 - `bin/platform.sh` - Platform detection utility
 - `bin/check-dns` - DNS checking utility
 - `bin/toggle-wifi-systemd.sh` - WiFi management script
+- `bin/link-dotfiles` - Safely link selected .config entries into ~/.config with backups, and a few custom links outside `.config`.
+
+### Linking dotfiles
+
+Use `bin/link-dotfiles` to create symlinks from this repo to your home directory.
+
+The script:
+- Explicitly manages a curated set of entries under `.config` (see the `entries` array inside the script).
+- Uses a single link_entry function that accepts a source directory, destination directory, and entry name, so it works for both `.config` items and custom locations.
+- Skips items that are already correctly linked.
+- Backs up existing files/dirs/symlinks by renaming them with a `.bkp.<timestamp>` suffix before linking.
+- Ensures destination parent directories exist.
+
+Usage:
+```bash
+# Preview actions without making changes
+DRY_RUN=1 bin/link-dotfiles
+
+# Perform the linking
+bin/link-dotfiles
+```
+
+Custom links example (already included by default):
+- Source in repo: tmux/
+- Destination on system: ~/tmux
+
+Notes:
+- You can extend the managed lists by editing the `entries` array inside `bin/link-dotfiles`, and add additional calls to link_entry for custom mappings (e.g., link_entry "$DOTFILES_DIR" "$HOME" "mydir").
+- The script is idempotent; running it multiple times is safe.
 
 ## Development Preferences
 

@@ -1,3 +1,4 @@
+# vi: tabstop=8 softtabstop=8
 # rafael bernard rodrigues araujo - zsh config file
 
 # enable for zsh profiling
@@ -136,4 +137,5 @@ export NIX_REMOTE=daemon
 export OMARCHY_PATH="$HOME/.local/share/omarchy"
 export PATH="$PATH:$OMARCHY_PATH/bin"
 
-# vi: tabstop=8 softtabstop=8
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
