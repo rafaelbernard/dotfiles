@@ -136,7 +136,7 @@ main() {
 
   echo "Linking custom dotfiles outside .config"
   link_entry "$DOTFILES_DIR" "$HOME" "tmux"
-  link_entry "$DOTFILES_DIR" "$HOME" "tmux.conf"
+  link_entry "$DOTFILES_DIR" "$HOME" ".tmux.conf"
   link_entry "$DOTFILES_DIR" "$HOME" ".gitconfig"
   link_entry "$DOTFILES_DIR" "$HOME" ".psqlrc"
 
