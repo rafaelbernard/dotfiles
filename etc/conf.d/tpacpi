@@ -1,3 +1,5 @@
+# /etc/conf.d/tpacpi
+
 # battery is 1 for main, 2 for secondary, or 0 for either/both
 BATTERY="0"
 
