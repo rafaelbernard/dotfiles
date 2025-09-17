@@ -41,3 +41,5 @@
 # 	path = ~/.gitconfig-ps
 [protocol "file"]
 	allow = always
+[core]
+	excludesFile = ~/.gitignore_global

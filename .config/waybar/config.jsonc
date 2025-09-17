@@ -6,7 +6,8 @@
         "spacing": 0,
         "height": 26,
         "modules-left": [
-            "custom/omarchy"
+            "custom/omarchy",
+            "hyprland/workspaces"
         ],
         "modules-center": [
             "clock",
