@@ -11,8 +11,7 @@
         ],
         "modules-center": [
             "clock",
-            "custom/update",
-            "custom/screenrecording-indicator"
+            "custom/update"
         ],
         "modules-right": [
             "tray",
@@ -53,15 +52,14 @@
         "custom/update": {
             "format": "",
             "exec": "omarchy-update-available",
-            "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+            "on-click": "alacritty --class Omarchy --title Omarchy -e omarchy-update",
             "tooltip-format": "Omarchy update available",
-            "signal": 7,
             "interval": 3600
         },
         "cpu": {
             "interval": 5,
             "format": "󰍛",
-            "on-click": "$TERMINAL -e btop"
+            "on-click": "alacritty -e btop"
         },
         "clock": {
             "format": "{:%d %A %H:%M}",
@@ -80,13 +78,13 @@
             "format": "{icon}",
             "format-wifi": "{icon}",
             "format-ethernet": "󰀂",
-            "format-disconnected": "󰤮",
+            "format-disconnected": "󰖪",
             "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
             "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
             "tooltip-format-disconnected": "Disconnected",
             "interval": 3,
-            "spacing": 1,
-            "on-click": "omarchy-launch-wifi"
+            "nospacing": 1,
+            "on-click": "alacritty --class=Impala -e impala"
         },
         "battery": {
             "format": "{capacity}% {icon}",
@@ -120,10 +118,9 @@
                 ]
             },
             "format-full": "󰂅",
-            "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
-            "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+            "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%\n{time}",
+            "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%\n{time}",
             "interval": 5,
-            "on-click": "omarchy-menu power",
             "states": {
                 "warning": 20,
                 "critical": 10
@@ -138,11 +135,11 @@
         },
         "pulseaudio": {
             "format": "{icon}",
-            "on-click": "$TERMINAL --class=Wiremix -e wiremix",
+            "on-click": "alacritty --class=Wiremix -e wiremix",
             "on-click-right": "pamixer -t",
             "tooltip-format": "Playing at {volume}%",
             "scroll-step": 5,
-            "format-muted": "",
+            "format-muted": "󰝟",
             "format-icons": {
                 "default": [
                     "",
@@ -166,12 +163,6 @@
             "format": " ",
             "tooltip": false
         },
-        "custom/screenrecording-indicator": {
-            "on-click": "omarchy-cmd-screenrecord",
-            "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
-            "signal": 8,
-            "return-type": "json"
-        },
         "tray": {
             "icon-size": 12,
             "spacing": 12
@@ -181,7 +172,7 @@
         "layer": "top",
         "position": "bottom",
         "height": 26,
-        "modules-left": [
+        "modules-left" : [
             "hyprland/workspaces"
         ],
         "modules-right": [
