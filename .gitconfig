@@ -34,12 +34,9 @@
 [init]
 	defaultBranch = master
 
-# [includeIf "gitdir:~/dev/powerschool/"]
-# 	path = ~/.gitconfig-ps
-# 
-# [includeIf "gitdir:~/dev/moduscreate/naviance/"]
-# 	path = ~/.gitconfig-ps
 [protocol "file"]
 	allow = always
 [core]
 	excludesFile = ~/.gitignore_global
+[coderabbit]
+	machineId = cli/49dba5f822104e45a229969c57163c88
