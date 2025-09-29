@@ -23,9 +23,10 @@ These are the software while using hyperland as a [Window](https://wiki.archlinu
 | --------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Window Manager        | [hypr.land](https://hypr.land/)                                             | [.config/hypr](https://github.com/rafaelbernard/dotfiles/tree/master/.config/hypr)                                                                |
 | Audio                 | pipewire<br>pipewire-alsa<br>pipewire-pulse<br>pipewire-jack<br>wireplumber | I had to unmask pipewire, due to legacy masking from my previous installations                                                                    |
-| Battery               | tlp + tlp-rdw                                                                         | [/etc/conf.d/tpacpi](https://github.com/rafaelbernard/dotfiles/blob/master/etc/conf.d/tpacpi)                                                     |
+| Battery               | tlp + tlp-rdw                                                               | [/etc/conf.d/tpacpi](https://github.com/rafaelbernard/dotfiles/blob/master/etc/conf.d/tpacpi)                                                     |
 | Clipboard             | [wl-clipboard](https://man.archlinux.org/man/wl-clipboard.1)                |                                                                                                                                                   |
 | Firewall              | ufw                                                                         |                                                                                                                                                   |
+| Launcher              | [walker](https://github.com/abenz1267/walker)                               |                                                                                                                                                   |
 | *Network backend*     | *iwd*                                                                       | *Being replaced by NetworkManager*                                                                                                                |
 | Network Manager (1)   | NetworkManager                                                              | [etc/NetworkManager/conf.d](https://github.com/rafaelbernard/dotfiles/tree/master/etc/NetworkManager/conf.d)<br>DHCP configured to systemd-resolv |
 | *Network Manager (2)* | *Impala*                                                                    | *Being replaced by NetworkManager<br>*                                                                                                            |
@@ -40,4 +41,5 @@ These are the software while using hyperland as a [Window](https://wiki.archlinu
 
 **ArchWiki awesome links**
 - https://wiki.archlinux.org/title/Hyprland
+
 
