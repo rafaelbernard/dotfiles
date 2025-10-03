@@ -58,19 +58,13 @@ bindkey '^e' edit-command-line
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
 export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -40"'
 
-# Completion for kitty
-#kitty + complete setup zsh | source /dev/stdin
+# {{{{{ ===== My Stuff =====
 
 # Local scripts and binaries
-if [ -d "$HOME/.local/bin" ] ; then
-        PATH="$HOME/.local/bin:$PATH"
-fi
-
-[ -d "$HOME/bin" ] && PATH="${HOME}/bin:${PATH}"
-
-# my scripts to PATH
-[ -d "$HOME/.dotfiles/bin" ]
-PATH="$PATH:$HOME/.dotfiles/bin"
+[ -d "$HOME/.dotfiles/bin" ] && PATH="$PATH:$HOME/.dotfiles/bin"
+[ -d "$HOME/.local/bin" ] && PATH="$PATH:$HOME/.local/bin"
+[ -d "$HOME/bin" ] && PATH="$PATH:$HOME/bin:"
+[ -d "$HOME/dev/rafaelbernard/scripts/bin" ] && PATH="$PATH:$HOME/dev/rafaelbernard/scripts/bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -80,11 +74,6 @@ else
 fi
 # uncomment to force all vim
 #export EDITOR='vim'
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # -----------
 # aliases
@@ -97,6 +86,14 @@ export DOCKER_BUILDKIT=1
 
 # loading private setting
 [ -f ~/.dotfiles-priv/aliases.priv ] && source ~/.dotfiles-priv/aliases.priv
+
+# }}}}} ===== My Stuff END =====
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # ssh-agent for all sessions? (trying)
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
