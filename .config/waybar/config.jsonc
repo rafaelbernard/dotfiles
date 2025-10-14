@@ -20,6 +20,7 @@
             "network",
             "pulseaudio",
             "cpu",
+            "memory",
             "battery"
         ],
         "hyprland/workspaces": {
@@ -36,7 +37,7 @@
                 "7": "7",
                 "8": "8",
                 "9": "9",
-                "active": "󱓻"
+                "active": "_"
             },
             "persistent-workspaces": {
                 "1": [],
@@ -62,6 +63,9 @@
             "interval": 5,
             "format": "󰍛",
             "on-click": "$TERMINAL -e btop"
+        },
+        "memory": {
+            "format": "{}% "
         },
         "clock": {
             "format": "{:%d %A %H:%M}",
