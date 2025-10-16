@@ -13,8 +13,26 @@
 }
 
 #battery {
-    color: orange;
+    color: #74c7ec;
     padding: 3px;
+}
+
+#battery.charging {
+    color: orange;
+}
+
+#battery.critical:not(.charging) {
+    /* background-color: #f53c3c; */
+    color: red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#clock {
+    color: @foreground;
 }
 
 /**/
