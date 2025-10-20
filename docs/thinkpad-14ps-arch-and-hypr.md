@@ -33,14 +33,17 @@ These are the software while using hyperland as a [Window](https://wiki.archlinu
 | Network DHCP client   | systemd-resolv                                                              |                                                                                                                                                   |
 | Notification daemon   | [mako](https://github.com/emersion/mako)                                    |                                                                                                                                                   |
 | Screen Locker         | hyprlock                                                                    |                                                                                                                                                   |
+| Session Manager       | [uwsm](https://wiki.archlinux.org/title/Universal_Wayland_Session_Manager)  |                                                                                                                                                   |
+| Shell                 | zsh<br>[oh-my-zsh](https://ohmyz.sh/)                                       | [.zshrc](https://github.com/rafaelbernard/dotfiles/blob/master/.zshrc)                                                                            |
+| Snapshots             | timeshift<br><br>timeshift-autosnap                                         | [/etc/timeshift/timeshift.conf](./etc/timeshift/timeshift.conf)<br><br>[/etc/timeshift-autosnap.conf](./etc/timeshift-autosnap.conf)              |
 | Status bar            | waybar                                                                      | [.config/waybar](https://github.com/rafaelbernard/dotfiles/tree/master/.config/waybar)                                                            |
 | Terminal emulator     | alacritty                                                                   | [.config/alacritty](https://github.com/rafaelbernard/dotfiles/tree/master/.config/alacritty)                                                      |
 | Terminal multiplexer  | tmux                                                                        |                                                                                                                                                   |
-| Session Manager       | [uwsm](https://wiki.archlinux.org/title/Universal_Wayland_Session_Manager)  |                                                                                                                                                   |
-| Shell                 | zsh<br>[oh-my-zsh](https://ohmyz.sh/)                                       | [.zshrc](https://github.com/rafaelbernard/dotfiles/blob/master/.zshrc)                                                                            |
+
 
 **ArchWiki awesome links**
 - https://wiki.archlinux.org/title/Hyprland
+
 
 
 
