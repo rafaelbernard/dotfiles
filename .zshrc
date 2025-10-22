@@ -64,7 +64,7 @@ export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -
 [ -d "$HOME/.dotfiles/bin" ] && PATH="$PATH:$HOME/.dotfiles/bin"
 [ -d "$HOME/.local/bin" ] && PATH="$PATH:$HOME/.local/bin"
 [ -d "$HOME/bin" ] && PATH="$PATH:$HOME/bin:"
-[ -d "$HOME/dev/rafaelbernard/scripts/bin" ] && PATH="$PATH:$HOME/dev/rafaelbernard/scripts/bin"
+[ -d "$HOME/.bin" ] && PATH="$PATH:$HOME/.bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
