@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # vi: tabstop=8 softtabstop=8
 # rafael bernard rodrigues araujo - zsh config file
 
@@ -139,3 +141,6 @@ export PATH="$PATH:$OMARCHY_PATH/bin"
 
 # added by Snowflake SnowflakeCLI installer v1.0
 export PATH=/Applications/SnowflakeCLI.app/Contents/MacOS/:$PATH
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
