@@ -97,13 +97,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-# ssh-agent for all sessions? (trying)
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+# ssh-agent for all sessions
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    # Linux: use XDG_RUNTIME_DIR
+    if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+        ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+    fi
+    if [[ ! "$SSH_AUTH_SOCK" ]]; then
+        eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
+    fi
 fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
-fi
+# macOS: uses native keychain via ~/.ssh/config
 
 # go
 export GOPATH="$HOME/go"
