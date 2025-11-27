@@ -13,6 +13,7 @@ alias ei3='vim ~/.dotfiles/.config/i3/config'
 alias ek='vim ~/.dotfiles/.config/kitty/kitty.config'
 alias ehosts='sudo vim /etc/hosts'
 alias envim='vim ~/.dotfiles/.config/nvim/init.vim'
+alias et='vim ~/.tmux.conf'
 alias evim='vim ~/.dotfiles/.vimrc'
 alias ez='vim ~/.dotfiles/.zshrc'
 
