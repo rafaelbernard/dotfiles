@@ -37,8 +37,10 @@ plugins=(
         archlinux
         docker 
         docker-compose 
-        git terraform
+        git 
+        fzf
         npm 
+        terraform
         z
 )
 
