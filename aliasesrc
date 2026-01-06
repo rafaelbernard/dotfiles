@@ -89,3 +89,5 @@ alias icat="kitty +kitten icat"
 # php
 alias runphp='php -S localhost:8000'
 alias httpserver='runphp'
+
+alias autohandb='/home/rafael/.local/bin/autohand'
