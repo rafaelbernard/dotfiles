@@ -4,3 +4,4 @@ plugged
 .config/nvim/plugged/
 .idea
 .config/gh/hosts.yml
+.config/omarchy/current/
