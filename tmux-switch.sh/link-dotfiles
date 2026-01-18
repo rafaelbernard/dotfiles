@@ -1,0 +1,146 @@
+#!/usr/bin/env bash
+# Link selected dotfiles from this repo into ~/.config with safe backups.
+# Also supports a small explicit list of custom links outside ~/.config.
+# - If target is already a symlink to the repo, it is left untouched.
+# - If target exists and is not the correct symlink, it is backed up then replaced by a symlink.
+# - If target does not exist, a symlink is created.
+#
+# Usage:
+#   bin/link-dotfiles            # perform actions
+#   DRY_RUN=1 bin/link-dotfiles  # show what would be done
+#
+set -euo pipefail
+
+# Absolute path to this repo
+DOTFILES_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
+SRC_CONFIG_DIR="$DOTFILES_DIR/.config"
+DEST_CONFIG_DIR="$HOME/.config"
+
+# Ensure destination ~/.config exists
+mkdir -p "$DEST_CONFIG_DIR"
+
+# Timestamp for backups
+TS=$(date +%Y%m%d-%H%M%S)
+
+is_same_symlink() {
+  # Returns 0 if $1 is a symlink pointing to $2
+  local target="$1"
+  local expected="$2"
+  if [ -L "$target" ]; then
+    # readlink -f resolves to absolute path; compare
+    local points_to
+    points_to=$(readlink -f -- "$target" || true)
+    local expected_abs
+    expected_abs=$(readlink -f -- "$expected" || true)
+    [[ "$points_to" == "$expected_abs" ]]
+    return
+  fi
+  return 1
+}
+
+backup_if_exists() {
+  # If path exists (file/dir/symlink), move it to a timestamped backup.
+  local path="$1"
+  if [ -e "$path" ] || [ -L "$path" ]; then
+    local backup="${path}.bkp.${TS}"
+    if [ "${DRY_RUN:-}" = "1" ]; then
+      echo "[DRY] mv -T -- '$path' '$backup'"
+    else
+      mv -T -- "$path" "$backup"
+    fi
+    echo "Backed up existing: $path -> $backup"
+  fi
+}
+
+link_path() {
+  # Link any source path to any destination path with the same safe semantics.
+  # $1 = absolute or repo-relative source (if relative, it is resolved under $DOTFILES_DIR)
+  # $2 = absolute destination path
+  local src_in="$1"
+  local dest="$2"
+
+  # Resolve source: allow absolute, or repo-relative
+  local src
+  if [[ "$src_in" = /* ]]; then
+    src="$src_in"
+  else
+    src="$DOTFILES_DIR/$src_in"
+  fi
+
+  # Ensure parent directory for dest exists
+  local dest_parent
+  dest_parent=$(dirname -- "$dest")
+  if [ ! -d "$dest_parent" ]; then
+    if [ "${DRY_RUN:-}" = "1" ]; then
+      echo "[DRY] mkdir -p -- '$dest_parent'"
+    else
+      mkdir -p -- "$dest_parent"
+    fi
+  fi
+
+  if [ ! -e "$src" ] && [ ! -L "$src" ]; then
+    echo "[WARN] Source does not exist in repo: $src"
+    return 0
+  fi
+
+  if is_same_symlink "$dest" "$src"; then
+    echo "[OK] Already linked: $dest -> $src"
+    return 0
+  fi
+
+  if [ -e "$dest" ] || [ -L "$dest" ]; then
+    backup_if_exists "$dest"
+  fi
+
+  if [ "${DRY_RUN:-}" = "1" ]; then
+    echo "[DRY] ln -s -- '$src' '$dest'"
+  else
+    ln -s -- "$src" "$dest"
+  fi
+  echo "Linked: $dest -> $src"
+}
+
+link_entry() {
+  # Link an entry from a source directory into a destination directory.
+  # $1 = source directory (absolute)
+  # $2 = destination directory (absolute)
+  # $3 = entry name (file or directory) relative to the source/dest dir
+  local src_dir="$1"
+  local dest_dir="$2"
+  local entry="$3"
+  local src="$src_dir/$entry"
+  local dest="$dest_dir/$entry"
+  link_path "$src" "$dest"
+}
+
+main() {
+  echo "Linking dotfiles from: $SRC_CONFIG_DIR -> $DEST_CONFIG_DIR"
+
+  # Explicit list of known .config entries to manage. Add more as needed.
+  entries=(
+    "alacritty"
+    "hypr"
+    "waybar"
+    "i3"
+    "i3status"
+    "kitty"
+    "nvim"
+    "gh"
+    "walker"
+    "omarchy"
+  )
+
+  for e in "${entries[@]}"; do
+    link_entry "$SRC_CONFIG_DIR" "$DEST_CONFIG_DIR" "$e"
+  done
+
+  echo "Linking custom dotfiles outside .config"
+  link_entry "$DOTFILES_DIR" "$HOME" "tmux"
+  link_entry "$DOTFILES_DIR" "$HOME" ".tmux.conf"
+  link_entry "$DOTFILES_DIR" "$HOME" ".gitconfig"
+  link_entry "$DOTFILES_DIR" "$HOME" ".psqlrc"
+
+  echo "All done."
+}
+
+main "$@"
