@@ -117,11 +117,11 @@ fi
 
 # go
 export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
 
 # flyctl
 export FLYCTL_INSTALL="$HOME/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
+export PATH="$PATH:$FLYCTL_INSTALL/bin"
 
 export AWS_CONFIGURE_SSO_DEFAULT_SSO_REGION=us-east-1
 sso(){
@@ -139,9 +139,6 @@ if [ -f ~/.phpbrew/bashrc ]; then
     source ~/.phpbrew/bashrc
 fi
 
-# bun
-export PATH="/home/rafael/.cache/.bun/bin:$PATH"
-
 # nix
 export NIX_REMOTE=daemon
 
@@ -152,11 +149,12 @@ export PATH="$PATH:$OMARCHY_PATH/bin"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
-# added by Snowflake SnowflakeCLI installer v1.0
-export PATH=/Applications/SnowflakeCLI.app/Contents/MacOS/:$PATH
-
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh"
+
+# My personal bins -- better if at the end
+# bun
+export PATH="$PATH:$HOME/.cache/.bun/bin"
