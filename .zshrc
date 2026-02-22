@@ -158,3 +158,6 @@ export PATH="$PATH:$OMARCHY_PATH/bin"
 # My personal bins -- better if at the end
 # bun
 export PATH="$PATH:$HOME/.cache/.bun/bin"
+
+# OpenClaw Completion
+source "/home/rafael/.openclaw/completions/openclaw.zsh"
