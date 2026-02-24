@@ -1,9 +1,6 @@
 #!/bin/bash
 set -x
 
-echo "Exiting early for now"
-exit 0
-
 echo "Installing dotfiles"
 
 # =========================
@@ -38,7 +35,7 @@ export hostname=$(hostname -s)
 
 # }}}
 
-backup_do ">>> INSTALLING PREREQUISITES FOR $platform"
+#backup_do ">>> INSTALLING PREREQUISITES FOR $platform"
 if [[ $platform == 'linux' ]]; then
 	PACKAGES_TO_INSTALL="\
     git \
@@ -119,6 +116,15 @@ elif [[ $platform == 'arch' ]]; then
 		slack-desktop \
 		htop \
 		glxinfo traceroute wavebox-bin rr-bin gometalinter python
+elif [[ $platform == 'macos' ]]; then
+	PACKAGES_TO_INSTALL="\
+		tmux \
+		neovim \
+		rust \
+		zsh \
+		z \
+		"
+	brew install $PACKAGES_TO_INSTALL
 fi
 
 git config --global user.email "rafael@bernard-araujo.com"
@@ -140,14 +146,3 @@ if [ -e $ZSH_FILE ]; then
 	echo "exists"
 fi
 
-#echo "tmux"
-
-#if
-
-#echo "tmux"
-
-#cd $HOME
-#ln -sf ~/.dotfiles/tmux.conf .tmux.conf
-
-# add kitty
-# add ranger
