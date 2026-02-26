@@ -44,9 +44,9 @@ backup_if_exists() {
   if [ -e "$path" ] || [ -L "$path" ]; then
     local backup="${path}.bkp.${TS}"
     if [ "${DRY_RUN:-}" = "1" ]; then
-      echo "[DRY] mv -T -- '$path' '$backup'"
+      echo "[DRY] mv -- '$path' '$backup'"
     else
-      mv -T -- "$path" "$backup"
+      mv -- "$path" "$backup"
     fi
     echo "Backed up existing: $path -> $backup"
   fi
