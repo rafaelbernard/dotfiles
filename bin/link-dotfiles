@@ -139,6 +139,7 @@ main() {
   link_entry "$DOTFILES_DIR" "$HOME" ".tmux.conf"
   link_entry "$DOTFILES_DIR" "$HOME" ".gitconfig"
   link_entry "$DOTFILES_DIR" "$HOME" ".psqlrc"
+  link_entry "$DOTFILES_DIR" "$HOME" ".zshrc"
 
   echo "All done."
 }
