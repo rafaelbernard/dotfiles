@@ -146,7 +146,6 @@ export NIX_REMOTE=daemon
 export OMARCHY_PATH="$HOME/.local/share/omarchy"
 export PATH="$PATH:$OMARCHY_PATH/bin"
 
-
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 # Kiro CLI post block. Keep at the bottom of this file.
@@ -160,4 +159,4 @@ export PATH="$PATH:$OMARCHY_PATH/bin"
 export PATH="$PATH:$HOME/.cache/.bun/bin"
 
 # OpenClaw Completion
-source "/home/rafael/.openclaw/completions/openclaw.zsh"
+[[ -f "${HOME}/.openclaw/completions/openclaw.sh" ]] && source "${HOME}/.openclaw/completions/openclaw.zsh"
