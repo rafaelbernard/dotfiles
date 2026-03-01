@@ -69,10 +69,10 @@ export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -
 # {{{{{ ===== My Stuff =====
 
 # Local scripts and binaries
-[ -d "$HOME/.dotfiles/bin" ] && PATH="$PATH:$HOME/.dotfiles/bin"
 [ -d "$HOME/.local/bin" ] && PATH="$PATH:$HOME/.local/bin"
 [ -d "$HOME/bin" ] && PATH="$PATH:$HOME/bin:"
 [ -d "$HOME/.bin" ] && PATH="$PATH:$HOME/.bin"
+[ -d "$HOME/.dotfiles/bin" ] && PATH="$PATH:$HOME/.dotfiles/bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -90,18 +90,11 @@ fi
 #[[ -f "$HOME/.dotfiles/aliasesrc" ]] && 
 source ~/.dotfiles/aliasesrc || echo "alias file not present"
 
-export DOCKER_BUILDKIT=1
 
 # loading private setting
 [ -f ~/.dotfiles-priv/aliases.priv ] && source ~/.dotfiles-priv/aliases.priv
 
 # }}}}} ===== My Stuff END =====
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 # ssh-agent for all sessions
 if [[ "$OSTYPE" != "darwin"* ]]; then
@@ -115,9 +108,15 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
 fi
 # macOS: uses native keychain via ~/.ssh/config
 
-# go
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
+# nix
+export NIX_REMOTE=daemon
+
+# omarchy
+export OMARCHY_PATH="$HOME/.local/share/omarchy"
+export PATH="$PATH:$OMARCHY_PATH/bin"
+
+# docker
+export DOCKER_BUILDKIT=1
 
 # flyctl
 export FLYCTL_INSTALL="$HOME/.fly"
@@ -130,21 +129,6 @@ sso(){
   aws sts get-caller-identity &> /dev/null || aws sso login || (unset AWS_PROFILE && aws-configure-sso-profile --profile $1)
   eval $(aws-export-credentials --env-export)
 }
-
-# phpbrew - https://github.com/phpbrew/phpbrew
-if [ -f ~/.phpbrew/bashrc ]; then
-    # not setting prompt for now
-    export PHPBREW_SET_PROMPT=0
-    export PHPBREW_RC_ENABLE=1
-    source ~/.phpbrew/bashrc
-fi
-
-# nix
-export NIX_REMOTE=daemon
-
-# omarchy
-export OMARCHY_PATH="$HOME/.local/share/omarchy"
-export PATH="$PATH:$OMARCHY_PATH/bin"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
@@ -160,3 +144,28 @@ export PATH="$PATH:$HOME/.cache/.bun/bin"
 
 # OpenClaw Completion
 [[ -f "${HOME}/.openclaw/completions/openclaw.sh" ]] && source "${HOME}/.openclaw/completions/openclaw.zsh"
+
+### For programming languages
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# go
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+# python
+export UV_NATIVE_TLS=true
+
+# php
+
+# phpbrew - https://github.com/phpbrew/phpbrew
+if [ -f ~/.phpbrew/bashrc ]; then
+    # not setting prompt for now
+    export PHPBREW_SET_PROMPT=0
+    export PHPBREW_RC_ENABLE=1
+    source ~/.phpbrew/bashrc
+fi
+

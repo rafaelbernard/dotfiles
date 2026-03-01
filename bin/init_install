@@ -121,6 +121,7 @@ elif [[ $platform == 'macos' ]]; then
 		tmux \
 		neovim \
 		rust \
+        uv \
 		zsh \
 		z \
 		"
@@ -145,4 +146,3 @@ if [ -e $ZSH_FILE ]; then
 	# do nothing
 	echo "exists"
 fi
-
