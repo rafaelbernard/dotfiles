@@ -3,17 +3,7 @@
 
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-
-
-# Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.pre.zsh"
-<<<<<<< HEAD
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-=======
-
-# vi: tabstop=8 softtabstop=8
-# rafael bernard rodrigues araujo - zsh config file
->>>>>>> 574ed2c (lazyvim: update)
 
 # enable for zsh profiling
 #zmodload zsh/zprof
@@ -28,7 +18,6 @@ elif [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
 else
     echo "Unknown session type: $XDG_SESSION_TYPE"
 fi
-
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -95,9 +84,7 @@ fi
 # aliases
 # -----------
 
-#[[ -f "$HOME/.dotfiles/aliasesrc" ]] && 
 source ~/.dotfiles/aliasesrc || echo "alias file not present"
-
 
 # loading private setting
 [ -f ~/.dotfiles-priv/aliases.priv ] && source ~/.dotfiles-priv/aliases.priv
@@ -130,7 +117,11 @@ export DOCKER_BUILDKIT=1
 export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$PATH:$FLYCTL_INSTALL/bin"
 
+### aws
 export AWS_CONFIGURE_SSO_DEFAULT_SSO_REGION=us-east-1
+# only needed for mac -- tag
+[[ -f "${HOME}/corporate-certs.pem" ]] && export AWS_CA_BUNDLE=~/corporate-certs.pem
+
 sso(){
   unset AWS_PROFILE
   export AWS_PROFILE=$1
@@ -138,20 +129,16 @@ sso(){
   eval $(aws-export-credentials --env-export)
 }
 
+# kiro
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-
-
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh"
-
-# My personal bins -- better if at the end
-# bun
-export PATH="$PATH:$HOME/.cache/.bun/bin"
 
 # OpenClaw Completion
 [[ -f "${HOME}/.openclaw/completions/openclaw.sh" ]] && source "${HOME}/.openclaw/completions/openclaw.zsh"
 
 ### For programming languages
+
+# bun
+export PATH="$PATH:$HOME/.cache/.bun/bin"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -166,7 +153,6 @@ export PATH="$PATH:$GOPATH/bin"
 export UV_NATIVE_TLS=true
 
 # php
-
 # phpbrew - https://github.com/phpbrew/phpbrew
 if [ -f ~/.phpbrew/bashrc ]; then
     # not setting prompt for now
@@ -175,8 +161,6 @@ if [ -f ~/.phpbrew/bashrc ]; then
     source ~/.phpbrew/bashrc
 fi
 
-
-
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
-export AWS_CA_BUNDLE=~/corporate-certs.pem
+[[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh"
