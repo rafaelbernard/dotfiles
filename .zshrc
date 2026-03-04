@@ -1,11 +1,9 @@
+# vi: tabstop=8 softtabstop=8
+# rafael bernard rodrigues araujo - zsh config file
 
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.pre.zsh"
-
-# Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-# vi: tabstop=8 softtabstop=8
-# rafael bernard rodrigues araujo - zsh config file
 
 # enable for zsh profiling
 #zmodload zsh/zprof
