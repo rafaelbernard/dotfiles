@@ -16,7 +16,7 @@ elif [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
     gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']" || echo 1 >> /dev/null
     setxkbmap -option caps:ctrl_modifier && setxkbmap -layout us -variant intl  || echo 1 >> /dev/null
 else
-    echo "Unknown session type: $XDG_SESSION_TYPE"
+    echo "MacOs or Unknown session type: $XDG_SESSION_TYPE"
 fi
 
 # Path to your oh-my-zsh installation.
@@ -86,8 +86,8 @@ fi
 
 source ~/.dotfiles/aliasesrc || echo "alias file not present"
 
-# loading private setting
 [ -f ~/.dotfiles-priv/aliases.priv ] && source ~/.dotfiles-priv/aliases.priv
+[ -f ~/.dotfiles-priv-scripts/aliases.priv ] && source ~/.dotfiles-priv-scripts/aliases.priv
 
 # }}}}} ===== My Stuff END =====
 
