@@ -68,7 +68,6 @@ export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -
 # Local scripts and binaries
 [ -d "$HOME/.local/bin" ] && PATH="$PATH:$HOME/.local/bin"
 [ -d "$HOME/bin" ] && PATH="$PATH:$HOME/bin:"
-[ -d "$HOME/.bin" ] && PATH="$PATH:$HOME/.bin"
 [ -d "$HOME/.dotfiles/bin" ] && PATH="$PATH:$HOME/.dotfiles/bin"
 
 # Preferred editor for local and remote sessions
