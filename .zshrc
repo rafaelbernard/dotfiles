@@ -76,8 +76,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
         export EDITOR='nvim'
 fi
-# uncomment to force all vim
-#export EDITOR='vim'
 
 # -----------
 # aliases
@@ -87,6 +85,7 @@ source ~/.dotfiles/aliasesrc || echo "alias file not present"
 
 [ -f ~/.dotfiles-priv/aliases.priv ] && source ~/.dotfiles-priv/aliases.priv
 [ -f ~/.dotfiles-priv-scripts/aliases.priv ] && source ~/.dotfiles-priv-scripts/aliases.priv
+[ -f ~/.unmanaged.rc ] && source ~/.unmanaged.rc
 
 # }}}}} ===== My Stuff END =====
 

@@ -2,5 +2,6 @@ git_protocol: ssh
 editor: nvim
 aliases:
     co: pr checkout
+    prc: pr create --assignee @me
 protocol: ssh
 version: "1"
