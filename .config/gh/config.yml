@@ -3,5 +3,7 @@ editor: nvim
 aliases:
     co: pr checkout
     prc: pr create --assignee @me
+    pr-force-merge: pr merge --squash --delete-branch --admin
+    pr-merge: pr merge --squash --delete-branch
 protocol: ssh
 version: "1"
