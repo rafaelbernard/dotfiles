@@ -1,6 +1,6 @@
 [user]
 	email = rafael@bernard-araujo.com
-	name = Rafael Araujo
+	name = Rafael Bernard Araujo
 
 [alias]
     behind-ahead = "!git rev-list --left-right --count master...\"$(git rev-parse --abbrev-ref HEAD)\""
