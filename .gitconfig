@@ -38,5 +38,4 @@
 	allow = always
 [core]
 	excludesFile = ~/.gitignore_global
-[coderabbit]
-	machineId = cli/49dba5f822104e45a229969c57163c88
+	hooksPath = ~/.config/git/hooks
