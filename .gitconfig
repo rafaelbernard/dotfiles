@@ -39,3 +39,4 @@
 [core]
 	excludesFile = ~/.gitignore_global
 	hooksPath = ~/.config/git/hooks
+	autocrlf = input
