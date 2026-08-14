@@ -87,6 +87,6 @@ alias icat="kitty +kitten icat"
 alias runphp='php -S localhost:8000'
 alias httpserver='runphp'
 
-alias q='kiro-cli'
+alias q='kiro-cli --v3'
 alias ah='autohand'
 alias autohandb='/home/rafael/.local/bin/autohand'
