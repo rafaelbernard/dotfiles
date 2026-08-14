@@ -40,6 +40,29 @@
   font-size: 10px;
 }
 
+#custom-tlp {
+  min-width: 12px;
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+#custom-tlp.tlp-performance {
+  color: #f9e2af;
+}
+
+#custom-tlp.tlp-balanced {
+  color: #89b4fa;
+}
+
+#custom-tlp.tlp-power-saver {
+  color: #a6e3a1;
+}
+
+#custom-tlp.tlp-unavailable,
+#custom-tlp.tlp-unknown {
+  color: #f38ba8;
+}
+
 .hidden {
   opacity: 0;
 }

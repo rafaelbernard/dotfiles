@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+mode="$(tlp-stat -m 2>/dev/null || true)"
+profile="${mode%%/*}"
+
+case "$profile" in
+  performance)
+    next="balanced"
+    ;;
+  balanced)
+    next="power-saver"
+    ;;
+  *)
+    next="performance"
+    ;;
+esac
+
+if pkexec /usr/bin/tlp "$next"; then
+  notify-send "TLP profile" "$next"
+
+  for pid in $(pidof waybar 2>/dev/null || true); do
+    kill -RTMIN+10 "$pid"
+  done
+fi

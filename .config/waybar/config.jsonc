@@ -19,6 +19,7 @@
             "bluetooth",
             "network",
             "pulseaudio",
+            "custom/tlp",
             "cpu",
             "memory",
             "battery"
@@ -167,6 +168,14 @@
                     ""
                 ]
             }
+        },
+        "custom/tlp": {
+            "exec": "~/.local/bin/waybar-tlp-status",
+            "return-type": "json",
+            "interval": 10,
+            "signal": 10,
+            "on-click": "~/.local/bin/waybar-tlp-cycle",
+            "on-click-right": "notify-send -u low \"$(tlp-stat -s | grep -E 'TLP profile|Power source')\""
         },
         "group/tray-expander": {
             "orientation": "inherit",

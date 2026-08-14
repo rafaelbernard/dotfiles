@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+mode="$(tlp-stat -m 2>/dev/null || true)"
+
+if [[ -z "$mode" ]]; then
+  printf '{"text":"󰌾","tooltip":"TLP status unavailable","class":"tlp-unavailable"}\n'
+  exit 0
+fi
+
+profile="${mode%%/*}"
+
+case "$profile" in
+  performance)
+    icon=""
+    class="tlp-performance"
+    ;;
+  balanced)
+    icon=""
+    class="tlp-balanced"
+    ;;
+  power-saver)
+    icon=""
+    class="tlp-power-saver"
+    ;;
+  *)
+    icon="󰌾"
+    class="tlp-unknown"
+    ;;
+esac
+
+printf '{"text":"%s","tooltip":"TLP: %s\\nLeft-click: cycle profile\\nRight-click: status","class":"%s"}\n' "$icon" "$mode" "$class"
