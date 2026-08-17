@@ -29,50 +29,46 @@
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
 
 local custom_binds = {
-  "SUPER + ALT + RETURN",
-  "SUPER + RETURN",
-  "SUPER + SHIFT + RETURN",
-  "SUPER + SHIFT + F",
-  "SUPER + ALT + SHIFT + F",
-  "SUPER + SHIFT + B",
-  "SUPER + SHIFT + N",
-  "SUPER + SHIFT + T",
-  "SUPER + SHIFT + D",
-  "SUPER + SHIFT + O",
-  "SUPER + SHIFT + SLASH",
-  "SUPER + SHIFT + G",
-  "SUPER + SHIFT + M",
-  "SUPER + SHIFT + H",
-  "SUPER + SHIFT + X",
-  "SUPER + SHIFT + A",
-  "SUPER + ALT + G",
-  "SUPER + CTRL + K",
-  "SUPER + SLASH",
-  "SUPER + H",
-  "SUPER + J",
-  "SUPER + K",
-  "SUPER + L",
-  "SUPER + TAB",
-  "SUPER + SHIFT + TAB",
-  "SUPER + CTRL + ALT + T",
-  "SUPER + RIGHT",
-  "SUPER + LEFT",
-  "SUPER + ALT + RIGHT",
-  "SUPER + ALT + LEFT",
-  "SUPER + ALT + L",
-  "SUPER + ALT + H",
-  "SUPER + V",
+	"SUPER + ALT + RETURN",
+	"SUPER + RETURN",
+	"SUPER + SHIFT + RETURN",
+	"SUPER + SHIFT + F",
+	"SUPER + ALT + SHIFT + F",
+	"SUPER + SHIFT + B",
+	"SUPER + SHIFT + N",
+	"SUPER + SHIFT + T",
+	"SUPER + SHIFT + D",
+	"SUPER + SHIFT + O",
+	"SUPER + SHIFT + SLASH",
+	"SUPER + SHIFT + G",
+	"SUPER + SHIFT + M",
+	"SUPER + SHIFT + H",
+	"SUPER + SHIFT + X",
+	"SUPER + SHIFT + A",
+	"SUPER + ALT + G",
+	"SUPER + CTRL + K",
+	"SUPER + SLASH",
+	"SUPER + H",
+	"SUPER + J",
+	"SUPER + K",
+	"SUPER + L",
+	"SUPER + TAB",
+	"SUPER + SHIFT + TAB",
+	"SUPER + CTRL + ALT + T",
+	"SUPER + RIGHT",
+	"SUPER + LEFT",
+	"SUPER + ALT + RIGHT",
+	"SUPER + ALT + LEFT",
+	"SUPER + ALT + L",
+	"SUPER + ALT + H",
+	"SUPER + V",
 }
 
 for _, keys in ipairs(custom_binds) do
-  hl.unbind(keys)
+	hl.unbind(keys)
 end
 
-o.bind(
-  "SUPER + ALT + RETURN",
-  "Tmux",
-  'uwsm-app -- xdg-terminal-exec --dir="$(omarchy-cmd-terminal-cwd)" tmux new'
-)
+o.bind("SUPER + ALT + RETURN", "Tmux", 'uwsm-app -- xdg-terminal-exec --dir="$(omarchy-cmd-terminal-cwd)" tmux new')
 o.bind("SUPER + RETURN", "Terminal", { omarchy = "terminal" })
 o.bind("SUPER + SHIFT + RETURN", "Tmux", { omarchy = "terminal-tmux" })
 o.bind("SUPER + SHIFT + F", "File manager", { omarchy = "nautilus" })
@@ -87,8 +83,6 @@ o.bind("SUPER + SHIFT + G", "DataGrip", "uwsm-app -- datagrip")
 o.bind("SUPER + SHIFT + M", "Thunderbird", "uwsm-app -- thunderbird")
 o.bind("SUPER + SHIFT + H", "Postman", "uwsm-app -- postman")
 o.bind("SUPER + SHIFT + X", "Firefox Developer", "uwsm-app -- firefox-developer")
-o.bind("SUPER + SHIFT + A", "ChatGPT", "uwsm-app -- firefox --new-window https://chatgpt.com")
-o.bind("SUPER + SHIFT + A", "Grok", "uwsm-app -- firefox --new-window https://grok.com")
 o.bind("SUPER + ALT + G", "Google Messages", { webapp = "https://messages.google.com/web/conversations", focus = true })
 o.bind("SUPER + CTRL + K", "Keybindings", "omarchy-menu-keybindings")
 

@@ -119,6 +119,7 @@ main() {
   # Explicit list of known .config entries to manage. Add more as needed.
   entries=(
     "alacritty"
+    "foot"
     "hypr"
     "waybar"
     "i3"
