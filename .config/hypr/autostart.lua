@@ -1,0 +1,8 @@
+-- Extra autostart processes.
+-- o.launch_on_start("my-service")
+
+o.exec_on_start("rm -rf ~/temp/*")
+o.exec_on_start("setxkbmap -layout us -variant intl")
+o.exec_on_start('sh -c "sleep 2 && hyprctl dispatch workspace 2 && uwsm-app -- alacritty"')
+o.launch_on_start("slack")
+o.exec_on_start('sh -c "sleep 2 && hyprctl dispatch workspace 1 && uwsm-app -- firefox"')
