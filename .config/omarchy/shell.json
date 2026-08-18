@@ -34,7 +34,7 @@
           "type": "command",
           "exec": "~/.config/omarchy/bar/modules/worldclocks.sh",
           "interval": 60,
-          "fontSize": 7,
+          "fontSize": 8,
           "horizontalMargin": 5
         }
       ],
