@@ -104,9 +104,7 @@ fi
 # nix
 export NIX_REMOTE=daemon
 
-# omarchy
-export OMARCHY_PATH="$HOME/.local/share/omarchy"
-export PATH="$PATH:$OMARCHY_PATH/bin"
+# omarchy (OMARCHY_PATH is set by /usr/share/omarchy/default/bash/env-bootstrap via /etc/profile.d/omarchy.sh)
 
 # docker
 export DOCKER_BUILDKIT=1
