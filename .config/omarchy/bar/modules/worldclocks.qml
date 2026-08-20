@@ -19,7 +19,7 @@ Item {
     { label: "BR",   tz: "America/Sao_Paulo",  format: "dd HH:mm" },
     { label: "ASyd", tz: "Australia/Sydney",    format: "dd HH:mm" },
     { label: "CAlb", tz: "America/Edmonton",    format: "dd HH:mm" },
-    { label: "POR",  tz: "Europe/Lisbon",       format: "dd HH:mm" }
+    // { label: "POR",  tz: "Europe/Lisbon",       format: "dd HH:mm" }
   ]
 
   readonly property var zones: (settings && settings.zones) ? settings.zones : defaultZones
@@ -70,7 +70,7 @@ Item {
           id: label
           anchors.centerIn: parent
           font.family: bar ? bar.fontFamily : "monospace"
-          font.pixelSize: bar ? bar.fontPixelSize : 12
+          font.pixelSize: bar ? bar.fontPixelSize : 10
           color: bar ? bar.foreground : "white"
           text: "| " + modelData.label + " " + parent.parent.parent.formatInTz(modelData.tz, modelData.format)
         }
