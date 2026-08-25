@@ -43,6 +43,13 @@
           "id": "omarchy.tray"
         },
         {
+          "id": "slack-badge",
+          "type": "command",
+          "exec": "~/.config/omarchy/bar/modules/slack-badge.sh",
+          "interval": 30,
+          "onClick": "slack"
+        },
+        {
           "id": "omarchy.agents"
         },
         {
