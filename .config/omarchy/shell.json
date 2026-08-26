@@ -46,7 +46,7 @@
           "id": "slack-badge",
           "type": "command",
           "exec": "~/.config/omarchy/bar/modules/slack-badge.sh",
-          "interval": 30,
+          "interval": 10,
           "onClick": "slack"
         },
         {
