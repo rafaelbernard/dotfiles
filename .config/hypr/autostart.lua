@@ -9,5 +9,5 @@ o.exec_on_start("sleep 2 && hyprctl dispatch workspace 1 && uwsm-app -- firefox"
 
 -- Rotate background every 10 minutes
 hl.timer(function()
-  hl.exec_cmd("omarchy-theme-bg-next")
+  hl.exec_cmd("$HOME/.local/bin/rotate-background")
 end, { timeout = 600000, type = "repeat" })
