@@ -1,10 +1,6 @@
 # vi: tabstop=8 softtabstop=8
 # rafael bernard rodrigues araujo - zsh config file
 
-# Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-[[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.pre.zsh"
-
 # enable for zsh profiling
 #zmodload zsh/zprof
 
@@ -101,10 +97,11 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
 fi
 # macOS: uses native keychain via ~/.ssh/config
 
+# omarchy
+export OMARCHY_ALLOW_DIRECT_PACMAN=1
+
 # nix
 export NIX_REMOTE=daemon
-
-# omarchy (OMARCHY_PATH is set by /usr/share/omarchy/default/bash/env-bootstrap via /etc/profile.d/omarchy.sh)
 
 # docker
 export DOCKER_BUILDKIT=1
@@ -115,8 +112,6 @@ export PATH="$PATH:$FLYCTL_INSTALL/bin"
 
 ### aws
 export AWS_CONFIGURE_SSO_DEFAULT_SSO_REGION=us-east-1
-# only needed for mac -- tag
-[[ -f "${HOME}/corporate-certs.pem" ]] && export AWS_CA_BUNDLE=~/corporate-certs.pem
 
 sso(){
   unset AWS_PROFILE
@@ -145,23 +140,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# php
-# phpbrew - https://github.com/phpbrew/phpbrew
-if [ -f ~/.phpbrew/bashrc ]; then
-    # not setting prompt for now
-    export PHPBREW_SET_PROMPT=0
-    export PHPBREW_RC_ENABLE=1
-    source ~/.phpbrew/bashrc
-fi
-
 # python
 export UV_NATIVE_TLS=true
 
 # rust
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
-[[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh"
-
+# All my env needs
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
