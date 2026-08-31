@@ -114,7 +114,7 @@ export PATH="$PATH:$FLYCTL_INSTALL/bin"
 export AWS_CONFIGURE_SSO_DEFAULT_SSO_REGION=us-east-1
 
 sso(){
-  unset AWS_PROFILE
+  unset AWS_PROFILE AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
   export AWS_PROFILE=$1
   aws sts get-caller-identity &> /dev/null || aws sso login || (unset AWS_PROFILE && aws-configure-sso-profile --profile $1)
   eval $(aws configure export-credentials --format env)
