@@ -48,15 +48,15 @@ local custom_binds = {
 	"SUPER + ALT + G",
 	"SUPER + CTRL + K",
 	"SUPER + SLASH",
-	"SUPER + H",
-	"SUPER + J",
-	"SUPER + K",
-	"SUPER + L",
+	-- "SUPER + H",
+	-- "SUPER + J",
+	-- "SUPER + K",
+	-- "SUPER + L",
 	"SUPER + TAB",
 	"SUPER + SHIFT + TAB",
 	"SUPER + CTRL + ALT + T",
-	"SUPER + RIGHT",
-	"SUPER + LEFT",
+	-- "SUPER + RIGHT",
+	-- "SUPER + LEFT",
 	"SUPER + ALT + RIGHT",
 	"SUPER + ALT + LEFT",
 	"SUPER + ALT + L",
@@ -95,8 +95,8 @@ o.bind("SUPER + ALT + H", "Previous active workspace", hl.dsp.focus({ workspace 
 o.bind("SUPER + CTRL + ALT + T", "Toggle window group", hl.dsp.group.toggle())
 o.bind("SUPER + CTRL + ALT + RIGHT", "Next tab", hl.dsp.group.next())
 o.bind("SUPER + CTRL + ALT + LEFT", "Previous tab", hl.dsp.group.prev())
-o.bind("SUPER + RIGHT", "Next tab", hl.dsp.group.next())
-o.bind("SUPER + LEFT", "Previous tab", hl.dsp.group.prev())
+-- o.bind("SUPER + RIGHT", "Next tab", hl.dsp.group.next())
+-- o.bind("SUPER + LEFT", "Previous tab", hl.dsp.group.prev())
 o.bind("SUPER + CTRL + ALT + LEFT", "Move window to the group on left", hl.dsp.window.move({ into_group = "l" }))
 o.bind("SUPER + CTRL + ALT + RIGHT", "Move window to the group on right", hl.dsp.window.move({ into_group = "r" }))
 
