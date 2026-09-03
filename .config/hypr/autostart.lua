@@ -4,9 +4,17 @@
 o.launch_on_start("hypridle")
 o.exec_on_start("rm -rf $HOME/temp/*")
 -- o.exec_on_start("setxkbmap -layout us -variant intl")
-o.exec_on_start("sleep 2 && hyprctl dispatch workspace 2 && uwsm-app -- alacritty")
+hl.timer(function()
+  hl.dispatch(hl.dsp.focus({ workspace = "2" }))
+  hl.exec_cmd(o.launch("alacritty"))
+end, { timeout = 2000, type = "oneshot" })
+
 o.launch_on_start("slack")
-o.exec_on_start("sleep 2 && hyprctl dispatch workspace 1 && uwsm-app -- firefox")
+
+hl.timer(function()
+  hl.dispatch(hl.dsp.focus({ workspace = "1" }))
+  hl.exec_cmd(o.launch("firefox"))
+end, { timeout = 2000, type = "oneshot" })
 
 -- Rotate background every 10 minutes
 hl.timer(function()
