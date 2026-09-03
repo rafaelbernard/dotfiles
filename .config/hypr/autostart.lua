@@ -14,7 +14,7 @@ o.launch_on_start("slack")
 hl.timer(function()
   hl.dispatch(hl.dsp.focus({ workspace = "1" }))
   hl.exec_cmd(o.launch("firefox"))
-end, { timeout = 2000, type = "oneshot" })
+end, { timeout = 5000, type = "oneshot" })
 
 -- Rotate background every 10 minutes
 hl.timer(function()
