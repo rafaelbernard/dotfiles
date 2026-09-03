@@ -6,7 +6,7 @@ o.exec_on_start("rm -rf $HOME/temp/*")
 -- o.exec_on_start("setxkbmap -layout us -variant intl")
 hl.timer(function()
   hl.dispatch(hl.dsp.focus({ workspace = "2" }))
-  hl.exec_cmd(o.launch("alacritty"))
+  hl.exec_cmd(o.launch("alacritty -e tmux-notes"))
 end, { timeout = 2000, type = "oneshot" })
 
 o.launch_on_start("slack")
