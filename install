@@ -10,3 +10,8 @@ FILE=".psqlrc"
 echo "Creating link for $FILE"
 mv $HOME/$FILE $HOME/$FILE.bkp
 ln -s $DOTFILES/$FILE $HOME/$FILE
+
+DIR=".apm"
+echo "Creating link for $DIR"
+mkdir -p $HOME/$DIR
+ln -sf $DOTFILES/$DIR/config.json $HOME/$DIR/config.json
