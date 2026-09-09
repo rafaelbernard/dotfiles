@@ -4,8 +4,10 @@ hl.workspace_rule({ workspace = "1", default_name = "web" })
 hl.workspace_rule({ workspace = "2", default_name = "sh" })
 hl.workspace_rule({ workspace = "4", default_name = "code" })
 
+-- opacities
 o.window("^(firefox|firefox-dev)$", { opacity = "1 1" })
 o.window("^(jetbrains-idea|jetbrains-datagrip|obsidian|Slack|Postman)$", { opacity = "1 1" })
+o.window("^(tolaria)$", { opacity = "1 1" })
 
 o.window("^(tmux)$", { workspace = "2" })
 o.window("^(slack)$", { workspace = "3" })
