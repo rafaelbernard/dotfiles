@@ -40,3 +40,9 @@
 	excludesFile = ~/.gitignore_global
 	hooksPath = ~/.config/git/hooks
 	autocrlf = input
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/rafael/.local/share/mise/installs/gh/2.100.0/gh_2.100.0_linux_amd64/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/rafael/.local/share/mise/installs/gh/2.100.0/gh_2.100.0_linux_amd64/bin/gh auth git-credential
