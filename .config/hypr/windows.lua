@@ -6,7 +6,7 @@ hl.workspace_rule({ workspace = "4", default_name = "code" })
 
 -- opacities
 o.window("^(firefox|firefox-dev)$", { opacity = "1 1" })
-o.window("^(jetbrains-idea|jetbrains-datagrip|obsidian|Slack|Postman)$", { opacity = "1 1" })
+o.window("^(jetbrains-idea|jetbrains-datagrip|obsidian|slack|slack-desktop|Postman)$", { opacity = "1 1" })
 o.window("^(tolaria)$", { opacity = "1 1" })
 
 o.window("^(tmux)$", { workspace = "2" })
