@@ -56,6 +56,15 @@
           "id": "omarchy.audio"
         },
         {
+          "id": "resources",
+          "type": "command",
+          "exec": "~/.config/omarchy/bar/modules/resources.sh",
+          "interval": 10,
+          "fontSize": 9,
+          "horizontalMargin": 5,
+          "tooltip": "CPU / RAM / Swap usage"
+        },
+        {
           "id": "omarchy.monitor"
         },
         {
