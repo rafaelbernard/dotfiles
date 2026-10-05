@@ -1,0 +1,11 @@
+# vi:filetype=.gitconfig
+
+[user]
+    email = rafael-araujo@idexx.com
+    name = Rafael Bernard Araújo
+
+# Any github.com clone URL inside the work tree uses the idexx SSH host alias,
+# which picks ~/.ssh/id_ed25519_idexx.
+[url "git@github.com-idexx:"]
+    insteadOf = git@github.com:
+    insteadOf = https://github.com/

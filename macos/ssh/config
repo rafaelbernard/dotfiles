@@ -1,0 +1,15 @@
+# SSH client config — macOS
+# Symlinked to ~/.ssh/config
+
+Host github.com
+    IdentityFile ~/.ssh/id_ed25519_personal
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    UseKeychain yes
+
+Host github.com-idexx
+    HostName github.com
+    IdentityFile ~/.ssh/id_ed25519_idexx
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    UseKeychain yes
