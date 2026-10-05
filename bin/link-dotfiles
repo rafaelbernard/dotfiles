@@ -123,12 +123,10 @@ main() {
     "hypr"
     "waybar"
     "i3"
-    "i3status"
     "kitty"
     "nvim"
     "gh"
     "tmux"
-    "walker"
     "omarchy"
   )
 
@@ -137,6 +135,7 @@ main() {
   done
 
   echo "Linking custom dotfiles outside .config"
+  link_path "$DOTFILES_DIR/bin" "$HOME/bin"
   link_entry "$DOTFILES_DIR" "$HOME" "tmux"
   link_path "$DOTFILES_DIR/.config/tmux/tmux.conf" "$HOME/.tmux.conf"
   link_entry "$DOTFILES_DIR" "$HOME" ".gitconfig"
