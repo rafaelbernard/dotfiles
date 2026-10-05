@@ -22,7 +22,7 @@ elif [[ "$unamestr" == 'armv7' ]]; then
 elif [[ "$unamestr" == 'Darwin' ]]; then
 	platform='macos'
 	install() {
-		if [[ -e "/usr/local/bin/$1" ]]; then
+		if brew list $1 &>/dev/null; then
 			brew upgrade $1
 		else
 			brew install $1
@@ -118,14 +118,25 @@ elif [[ $platform == 'arch' ]]; then
 		glxinfo traceroute wavebox-bin rr-bin gometalinter python
 elif [[ $platform == 'macos' ]]; then
 	PACKAGES_TO_INSTALL="\
+		git \
+		zsh \
 		tmux \
 		neovim \
+		fzf \
+		gh \
+		uv \
 		rust \
-        uv \
-		zsh \
-		z \
+		docker \
+		apm \
+		rtk-ai/tap/icm \
+		"
+	CASKS_TO_INSTALL="\
+		alacritty \
+		font-fira-code-nerd-font \
+		font-jetbrains-mono-nerd-font \
 		"
 	brew install $PACKAGES_TO_INSTALL
+	brew install --cask $CASKS_TO_INSTALL
 fi
 
 git config --global user.email "rafael@bernard-araujo.com"
