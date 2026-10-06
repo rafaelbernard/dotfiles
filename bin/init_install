@@ -134,6 +134,8 @@ elif [[ $platform == 'macos' ]]; then
 		alacritty \
 		font-fira-code-nerd-font \
 		font-jetbrains-mono-nerd-font \
+		clocker \
+		thaw \
 		"
 	brew install $PACKAGES_TO_INSTALL
 	brew install --cask $CASKS_TO_INSTALL
