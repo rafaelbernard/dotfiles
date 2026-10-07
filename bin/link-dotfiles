@@ -138,6 +138,8 @@ main() {
   # ~/bin points at the sibling scripts repo root — its top-level
   # executable scripts land on PATH (see scripts/README.md)
   link_path "$DOTFILES_DIR/../scripts" "$HOME/bin"
+  # private aliases/config (sourced by .zshrc) live in the private scripts repo
+  link_path "$DOTFILES_DIR/../scripts/dotfiles-priv" "$HOME/.dotfiles-priv-scripts"
   link_entry "$DOTFILES_DIR" "$HOME" "tmux"
   link_path "$DOTFILES_DIR/.config/tmux/tmux.conf" "$HOME/.tmux.conf"
   link_entry "$DOTFILES_DIR" "$HOME" ".gitconfig"
