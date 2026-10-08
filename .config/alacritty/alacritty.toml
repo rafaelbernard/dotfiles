@@ -1,3 +1,8 @@
+# Alacritty — Linux (Omarchy)
+# macOS has its own copy: macos/alacritty/alacritty.toml (bin/link-dotfiles
+# picks one per platform). When changing shared settings (fonts, window,
+# keyboard, terminal), check whether the other file needs the same change.
+
 general.import = [ "~/.local/state/omarchy/current/theme/alacritty.toml" ]
 
 [env]

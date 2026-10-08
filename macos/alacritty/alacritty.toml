@@ -1,5 +1,8 @@
 # Alacritty — macOS
-# Symlinked to ~/.config/alacritty/alacritty.toml
+# Linux (Omarchy) has its own copy: .config/alacritty/alacritty.toml
+# (bin/link-dotfiles picks one per platform). When changing shared settings
+# (fonts, window, keyboard, terminal), check whether the other file needs the
+# same change.
 
 [env]
 TERM = "xterm-256color"
