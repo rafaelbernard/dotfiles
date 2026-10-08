@@ -118,7 +118,6 @@ main() {
 
   # Explicit list of known .config entries to manage. Add more as needed.
   entries=(
-    "alacritty"
     "foot"
     "hypr"
     "waybar"
@@ -133,6 +132,14 @@ main() {
   for e in "${entries[@]}"; do
     link_entry "$SRC_CONFIG_DIR" "$DEST_CONFIG_DIR" "$e"
   done
+
+  # Alacritty differs per platform (fonts, option_as_alt, decorations), so
+  # macOS gets its own directory instead of the shared Omarchy config.
+  if [ "$(uname -s)" = "Darwin" ]; then
+    link_path "$DOTFILES_DIR/macos/alacritty" "$DEST_CONFIG_DIR/alacritty"
+  else
+    link_entry "$SRC_CONFIG_DIR" "$DEST_CONFIG_DIR" "alacritty"
+  fi
 
   echo "Linking custom dotfiles outside .config"
   # ~/bin points at the sibling scripts repo root — its top-level
