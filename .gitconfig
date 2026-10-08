@@ -49,3 +49,5 @@
 
 [includeIf "gitdir:~/dev/idexx-laboratories/"]
 	path = ~/.gitconfig-idexx
+[neo]
+	teamBranch = feature-dream
