@@ -152,6 +152,12 @@ main() {
   link_entry "$DOTFILES_DIR" "$HOME" ".gitconfig"
   link_entry "$DOTFILES_DIR" "$HOME" ".psqlrc"
   link_entry "$DOTFILES_DIR" "$HOME" ".zshrc"
+  # IDEXX MacBook only: user-scope APM manifest with corporate packages,
+  # kept in the private scripts repo (scripts/dotfiles-priv/idexx-macos/).
+  local idexx_apm="$DOTFILES_DIR/../scripts/dotfiles-priv/idexx-macos/.apm/apm.yml"
+  if [ "$(uname -s)" = "Darwin" ] && [ -f "$idexx_apm" ]; then
+    link_path "$idexx_apm" "$HOME/.apm/apm.yml"
+  fi
 
   echo "All done."
 }
