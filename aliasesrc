@@ -87,6 +87,20 @@ alias icat="kitty +kitten icat"
 alias runphp='php -S localhost:8000'
 alias httpserver='runphp'
 
+# apm: one GitHub token per owner, so personal and IDEXX dependencies both
+# resolve whichever gh account is active. Tokens come from gh, are never
+# stored, and only exist for the apm process. An account gh doesn't know
+# (e.g. IDEXX on the Linux machine) is skipped.
+apm() {
+  local -a envs
+  local t
+  t="$(gh auth token --user rafaelbernard 2>/dev/null)" && [ -n "$t" ] && \
+    envs+=("GITHUB_APM_PAT_RAFAELBERNARD=$t" "GITHUB_APM_PAT_ICONS4U=$t")
+  t="$(gh auth token --user Rafael-Araujo_idxx 2>/dev/null)" && [ -n "$t" ] && \
+    envs+=("GITHUB_APM_PAT_IDEXX_LABORATORIES=$t")
+  env "${envs[@]}" apm "$@" # env runs the apm binary, not this function
+}
+
 alias q='kiro-cli --v3'
 alias ah='autohand'
 alias autohandb='/home/rafael/.local/bin/autohand'
