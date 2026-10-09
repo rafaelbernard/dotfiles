@@ -145,6 +145,7 @@ export UV_NATIVE_TLS=true
 
 # rust
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+export PATH="$PATH:~/.cargo/bin"
 
 # All my env needs
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
