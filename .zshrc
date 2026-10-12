@@ -63,7 +63,7 @@ export FZF_DEFAULT_OPTS='--preview "(coderay {} || cat {}) 2> /dev/null | head -
 
 # Local scripts and binaries
 [ -d "$HOME/.local/bin" ] && PATH="$PATH:$HOME/.local/bin"
-[ -d "$HOME/bin" ] && PATH="$PATH:$HOME/bin:"
+[ -d "$HOME/bin" ] && PATH="$PATH:$HOME/bin"
 [ -d "$HOME/.dotfiles/bin" ] && PATH="$PATH:$HOME/.dotfiles/bin"
 
 # Preferred editor for local and remote sessions
@@ -145,7 +145,7 @@ export UV_NATIVE_TLS=true
 
 # rust
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
-export PATH="$PATH:~/.cargo/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # All my env needs
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
