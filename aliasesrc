@@ -87,9 +87,6 @@ alias icat="kitty +kitten icat"
 alias runphp='php -S localhost:8000'
 alias httpserver='runphp'
 
-# apm with per-owner GitHub tokens from gh (see bin/apm-gh)
-alias apm='apm-gh'
-
 alias q='kiro-cli --v3'
 alias ah='autohand'
 alias autohandb='/home/rafael/.local/bin/autohand'
