@@ -7,13 +7,13 @@ Inspired by [eevee/rc](https://github.com/eevee/rc), this repository contains my
 See `docs/` directory for full environment setups, including:
 - [ThinkPad T14 Gen 3 setup with Arch Linux and Hyprland](./docs/thinkpad-14ps-arch-and-hypr.md)
 
+The previous i3/X11 setup is retained as a [legacy reference](./i3.md).
+
 ## Features
 
 ### Desktop Environments & Window Managers
 - **Hyprland** - Wayland compositor with custom configurations
-- **i3** - X11 window manager setup (both Arch and Ubuntu variants)
 - **Waybar** - Status bar configuration for Wayland
-- **i3status** - Status bar for i3wm
 
 ### Shell & Terminal
 - **Zsh** - Primary shell with custom configuration
@@ -30,8 +30,6 @@ See `docs/` directory for full environment setups, including:
 ### Applications & Utilities
 - **Ranger** - File manager configuration
 - **Dunst** - Notification daemon
-- **Picom** - X11 compositor
-- **SXHKD** - Simple X hotkey daemon
 - **Walker** - Application launcher
 - **PostgreSQL** - psql configuration
 
@@ -58,25 +56,9 @@ See `docs/` directory for full environment setups, including:
    - For Arch Linux: Additional configurations in `arch/` directory
    - For Ubuntu: Specific configs in `ubuntu/` directory
 
-## Structure
+## Organisation
 
-```
-.
-├── .config/           # Application configurations
-│   ├── hypr/         # Hyprland wayland compositor
-│   ├── waybar/       # Wayland status bar
-│   ├── i3/           # i3 window manager
-│   ├── alacritty/    # Terminal emulator
-│   ├── nvim/         # Neovim editor
-│   └── ...
-├── arch/             # Arch Linux specific configs
-├── ubuntu/           # Ubuntu specific configs
-├── bin/              # Custom scripts and utilities
-├── etc/              # System configuration files
-├── docs/             # Documentation and setup guides
-├── install           # Main installation script
-└── README.md         # This file
-```
+The repository mirrors the relevant parts of the home directory so dotfiles can be linked into place directly. Shared configuration lives at the root and under `.config/`; platform-specific variants live under `arch/` and `ubuntu/`; reusable commands live under `bin/`; and longer setup guidance lives under `docs/`.
 
 ## Key Scripts
 
