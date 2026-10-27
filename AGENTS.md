@@ -1,32 +1,31 @@
 <!-- icm:start -->
-## Persistent memory (ICM) — MANDATORY
+## Persistent memory (ICM)
 
-This project uses [ICM](https://github.com/rtk-ai/icm) for persistent memory across sessions.
-You MUST use it actively. Not optional.
+ICM is a helper index, not the source of truth. Files (notes, skills, AGENTS.md, tickets, ADRs) hold the facts and must be correct. ICM holds only three kinds of entry:
 
-### Recall (before starting work)
+1. **Preferences:** corrections and rules from the user. `icm store -t preferences -c "..." -i critical`, one fact per entry.
+2. **Voice:** the writing profile, topic `voice`, written by `capture-my-voice`.
+3. **Pointers:** where something lives, so it can be found faster. `icm store -t pointers -c "<what>: <path>" -i high`, one line each.
+
+### Recall
+When a preference, voice trait or file location is unclear, before searching the files:
 ```bash
 icm recall "query"                        # search memories
-icm recall "query" -t "topic-name"        # filter by topic
+icm recall "query" -t "pointers"          # filter by topic
 icm recall-context "query" --limit 5      # formatted for prompt injection
 ```
+Treat a recalled entry as a hint and check it against the file before relying on it.
 
-### Store — MANDATORY triggers
-You MUST call `icm store` when ANY of the following happens:
-1. **Error resolved** → `icm store -t errors-resolved -c "description" -i high -k "keyword1,keyword2"`
-2. **Architecture/design decision** → `icm store -t decisions-{project} -c "description" -i high`
-3. **User preference discovered** → `icm store -t preferences -c "description" -i critical`
-4. **Significant task completed** → `icm store -t context-{project} -c "summary of work done" -i high`
-5. **Conversation exceeds ~20 tool calls without a store** → store a progress summary
+### Store, only when
+- the user corrects you or states a preference or rule;
+- a durable note or document is created or moved (store its pointer);
+- the voice profile is refreshed.
 
-Do this BEFORE responding to the user. Not after. Not later. Immediately.
+Recall first. If an entry already covers it, `icm update <id> -c "..."`; never add a second entry for the same fact. Do not store on a timer or a tool-call count.
 
-Do NOT store: trivial details, info already in CLAUDE.md, ephemeral state (build logs, git status).
+### Never store
+Progress, status, summaries of work done, decisions or errors that a note or ticket already records (write the note, store only a pointer), build logs, git state, or assistant text.
 
-### Other commands
-```bash
-icm update <id> -c "updated content"     # edit memory in-place
-icm health                                # topic hygiene audit
-icm topics                                # list all topics
-```
+### Maintenance
+No consolidation. Fix a wrong entry with `icm update <id>` or `icm forget <id>`. Check `icm health` and `icm prune --dry-run` now and then.
 <!-- icm:end -->
