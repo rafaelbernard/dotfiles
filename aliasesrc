@@ -89,4 +89,4 @@ alias httpserver='runphp'
 
 alias q='kiro-cli --v3'
 alias ah='autohand'
-alias autohandb='/home/rafael/.local/bin/autohand'
+alias cl='claude'
