@@ -110,6 +110,10 @@
     "lock": 300,
     "screensaver": 150
   },
-  "plugins": [],
+  "plugins": [
+    {
+      "id": "io.voxtype.settings"
+    }
+  ],
   "version": 1
 }
